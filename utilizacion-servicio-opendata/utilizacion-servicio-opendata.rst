@@ -26,7 +26,7 @@ Para buscar en portales CKAN necesitamos saber la URL del portal , exemplo http:
 http://demo.ckan.org/api/3/action/resource_search?
 
 
-Descomprimiremos el archivo |file| `utilizacion-servicio-opendata.zip <utilizacion-servicio-opendata.zip>`_  en nuestro espacio de trabajo.
+Descomprimiremos el archivo `utilizacion-servicio-opendata.zip <https://github.com/bolollo/GSS-mtig-17-18/raw/master/utilizacion-servicio-opendata/utilizacion-servicio-opendata.zip`_  en nuestro espacio de trabajo.
 
 
 Creación de un buscador
