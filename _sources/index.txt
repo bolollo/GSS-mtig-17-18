@@ -11,7 +11,7 @@ Materiales:
    servicios-realtime-opendata/servicios-realtime-opendata
    herramientas-visualizacion-opendata/herramientas-visualizacion-opendata
    utilizacion-servicio-opendata/utilizacion-servicio-opendata     
-   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn
+   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn https://www.bicing.cat/availability_map/getJsonObject
    conceptos-geoservicios/conceptos_geoservicios
    geoservicios-realtime/geoservicios-realtime
    herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios
