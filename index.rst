@@ -11,16 +11,16 @@ Materiales:
    servicios-realtime-opendata/servicios-realtime-opendata
    herramientas-visualizacion-opendata/herramientas-visualizacion-opendata
    utilizacion-servicio-opendata/utilizacion-servicio-opendata     
-   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn https://www.bicing.cat/availability_map/getJsonObject
+   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn
    conceptos-geoservicios/conceptos_geoservicios
    geoservicios-realtime/geoservicios-realtime
    herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios
    utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime  
-   ejemplo-mapzen-mobility/ejemplo-mapzen-mobility https://mapzen.com/documentation/mobility/
+   ejemplo-mapzen-mobility/ejemplo-mapzen-mobility
    conceptos-sensores/conceptos-sensores
    servicios-realtime-sensores/servicios-realtime-sensores
    utilizacion-servicio-sensores/utilizacion-servicio-sensores
-   ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn    http://sensors.portdebarcelona.cat/
+   ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn
    como-crear-un-geoservicio/como-crear-un-geoservicio
    conceptos-servidor-mapas/conceptos_servidor_mapas
    geoserver/geoserver
