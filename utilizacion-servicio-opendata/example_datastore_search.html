@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Bàsic sample dataStore Search API
+    </title>
+    <link rel="stylesheet" href="javascripts/vendor/bootstrap/3.2.0/css/bootstrap.css" />
+    <link rel="stylesheet" href="stylesheets/grid.css" />
+    <link rel="stylesheet" href="stylesheets/slickgrid.css">
+    <link rel="stylesheet" href="javascripts/vendor/slickgrid/2.2/slick.grid.css">
+    <script type="text/javascript" src="javascripts/vendor/jquery/1.7.1/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/underscore/1.4.4/underscore.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/backbone/1.0.0/backbone.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/mustache/0.5.0-dev/mustache.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/bootstrap/3.2.0/js/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/jquery.event.drag-2.2.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/slick.core.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/slick.grid.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/slick.formatters.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/slick.editors.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/plugins/slick.rowselectionmodel.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/slickgrid/2.2/plugins/slick.rowmovemanager.js"></script>
+
+    <!-- include the backend code you need e.g. here for csv -->
+    <script type="text/javascript" src="http://okfnlabs.org/csv.js/csv.js"></script>
+
+    <!-- Or you can just include all of recline. -->
+    <script type="text/javascript" src="javascripts/ckan.js"></script>
+    <script type="text/javascript" src="javascripts/recline.js"></script>
+
+    <style>
+        .slick-header-column {
+            min-height: 32px !important;
+        }
+
+        #results {
+            width: 100%;
+            background-color: #f2f2f2;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Datastore Search example </h3>
+        <p>
+            DataStore Extension <br>
+            <a target="_blank" href="http://docs.ckan.org/en/latest/maintaining/datastore.html">http://docs.ckan.org/en/latest/maintaining/datastore.html</a>
+        </p>
+        <form>
+            <div class="form-group">
+                <label for="url_ckan">Url:</label>
+                <input type="text" class="form-control" value="http://opendata-ajuntament.barcelona.cat/data/api/action/datastore_search?" id="url_ckan">
+            </div>
+            <div class="form-group">
+                <label for="resource_ckan">Resource id:</label>
+                <input type="text" value="ee5c6a24-7cb1-4897-9793-57de0d047d8b" class="form-control" id="resource_ckan">
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="num_results_ckan">Num results</label>
+                <input type="number" size="3" class="form-control" id="num_results_ckan" value="5">
+            </div>
+            <div class="form-group">
+                <label for="text_filter_ckan"> Filter</label>
+                <input type="text" class="form-control" id="text_filter_ckan" value="PobleNou" placeholder="text filter">
+            </div>
+        </form>
+        <form>
+            <div class="form-group">
+                <button id="bt_send" type="button" class="btn btn-default btn-success">Send</button>
+            </div>
+        </form>
+        <hr>
+        <div id="results"></div>
+        <div id="mygrid" style="height: 500px"></div>
+
+    </div>
+
+    <script>
+        $.ajaxSetup({
+            cache: true
+        });
+        $(document).ready(function() {
+
+
+            $('#bt_send').on('click', function() {
+
+			var _filter=$('#text_filter_ckan').val()
+			
+                var data = {
+                    resource_id: $('#resource_ckan').val(),
+                    limit: $('#num_results_ckan').val(),
+                    q:  encodeURI(_filter)
+                };
+                $.ajax({
+                    url: $('#url_ckan').val(),
+                    data: data,
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        //console.info(data);
+
+                        $('#results').html('Total results found: ' + data.result.total)
+                        var dataset = new recline.Model.Dataset({
+                            records: data.result.records
+                        });
+                        var $el = $('#mygrid');
+                        var grid = new recline.View.SlickGrid({
+                            model: dataset,
+                            el: $el
+                        });
+                        grid.visible = true;
+                        grid.render();
+                    }
+                });
+
+
+
+            })
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>
