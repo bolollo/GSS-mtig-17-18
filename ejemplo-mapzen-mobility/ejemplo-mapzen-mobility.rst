@@ -22,5 +22,23 @@ Apartado
 URL de servicio https://mapzen.com/documentation/mobility/
 
 
+documentación
+https://mapzen.com/documentation/mobility/isochrone/api-reference/
+
+
+plugin leaflet
+https://github.com/calvinmetcalf/leaflet-ajax
+
+https://github.com/mapzen/leaflet-geocoder
+
+
+
+
+demo utilizando mapzen
+https://bl.ocks.org/rfriberg/38694be3e8ffb30ac6ac8302960c7ebd
+
+
+
+
 Referencias
 ###########

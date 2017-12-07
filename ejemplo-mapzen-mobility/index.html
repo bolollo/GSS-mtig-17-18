@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.css">    
+    <style>
+        #map {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.js"></script>
+    <script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+    <script>
+        var API_KEY = 'mapzen-mQ89VE2';
+
+        var map = L.map('map');
+
+        map.setView([41.3887, 2.1777], 13);  
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var geojsonLayer = new L.GeoJSON.AJAX('',{
+            style: function(geoJsonFeature){
+                return {color: geoJsonFeature.properties.color};
+            }
+        }).addTo(map);
+
+        map.on('click', function(e){
+            console.log(e);
+
+            var url = crearUrlIsochrona(e.latlng);
+
+            geojsonLayer.refresh(url);
+
+        });
+
+        var geocoder = L.control.geocoder(API_KEY).addTo(map);
+
+        geocoder.on('select', function (e) {
+            console.log(e);
+            console.log('You’ve selected', e.feature.properties.label);
+            var url = crearUrlIsochrona(e.latlng);
+            geojsonLayer.refresh(url);
+        });
+
+        function crearUrlIsochrona(latlng){
+            var lat = latlng.lat;
+            var lng = latlng.lng;
+            var url = 'https://matrix.mapzen.com/isochrone?json=';
+            var json = {
+                locations: [{"lat":lat, "lon":lng}],
+                costing: "pedestrian",
+                contours: [{"time":15,"color":"ff0000"}, {"time":30,"color":"00ff00"}]
+            };
+            url += escape(JSON.stringify(json));
+            url+= '&api_key='+API_KEY;
+            return url;
+        }
+
+    </script>
+</body>
+</html>

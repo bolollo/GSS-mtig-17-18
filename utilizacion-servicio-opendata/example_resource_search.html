@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Bàsic sample Resource Search API CKAN
+    </title>
+    <link rel="stylesheet" href="javascripts/vendor/bootstrap/3.2.0/css/bootstrap.css" />
+    <script type="text/javascript" src="javascripts/vendor/jquery/1.7.1/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/vendor/bootstrap/3.2.0/js/bootstrap.js"></script>
+
+
+    <style>
+
+
+        #results {
+            width: 100%;
+            background-color: #f2f2f2;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Resource Search example </h3>
+        <p>
+            Package Search <br>
+            <a target="_blank" href="http://docs.ckan.org/en/latest/api/">http://docs.ckan.org/en/latest/api/</a>
+        </p>
+        <form>
+            <div class="form-group">
+                <label for="url_ckan">Url:</label>
+				
+				<select id="url_ckan" >
+				<option value="http://demo.ckan.org/api/3/action/resource_search?">http://demo.ckan.org/api/3/action/resource_search?</option>
+				<option value="http://old.datahub.io/api/3/action/resource_search?">http://old.datahub.io/api/3/action/resource_search?</option> 
+				
+				
+				</select>
+                
+            </div>
+            <div class="form-group">
+                <label for="text_filter_ckan"> Filter <u>(name, descripton, format )</u></label>
+                <input type="text" class="form-control" id="text_filter_ckan" value="name:wifi" placeholder="text filter">
+            </div>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="num_results_ckan">Num results</label>
+                <input type="number" size="3" class="form-control" id="num_results_ckan" value="5">
+            </div>
+
+        </form>
+        <form>
+            <div class="form-group">
+                <button id="bt_send" type="button" class="btn btn-default btn-success">Send</button>
+            </div>
+        </form>
+        <hr>
+        <div id="results"></div>
+        <div id="mygrid" style="height: 500px"></div>
+
+    </div>
+
+    <script>
+        $.ajaxSetup({
+            cache: true
+        });
+        $(document).ready(function() {
+
+
+            $('#bt_send').on('click', function() {
+                var data = {
+
+                    rows: $('#num_results_ckan').val(),
+                    query: $('#text_filter_ckan').val()
+                };
+                $.ajax({
+                    url: $('#url_ckan').val(),
+                    data: data,
+                    dataType: 'jsonp',
+                    success: function(data) {
+                        if (data.success) {
+                            $('#results').html('Total results found: ' + data.result.count);
+                            $('#mygrid').html('');
+
+                            if (data.result.count >= 1) {
+                                $('#mygrid').append('<ul>');
+                                $.each(data.result.results, function(index, value) {
+                                    $('#mygrid').append('<li>' + value.name + ': <a href="' + value.url + '">' + value.url + '</a>');
+
+                                    if (value.datastore_active) {
+                                        $('#mygrid').append('<p>ResourceID:<a href="' + value.id + '">' + value.id + '</a></p>');
+                                    }
+
+                                    $('#mygrid').append('</li>');
+                                });
+                                $('#mygrid').append('</ul>');
+
+                            }
+
+                        } else {
+                            $('#results').html("An error occured: " + data.error.message);
+                        }
+                    },
+                    error: function(xhr) {
+                        $('#results').html("An error occured: " + xhr.status + " " + xhr.statusText);
+                    }
+
+                });
+
+            })
+
+        });
+    </script>
+
+</body>
+</html>
