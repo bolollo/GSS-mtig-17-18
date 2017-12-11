@@ -25,18 +25,18 @@ Algunos problemas que nos encontraremos al trabar con sensores
 
 
 Ejemplo de buenas prácticas
-===========================
+---------------------------
 
 Un buen ejemplo de servicios de sensores son los servicios de datos sobre embalses ofrecidos por la ACA http://aca-web.gencat.cat/aca/appmanager/aca/aca?_nfpb=true&_pageLabel=P56600137761453129970599. El servicio está bien documentado con ejemplos, el acceso es libre y gratuito, también tiene salida en un mapa para los ususarios que no sean desarrolladores. 
  
 Ejemplo de salida
 http://aca-web.gencat.cat/sdim2/apirest/catalog?componentType=embassament
 
-Si bien el formato de salida es un JSON donde tiene un propiedad *location* no es un formato geográfico que podamos utilizar directamente para poner en un mapa, para ello tendríamos que hacer una transfromación a algún formato geo tipo GeoJSON.
+Si bien el formato de salida es un JSON donde tiene una propiedad *location* no es un formato geográfico que podamos utilizar directamente para poner en un mapa, para ello tendríamos que hacer una transfromación a algún formato geo tipo GeoJSON.
 
 
-Ejemplo de malas prácticas
-==========================
+Ejemplo de no tan buenas prácticas
+----------------------------------
 
 Un ejemplo de no tan buenas prácticas es el caso del servicio de la DIBA https://www.diba.cat/es/web/smartregion/obtenir-acces-a-sentilo-diba para acceder a los servicios es necesaria una API Key, para obtenerla hay que enviar un email con nuestros datos y el motivo de uso. El simple hecho de tener que registrarse ya es una barrera. El acceso a la aplicación http://sentilo.diba.cat/sentilo-catalog-web/ no está fácil de encontrar y no hay ninguna documentación.
 

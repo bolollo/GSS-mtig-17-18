@@ -27,7 +27,7 @@ Algunos problemas que nos encontraremos al trabar con servicios Open Data
 
 
 Ejemplo de buenas prácticas
-===========================
+---------------------------
 
 Un buen ejemplo de servicios realtime Open Data son los servicios de notificación de terremotos ofrecidos por el USGS. El USGS ofrece una serie de servicios que están muy bien documentados y tienen salida en múltiples formatos y son gratuitos y de libre acceso. 
 
@@ -36,8 +36,8 @@ En nuestro caso nos centraremos en el GeoJSON Summary Format https://earthquake.
 Ofrece diferentes salidas desde salidas ya procesadas como mapas, gráficos, etc, para los no desarrolladores hasta una API para los desarrolladores. 
 
 
-Ejemplo de malas prácticas
-==========================
+Ejemplo de no tan buenas prácticas
+----------------------------------
 
 Un ejemplo de no tan buenas prácticas es el caso del servicio OpenData de la AEMET http://www.aemet.es/es/datos_abiertos/AEMET_OpenData para acceder a los servicios es necesaria una API Key, para obtenerla hay que dar una dirección de email y resolver un captcha. Si bien no parece haber restricciones de uso, el simple hecho de tener que registrarse ya es una barrera.  
 
