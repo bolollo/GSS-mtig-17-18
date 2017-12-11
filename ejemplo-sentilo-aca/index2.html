@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Ejemplo Sentilo ACA</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+	<style>
+        #map {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+	<div id="map">
+
+    </div>
+
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+	<script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script>
+		var map = L.map('map');
+
+        map.setView([41.5087, 2.1777], 8);  
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var geojsonLayer = new L.GeoJSON.AJAX('http://localhost:3000/aca/',{
+	    	middleware:function(data){
+	    		return sentiloAca2geoJSON(data);
+	        },
+	        onEachFeature: eachFeature
+	    }).addTo(map);
+
+        function sentiloAca2geoJSON(data){
+        	var geojson = {
+        		type: "FeatureCollection",
+        		features: []
+        	};
+        	var sensors = data.providers[0].sensors;
+        	for (var i = sensors.length - 1; i >= 0; i--) {
+        		var sensor = sensors[i];
+        		var location = sensor.location.split(" ");
+        		var feature = {
+			        type: 'Feature',
+			        properties: {
+			            description: sensor.description,
+			            id: sensor.component,
+			            nom: sensor.componentDesc,
+			            info: sensor.componentAdditionalInfo,
+			            unit: sensor.unit
+			        },
+			        geometry: {
+			            type: 'Point',
+			            coordinates: [location[1], location[0]]
+			        }
+			    };
+			    geojson.features.push(feature);
+        	}
+        	return geojson;
+        }
+
+        function eachFeature(f,l){
+        	l.on('click',function(ev){
+        		var url = 'http://localhost:3000/acalast/'+f.properties.id;
+        		$.ajax({
+				  url: url,
+				}).done(function(result) {
+				  console.log(result);
+				  popUp(l, result);
+				});
+			});
+		}
+
+		function popUp(l, data){
+			var out = [];
+			out.push('<strong>'+data.componentDesc+'</strong>');
+		    if (data.sensorLastObservations){
+		    	for (var i = data.sensorLastObservations.length - 1; i >= 0; i--) {
+		    		var observ = data.sensorLastObservations[i];
+		    		out.push(observ.sensorType+": "+observ.value+" "+observ.unit);
+		    	}
+		    }
+		    l.unbindPopup();
+		    l.bindPopup(out.join("<br />")).togglePopup();
+		}
+
+	</script>
+</body>
+</html>
