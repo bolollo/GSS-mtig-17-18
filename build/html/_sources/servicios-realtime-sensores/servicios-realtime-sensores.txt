@@ -8,7 +8,6 @@ Servicios realtime sensores
 	Fecha              Autores
 	=================  ====================================================
 	 8 Noviembre 2017    * Wladimir Szczerban
-	 X Noviembre 2017    * Victor Pascual 
 	=================  ====================================================
 
 	©2017 Wladimir Szczerban
@@ -17,7 +16,7 @@ Servicios realtime sensores
 
 
 Algunos problemas que nos encontraremos al trabar con sensores
-==============================================================
+--------------------------------------------------------------
 
 - Si bien existe el estandar SOS de la OGC [#]_, muchos de los desarrolladores de los sensores utilizan formatos propios, lo que dificulta la integración de sensores de diferentes provedores en un sólo sistema.
 

@@ -8,7 +8,6 @@ Ejemplo servicio bicing Barcelona
 	Fecha              Autores
 	=================  ====================================================
 	 8 Noviembre 2017    * Wladimir Szczerban
-	 X Noviembre 2017    * Victor Pascual 
 	=================  ====================================================
 
 	©2017 Wladimir Szczerban
@@ -17,7 +16,7 @@ Ejemplo servicio bicing Barcelona
 
 
 Acceso al servicio de datos del Bicing de Barcelona
-===================================================
+---------------------------------------------------
 
 En el portal Open data del Ayuntamiento de Barcelona podemos encontrar un dataset (conjunto de datos) que contiene las `estaciones del servicio de Bicing <http://opendata-ajuntament.barcelona.cat/data/es/dataset/bicing>`_ 
 
@@ -34,6 +33,8 @@ Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los da
 
 Si abrimos la url del servicio http://wservice.viabicing.cat/v2/stations en nuestro navegador podemos ver que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing y también nos ofrece otros datos como la disponibilidad de bicis, las estaciones más cercanas, etc.
 
+Aquí podemos ver un ejemplo de visualización de los datos del Bicing en la plataforma Instamaps https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714
+
 El si bien archivo json que retorna el servicio tiene coordenadas no es un fichero GeoJSON [#]_.
 
 Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet [#]_.
@@ -43,7 +44,8 @@ Creación de un visor
 
 #. En nuestro ordenador creamos una carpeta con el nombre de *visor-bicing*.
 #. Dentro de esta carpeta creamos un archivo con el nombre de *index.html*.
-#. Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código.::
+#. Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código. ::
+
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -79,11 +81,11 @@ Creación de un visor
 
 #. Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Barcelona.
 
-#. Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime [#]_. Para agregar el plugin copiaremos lo siguiente justo después de cuando cargamos la libreria de Leaflet.::
+#. Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime [#]_. Para agregar el plugin copiaremos lo siguiente justo después de cuando cargamos la libreria de Leaflet. ::
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.1.0/leaflet-realtime.min.js"></script>
 
-#. Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa debemos copiar lo siguiente al final de nuestro códogp de javascript.::
+#. Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa debemos copiar lo siguiente al final de nuestro códogp de javascript. ::
 
 		var realtime = L.realtime({
 	        url: 'http://wservice.viabicing.cat/v2/stations',
@@ -101,11 +103,9 @@ Creación de un visor
 
 		node -v
 
-#. En la consola navegamos hasta nuestra carpeta *visor-bicing*. Una vez en la carpeta escribimos: ::
+#. En la consola navegamos hasta nuestra carpeta *visor-bicing*. Con este comando estamos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos: ::
 
 		npm init
-
-	Con este comando estamos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
 
 #. Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express [#]_ como servidor web y el módulo http-proxy [#]_ .
 

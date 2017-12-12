@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Ejemplo servicio bicing Barcelona &mdash; geotalleres-teoria 1 documentation</title>
+    <title>Ejemplo Geoservicio realtime &mdash; geotalleres-teoria 1 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,8 +30,8 @@
     <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="geotalleres-teoria 1 documentation" href="../index.html" />
-    <link rel="next" title="Servicios realtime sensores" href="../servicios-realtime-sensores/servicios-realtime-sensores.html" />
-    <link rel="prev" title="Herramientas de visualización Opendata" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html" />
+    <link rel="next" title="Utilización de servicios de sensores" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html" />
+    <link rel="prev" title="Ejemplo Mapzen Mobility" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -100,9 +100,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html#servicios">Servicios</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo servicio bicing Barcelona</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html">Ejemplo servicio bicing Barcelona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#creacion-de-un-visor">Creación de un visor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
@@ -139,10 +139,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">Agregar un buscador de direcciones y puntos de interés al mapa</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html">Ejemplo Geoservicio realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-mapa">Creación del mapa</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo Geoservicio realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-del-mapa">Creación del mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
@@ -170,9 +170,10 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Ejemplo servicio bicing Barcelona</a><ul>
-<li><a class="reference internal" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
-<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a><ul>
+<li><a class="reference internal" href="#">Ejemplo Geoservicio realtime</a><ul>
+<li><a class="reference internal" href="#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+<li><a class="reference internal" href="#creacion-del-mapa">Creación del mapa</a></li>
+<li><a class="reference internal" href="#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a><ul>
 <li><a class="reference internal" href="#referencias">Referencias</a></li>
 </ul>
 </li>
@@ -187,11 +188,11 @@
               
                 
   <li>
-    <a href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html" title="Previous Chapter: Herramientas de visualización Opendata"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Herramientas ...</span>
+    <a href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html" title="Previous Chapter: Ejemplo Mapzen Mobility"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Ejemplo Mapze...</span>
     </a>
   </li>
   <li>
-    <a href="../servicios-realtime-sensores/servicios-realtime-sensores.html" title="Next Chapter: Servicios realtime sensores"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Servicios rea... &raquo;</span>
+    <a href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html" title="Next Chapter: Utilización de servicios de sensores"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Utilización d... &raquo;</span>
     </a>
   </li>
               
@@ -201,7 +202,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.txt"
+  <a href="../_sources/ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -225,8 +226,8 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="ejemplo-servicio-bicing-barcelona">
-<h1>Ejemplo servicio bicing Barcelona<a class="headerlink" href="#ejemplo-servicio-bicing-barcelona" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ejemplo-geoservicio-realtime">
+<h1>Ejemplo Geoservicio realtime<a class="headerlink" href="#ejemplo-geoservicio-realtime" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <blockquote>
@@ -253,30 +254,15 @@
 </div></blockquote>
 <p class="last">Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">http://creativecommons.org/licenses/by-sa/3.0/deed.es</a>)</p>
 </div>
-<div class="section" id="acceso-al-servicio-de-datos-del-bicing-de-barcelona">
-<h2>Acceso al servicio de datos del Bicing de Barcelona<a class="headerlink" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona" title="Permalink to this headline">¶</a></h2>
-<p>En el portal Open data del Ayuntamiento de Barcelona podemos encontrar un dataset (conjunto de datos) que contiene las <a class="reference external" href="http://opendata-ajuntament.barcelona.cat/data/es/dataset/bicing">estaciones del servicio de Bicing</a></p>
-<p>Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los datos del Bicing como un servicio si tiene un servicio que nos ofrece los datos en tiempo real. La url de este servicio la podemos encontrar si presionamos el botón de Descargar del recurso bicing.json</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><img alt="capturar url servicio de bicing" class="align-middle" src="../_images/bicing.png" /></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<p>Si abrimos la url del servicio <a class="reference external" href="http://wservice.viabicing.cat/v2/stations">http://wservice.viabicing.cat/v2/stations</a> en nuestro navegador podemos ver que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing y también nos ofrece otros datos como la disponibilidad de bicis, las estaciones más cercanas, etc.</p>
-<p>Aquí podemos ver un ejemplo de visualización de los datos del Bicing en la plataforma Instamaps <a class="reference external" href="https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/">https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/</a><a href="#id17"><span class="problematic" id="id18">Estacions_bicing_i_carrils_bici_a_BCN_</span></a>.html?3D=false#14/41.3962/2.1714</p>
-<p>El si bien archivo json que retorna el servicio tiene coordenadas no es un fichero GeoJSON <a class="footnote-reference" href="#id9" id="id1">[1]</a>.</p>
-<p>Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet <a class="footnote-reference" href="#id10" id="id2">[2]</a>.</p>
+<div class="section" id="creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">
+<h2>Creación de un servicio realtime para compartir la ubicación<a class="headerlink" href="#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion" title="Permalink to this headline">¶</a></h2>
+<p>Crearemos un servicio que permita compartir la ubicación de los usuarios y ver que usuarios están en linea. Para ello utilizaremos la librería Socket.io <a class="footnote-reference" href="#id7" id="id1">[1]</a> que permite la comunicación en tiempo real en dos direcciones cliente-servidor (tipo pull) y servidor-cliente (tipo push). Esto lo hace gracias a un socket <a class="footnote-reference" href="#id8" id="id2">[2]</a> .</p>
+<p>Para mostrar los datos en el mapa utilizaremos la libreria Leaflet <a class="footnote-reference" href="#id9" id="id3">[3]</a> . Para obtener la ubicación de los usuarios podemos usar el plugin <em>leaflet-locatecontrol</em> <a class="footnote-reference" href="#id10" id="id4">[4]</a> en nuestro caso vamos en lugar de utilizar la ubicación del usuario vamos a simular la ubicación del usuario haciendo click sobre el mapa.</p>
 </div>
-<div class="section" id="creacion-de-un-visor">
-<h2>Creación de un visor<a class="headerlink" href="#creacion-de-un-visor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creacion-del-mapa">
+<h2>Creación del mapa<a class="headerlink" href="#creacion-del-mapa" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>visor-bicing</em>.</p>
+<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>user-realtime</em>.</p>
 </li>
 <li><p class="first">Dentro de esta carpeta creamos un archivo con el nombre de <em>index.html</em>.</p>
 </li>
@@ -318,37 +304,32 @@
 </li>
 <li><p class="first">Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Barcelona.</p>
 </li>
-<li><p class="first">Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime <a class="footnote-reference" href="#id11" id="id3">[3]</a>. Para agregar el plugin copiaremos lo siguiente justo después de cuando cargamos la libreria de Leaflet.</p>
-<div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.1.0/leaflet-realtime.min.js&quot;&gt;&lt;/script&gt;
+<li><p class="first">Capturamos el click en el mapa. Para esto tenemos que capturar el evento click. Luego de la declaración de nuestra capa vamos a escribir los siguiente:</p>
+<div class="highlight-python"><div class="highlight"><pre>    map.on(&#39;click&#39;, function(e){
+console.log(e);
+    });
 </pre></div>
 </div>
 </li>
-<li><p class="first">Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa debemos copiar lo siguiente al final de nuestro códogp de javascript.</p>
-<div class="highlight-python"><div class="highlight"><pre>    var realtime = L.realtime({
-    url: &#39;http://wservice.viabicing.cat/v2/stations&#39;,
-    crossOrigin: true,
-    type: &#39;json&#39;
-}, {
-    interval: 3 * 1000
-}).addTo(map);
-</pre></div>
+<li><p class="first">Recargamos la aplicación y abrimos la consola del desarrollador, al hacer click sobre el mapa, en la consola aparece el objeto del evento click. Si inspeccionamos este objeto vemos que tiene una propiedad llamada latlng que contine las coordenadas donde se ha hecho el click.</p>
+</li>
+</ol>
 </div>
-</li>
-<li><p class="first">Recargamos la página para ver nuestra capa de bicing y vemos que no aparece ningún dato, esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y nos da un error de CORS <a class="footnote-reference" href="#id12" id="id4">[4]</a>. Abrimos la consola de desarrollador del navegador presionando F12 y vemos que cada 3 segundos nos aparece un error. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id13" id="id5">[5]</a> en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.</p>
-</li>
-<li><p class="first">Creación del proxy. En este caso crearemos un proxy utilizando Node.js <a class="footnote-reference" href="#id14" id="id6">[6]</a></p>
-</li>
+<div class="section" id="creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">
+<h2>Creación del servicio que comparte la ubicación de los usuarios<a class="headerlink" href="#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios" title="Permalink to this headline">¶</a></h2>
+<p>Para la creación del servicio utilizaremos Nodejs <a class="footnote-reference" href="#id11" id="id5">[5]</a> para implementar nuestro servidor web y utilizaremos el módulo de socket.io para establecer la comunicación entre el cliente y nuestro servidor.</p>
+<ol class="arabic">
 <li><p class="first">Instalación de Node. Nos descargamos la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalamos con las opciones por defecto. Una vez instalado el Node abrimos la consola para verificar que se ha instalado correctamente escribimos</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">-</span><span class="n">v</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">En la consola navegamos hasta nuestra carpeta <em>visor-bicing</em>. Con este comando estamos creando el archivo <em>package.json</em>. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos:</p>
+<li><p class="first">En la consola navegamos hasta nuestra carpeta <em>user-realtime</em>. Con este comando estamos creando el archivo <em>package.json</em>. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos:</p>
 <div class="highlight-python"><div class="highlight"><pre>npm init
 </pre></div>
 </div>
 </li>
-<li><p class="first">Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express <a class="footnote-reference" href="#id15" id="id7">[7]</a> como servidor web y el módulo http-proxy <a class="footnote-reference" href="#id16" id="id8">[8]</a> .</p>
+<li><p class="first">Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express <a class="footnote-reference" href="#id12" id="id6">[6]</a> como servidor web y el módulo socket.io.</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first">Instalar el express y guardarlo en la lista de dependencias</p>
@@ -356,8 +337,8 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Instalar el http-proxy y guardarlo en la lista de dependencias</p>
-<div class="highlight-python"><div class="highlight"><pre>npm install http-proxy --save
+<li><p class="first">Instalar el socket.io y guardarlo en la lista de dependencias</p>
+<div class="highlight-python"><div class="highlight"><pre>npm install socket.io --save
 </pre></div>
 </div>
 </li>
@@ -368,24 +349,21 @@
 </li>
 <li><p class="first">En nuestra carpeta creamos un archivo llamado <em>app.js</em> que contendrá nuestra aplicación que servirá de proxy con el servicio de Bicing. Para ello copiremos lo siguiente en este archivo.</p>
 <div class="highlight-python"><div class="highlight"><pre>var express  = require(&#39;express&#39;);
-var app      = express();
-var httpProxy = require(&#39;http-proxy&#39;);
-var apiProxy = httpProxy.createProxyServer();
-var serverBicing = &#39;http://wservice.viabicing.cat/v2/stations&#39;;
+var app = express();
+var http = require(&#39;http&#39;).Server(app);
+var io = require(&#39;socket.io&#39;)(http);
 
-
-app.use(express.static(&#39;public&#39;));
-
-app.all(&quot;/bicing/*&quot;, function(req, res) {
-    console.log(&#39;redirecting to Server1&#39;);
-    apiProxy.web(req, res, {
-        target: serverBicing,
-        changeOrigin: false,
-        ignorePath: true
-    });
+app.get(&#39;/&#39;, function(req, res){
+        res.sendFile(__dirname + &#39;/index.html&#39;);
 });
 
-app.listen(3000);
+io.on(&#39;connection&#39;, function(socket){
+        console.log(&#39;a user connected&#39;);
+});
+
+http.listen(3000, function(){
+  console.log(&#39;listening on *:3000&#39;);
+});
 </pre></div>
 </div>
 </li>
@@ -394,140 +372,94 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos la url de nuestro proxy <a class="reference external" href="http://localhost:3000/bicing/">http://localhost:3000/bicing/</a> en el navegador.</p>
+<li><p class="first">Abrimos la url de nuestro proxy <a class="reference external" href="http://localhost:3000/">http://localhost:3000/</a> en el navegador y vemos nuestro mapa.</p>
 </li>
-<li><p class="first">Creamos una carpeta llamada <em>public</em> en nuestra carpeta y movemos el archivo index.html dentro de esa carpeta. Con esto ya podemos ver nuestra aplicación del mapa servida desde un servidor web y no abriendola directamente como habíamos ellos hasta ahora.</p>
-</li>
-<li><p class="first">En el navegador escribimos <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> y debemos ver nuestro mapa.</p>
-</li>
-<li><p class="first">Modificamos el archivo index.html para que llame al proxy que hemos creado. Para ello cambiamos la url del servicio de bicing <em>http://wservice.viabicing.cat/v2/stations</em> por nuestro proxy <em>http://localhost:3000/bicing/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/bicing/</em>). Recargamos la aplicación con Ctrl+F5 y vemos que el error que nos da ahora es diferente.</p>
-<blockquote>
-<div><p>En este caso el error es <em>Error: Invalid GeoJSON object.</em>. Este error es debido a lo que ya comentamos que la respuesta del servicio de Bicing no es un GeoJSON.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Antes de la declaración de nuestra capa de realtime creamos una variable llamada geojson que será la que contendrá el GeoJSON resultante de la transformación.</p>
-<div class="highlight-python"><div class="highlight"><pre>        var geojson = {
-    type: &#39;FeatureCollection&#39;,
-    features: []
-};
+<li><p class="first">En nuestro archivo html agregamos la librería cliente de socket.io. Justo debajo de donde cargamos el leaflet escribimos</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Modificar la aplicación para transformar la respuesta del bicing en un GeoJSON, para ello debemos modificar nuestra capa realtime con el siguiente código</p>
-<div class="highlight-python"><div class="highlight"><pre>    var realtime = L.realtime(function(success, error) {
-    fetch(&#39;/bicing/&#39;)
-    .then(function(response) {
-            return response.json();
-    })
-    .then(function(data) {
-            var stations = data.stations;
-            for (var i = stations.length - 1; i &gt;= 0; i--) {
-                    var station = stations[i];
-                    var feature = {
-                            type: &#39;Feature&#39;,
-                            properties: {
-                                altitude: station.altitude,
-                                bikes: station.bikes,
-                                id: station.id,
-                                nearbyStations: station.nearbyStations,
-                                slots: station.slots,
-                                status: station.status,
-                                streetName: station.streetName,
-                                streetNumber: station.streetNumber,
-                                type: station.type
-                            },
-                            geometry: {
-                                type: &#39;Point&#39;,
-                                coordinates: [station.longitude, station.latitude]
-                            }
-                        };
-                        geojson.features.push(feature);
-            }
-        success(geojson);
-    })
-    .catch(error);
-}, {
-    interval: 3 * 1000
-}).addTo(map);
+<li><p class="first">Al inicio de nuestro código antes de la declaración del mapa declaramos nuestra variable que va a tener el objeto socket.io. Para ello escribimos los siguiente:</p>
+<div class="highlight-python"><div class="highlight"><pre>var socket = io();
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la aplicación y debemos ver los puntos de las estaciones de bicing. Si vamos a la pestaña de red (network) en la consola de desarrollador del navegador podemos ver que cada 3 segundos se hace una llamada a nuetro proxy.</p>
+<li><p class="first">Ahora recarmos la página y podemos ver en la consola que nos aparece el mensaje de <em>a user connected</em>.</p>
 </li>
-<li><p class="first">Ver información de la estación al seleccionarla. Para ver la información crearemos un popup en cada uno de los elementos de la capa realtime. Justo desdepues de donde definimos el intervalo escribimos</p>
-<div class="highlight-python"><div class="highlight"><pre>        ,onEachFeature(f, l) {
-    l.bindPopup(function() {
-        return &#39;&lt;h3&gt;&#39; + f.properties.id + &#39;&lt;/h3&gt;&#39; +
-            &#39;&lt;p&gt;&#39; + f.properties.streetName +
-            &#39;&lt;br/&gt;bike: &lt;strong&gt;&#39; + f.properties.bikes + &#39;&lt;/strong&gt;&lt;/p&gt;&#39; +
-            &#39;&lt;p&gt;slots: &#39; + f.properties.slots + &#39;&lt;/p&gt;&#39;;
-    });
-}
+<li><p class="first">En la funcion que se llama al hacer click sobre el mapa enviaremos un evento al servidor, este evento lo llamaremos <em>user_click</em>. A este evento le pasaremos como parámetro la posición del click. Para ello copiamos lo siguiente en la función del on click.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">socket</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">latlng</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la página y si hacemos click sobre alguna estación podemos ver su información en tiempo real.</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><img alt="mapa de servicio de bicing" class="align-middle" src="../_images/mapa_bicing.png" /></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<li><p class="first">En nuestra aplicación del servidor tenemos que escuchar al evento <em>user_click</em>. Dentro de la función que se llama en el <em>io.on</em> es donde se crea el socket de conexión, por lo tando escribiremos nuestro código dentro de la misma. Debajo de donde escribimos el mensaje de <em>a user connected</em> escribimos lo siguiente:</p>
+<div class="highlight-python"><div class="highlight"><pre>socket.on(&#39;user_click&#39;, function(msg){
+        console.log(msg);
+});
+</pre></div>
+</div>
+</li>
+<li><p class="first">Para reiniciar nuestro servidor de node vamos a la consola y presionamos Crtl+c. Luego volvemos a escribir node app.js.</p>
+</li>
+<li><p class="first">Ahora recargamos la página y si hacemos click sobre el mapa vemos en la consola que nos aparecen las coordenadas del click. Con esto ya hemos logrado la comunicación cliente-servidor.</p>
+</li>
+<li><p class="first">Para lograr la comunicación servidor-cliente y que el servidor notifique a todos los cliente debemos emitir un evento en nuestro servidor. Este evento lo llamaremos <em>new_user</em>. Para emitir el evento dentro de la función que se llama en el evento <em>user_click</em> copiamos los siguiente.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">io</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="s1">&#39;new_user&#39;</span><span class="p">,</span> <span class="n">msg</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">En nuestro cliente ahora debemos escuchar el evento <em>new_user</em>. Al final de nuestro código del html escribimos</p>
+<div class="highlight-python"><div class="highlight"><pre>        socket.on(&#39;new_user&#39;, function(msg){
+        console.log(msg);
+});
+</pre></div>
+</div>
+</li>
+<li><p class="first">Volvemos a recargar el servidor y recargamos la página. Ahora al clicar sobre el mapa vemos las coordenadas del click tanto en el la consola del servidor como en la consola de desarrolladores del navegador.</p>
+</li>
+<li><p class="first">Vamos a mostrar un marcador en el mapa en la posición donde el usuario hace click. En nuestro html en la función que escucha el evento <em>new_user</em> agregamos el siguiente código</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">L</span><span class="o">.</span><span class="n">marker</span><span class="p">([</span><span class="n">msg</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">lng</span><span class="p">])</span><span class="o">.</span><span class="n">addTo</span><span class="p">(</span><span class="nb">map</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Recargamos nuestra aplicación y abrimos otra pestaña con nuestra aplicación para simular que somos dos usuarios distintos. Si hacemos click en nuestro mapa en cualquiera de las pestañas vemos que nos aparece el marcador en ambas pestañas.</p>
 </li>
 </ol>
 <div class="section" id="referencias">
 <h3>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h3>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://socket.io/">https://socket.io/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://es.wikipedia.org/wiki/Socket_de_Internet">https://es.wikipedia.org/wiki/Socket_de_Internet</a></td></tr>
+</tbody>
+</table>
 <table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://es.wikipedia.org/wiki/GeoJSON">https://es.wikipedia.org/wiki/GeoJSON</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://leafletjs.com/">http://leafletjs.com/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://leafletjs.com/">http://leafletjs.com/</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://github.com/domoritz/leaflet-locatecontrol">https://github.com/domoritz/leaflet-locatecontrol</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id11" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://github.com/perliedman/leaflet-realtime">https://github.com/perliedman/leaflet-realtime</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://nodejs.org/es/">https://nodejs.org/es/</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id12" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS">https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id13" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://es.wikipedia.org/wiki/Servidor_proxy">https://es.wikipedia.org/wiki/Servidor_proxy</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id14" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://nodejs.org/es/">https://nodejs.org/es/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id15" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="http://expressjs.com/">http://expressjs.com/</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id16" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="https://github.com/nodejitsu/node-http-proxy">https://github.com/nodejitsu/node-http-proxy</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="http://expressjs.com/">http://expressjs.com/</a></td></tr>
 </tbody>
 </table>
 </div>

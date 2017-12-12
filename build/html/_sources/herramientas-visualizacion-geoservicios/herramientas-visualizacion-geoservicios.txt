@@ -8,7 +8,6 @@ Herramientas de visualización geoservicios
 	Fecha              Autores
 	=================  ====================================================
 	 8 Noviembre 2017    * Wladimir Szczerban
-	 X Noviembre 2017    * Victor Pascual 
 	=================  ====================================================
 
 	©2017 Wladimir Szczerban

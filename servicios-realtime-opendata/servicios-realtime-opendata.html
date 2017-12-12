@@ -30,7 +30,7 @@
     <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="geotalleres-teoria 1 documentation" href="../index.html" />
-    <link rel="next" title="Ejemplo servicio bicing Barcelona" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html" />
+    <link rel="next" title="Herramientas de visualización Opendata" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html" />
     <link rel="prev" title="Utilización de servicios Open data" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -76,20 +76,23 @@
 <li class="toctree-l2"><a class="reference internal" href="../conceptos-geoservicios/conceptos_geoservicios.html#geoservicio">Geoservicio</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html">Geoservicios realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../conceptos-sensores/conceptos-sensores.html">Conceptos sensores</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../conceptos-sensores/conceptos-sensores.html#apartado">Apartado</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../conceptos-opendata/conceptos-opendata.html">Conceptos Open data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../conceptos-opendata/conceptos-opendata.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html">Utilización de servicios Open data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html#ejemplo-api-ckan">Ejemplo API CKAN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html#ejemplos-api-socrata">Ejemplos API SOCRATA</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Servicios realtime Open data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html">Herramientas de visualización Opendata</a><ul>
@@ -97,25 +100,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html#servicios">Servicios</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html">Utilización de servicios Open data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Servicios realtime Open data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html">Ejemplo servicio bicing Barcelona</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#creacion-de-un-visor">Creación de un visor</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html#apartado">Apartado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html">Ejemplo sensores port Barcelona</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html#acceso-al-servicio-de-datos-de-sensores-del-port-de-barcelona">Acceso al servicio de datos de sensores del Port de Barcelona</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html#creacion-de-un-visor">Creación de un visor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html">Ejemplo Sentilo ACA</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#creacion-de-un-visor">Creación de un visor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html">Geoservicios realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#id1">Geoservicios realtime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#geocodificacion">Geocodificación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#routing">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#servicios-varios">Servicios varios</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html">Herramientas de visualización geoservicios</a><ul>
@@ -123,12 +133,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html#servicios">Servicios</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html">Utilización de geoservicios realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html#apartado">Apartado</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html">Ejemplo Mapzen Mobility</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#acceso-a-los-servicios-de-mapzen-mobility">Acceso a los servicios de Mapzen Mobility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#creacion-de-un-visor-que-permita-el-caculo-de-isocronas">Creación de un visor que permita el cáculo de Isócronas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">Agregar un buscador de direcciones y puntos de interés al mapa</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html">Ejemplo Geoservicio realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-mapa">Creación del mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html">Utilización de geoservicios realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html#apartado">Apartado</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html">¿Cómo crear un geoservicio?</a><ul>
@@ -149,11 +171,9 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Servicios realtime Open data</a><ul>
-<li><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a><ul>
+<li><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
 <li><a class="reference internal" href="#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
 <li><a class="reference internal" href="#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -169,7 +189,7 @@
     </a>
   </li>
   <li>
-    <a href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html" title="Next Chapter: Ejemplo servicio bicing Barcelona"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Ejemplo servi... &raquo;</span>
+    <a href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html" title="Next Chapter: Herramientas de visualización Opendata"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Herramientas ... &raquo;</span>
     </a>
   </li>
               
@@ -225,12 +245,6 @@
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>X Noviembre 2017</td>
-<td><ul class="first last simple">
-<li>Victor Pascual</li>
-</ul>
-</td>
-</tr>
 </tbody>
 </table>
 <p>©2017 Wladimir Szczerban</p>
@@ -244,34 +258,31 @@
 <li>Otro problema común es el cambio de las direcciones de los recursos. Es muy frecuente que por un cambio de nombre de servidor o al cambiar la técnología del portal las URLs cambien. Esto hace que todas las aplicaciones y servicios que consumen estos datos dejen de funcionar.</li>
 <li>Falta de cuidado en los datos, inconsistencia, falta de normalización, datos erroneos, etc. Ejemplo <a class="reference external" href="https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i">https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i</a></li>
 </ul>
+</div>
 <div class="section" id="ejemplo-de-buenas-practicas">
-<h3>Ejemplo de buenas prácticas<a class="headerlink" href="#ejemplo-de-buenas-practicas" title="Permalink to this headline">¶</a></h3>
+<h2>Ejemplo de buenas prácticas<a class="headerlink" href="#ejemplo-de-buenas-practicas" title="Permalink to this headline">¶</a></h2>
 <p>Un buen ejemplo de servicios realtime Open Data son los servicios de notificación de terremotos ofrecidos por el USGS. El USGS ofrece una serie de servicios que están muy bien documentados y tienen salida en múltiples formatos y son gratuitos y de libre acceso.</p>
 <p>En nuestro caso nos centraremos en el GeoJSON Summary Format <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php</a> vemos que está muy bien documentado.</p>
 <p>Ofrece diferentes salidas desde salidas ya procesadas como mapas, gráficos, etc, para los no desarrolladores hasta una API para los desarrolladores.</p>
 </div>
 <div class="section" id="ejemplo-de-no-tan-buenas-practicas">
-<h3>Ejemplo de no tan buenas prácticas<a class="headerlink" href="#ejemplo-de-no-tan-buenas-practicas" title="Permalink to this headline">¶</a></h3>
+<h2>Ejemplo de no tan buenas prácticas<a class="headerlink" href="#ejemplo-de-no-tan-buenas-practicas" title="Permalink to this headline">¶</a></h2>
 <p>Un ejemplo de no tan buenas prácticas es el caso del servicio OpenData de la AEMET <a class="reference external" href="http://www.aemet.es/es/datos_abiertos/AEMET_OpenData">http://www.aemet.es/es/datos_abiertos/AEMET_OpenData</a> para acceder a los servicios es necesaria una API Key, para obtenerla hay que dar una dirección de email y resolver un captcha. Si bien no parece haber restricciones de uso, el simple hecho de tener que registrarse ya es una barrera.</p>
 <p>En este caso hay una diferencia clara entre desarrolladores y acceso general. En ninguno de los casos hay un uso fácil ni claro de los recuros. Al solicitar un recurso te retorna un json que apunta a otro recurso. Ejemplo</p>
 <p><a class="reference external" href="https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/08001?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJib2xvc2lnQGdtYWlsLmNvbSIsImp0aSI6ImFkMzFlYjhmLTYxYmQtNGUxMi05Y2E0LTE4MGU4M2UzYzkwNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNTExOTgzOTI2LCJ1c2VySWQiOiJhZDMxZWI4Zi02MWJkLTRlMTItOWNhNC0xODBlODNlM2M5MDUiLCJyb2xlIjoiIn0.YYQ93aedA5RM6WTp8XR-gDw3XyMeMxYrCEddDbSpwhU">https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/08001?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJib2xvc2lnQGdtYWlsLmNvbSIsImp0aSI6ImFkMzFlYjhmLTYxYmQtNGUxMi05Y2E0LTE4MGU4M2UzYzkwNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNTExOTgzOTI2LCJ1c2VySWQiOiJhZDMxZWI4Zi02MWJkLTRlMTItOWNhNC0xODBlODNlM2M5MDUiLCJyb2xlIjoiIn0.YYQ93aedA5RM6WTp8XR-gDw3XyMeMxYrCEddDbSpwhU</a></p>
-<dl class="docutils">
-<dt>Retorna ::</dt>
-<dd><dl class="first docutils">
-<dt>{</dt>
-<dd>&#8220;descripcion&#8221; : &#8220;exito&#8221;,
-&#8220;estado&#8221; : 200,
-&#8220;datos&#8221; : &#8220;<a class="reference external" href="https://opendata.aemet.es/opendata/sh/36188a6b">https://opendata.aemet.es/opendata/sh/36188a6b</a>&#8221;,
-&#8220;metadatos&#8221; : &#8220;<a class="reference external" href="https://opendata.aemet.es/opendata/sh/dfd88b22">https://opendata.aemet.es/opendata/sh/dfd88b22</a>&#8220;</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
+<p>Retorna</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s2">&quot;descripcion&quot;</span> <span class="p">:</span> <span class="s2">&quot;exito&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;estado&quot;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+  <span class="s2">&quot;datos&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://opendata.aemet.es/opendata/sh/36188a6b&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;metadatos&quot;</span> <span class="p">:</span> <span class="s2">&quot;https://opendata.aemet.es/opendata/sh/dfd88b22&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Datos
 <a class="reference external" href="https://opendata.aemet.es/opendata/sh/36188a6b">https://opendata.aemet.es/opendata/sh/36188a6b</a></p>
 <p>Metadatos
 <a class="reference external" href="https://opendata.aemet.es/opendata/sh/dfd88b22">https://opendata.aemet.es/opendata/sh/dfd88b22</a></p>
-</div>
 </div>
 </div>
 

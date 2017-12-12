@@ -8,7 +8,6 @@ Servicios realtime Open data
 	Fecha              Autores
 	=================  ====================================================
 	 8 Noviembre 2017    * Wladimir Szczerban
-	 X Noviembre 2017    * Victor Pascual 
 	=================  ====================================================
 
 	©2017 Wladimir Szczerban
@@ -17,7 +16,7 @@ Servicios realtime Open data
 
 
 Algunos problemas que nos encontraremos al trabar con servicios Open Data
-=========================================================================
+-------------------------------------------------------------------------
 
 - Al trabajar con servicios Open Data nos encotraremos con infinidad de diferentes implementaciones desde datos en formatos cerrados o no reutilizables como el pdf, hasta servicios bien pensados que ofrecen soluciones a los diferentes niveles de usuarios ya sea mediante aplicaciones finales como mapas o gráficas hasta APIs y ejemplos para desarrolladores.
 
@@ -46,6 +45,7 @@ En este caso hay una diferencia clara entre desarrolladores y acceso general. En
 https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/08001?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJib2xvc2lnQGdtYWlsLmNvbSIsImp0aSI6ImFkMzFlYjhmLTYxYmQtNGUxMi05Y2E0LTE4MGU4M2UzYzkwNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNTExOTgzOTI2LCJ1c2VySWQiOiJhZDMxZWI4Zi02MWJkLTRlMTItOWNhNC0xODBlODNlM2M5MDUiLCJyb2xlIjoiIn0.YYQ93aedA5RM6WTp8XR-gDw3XyMeMxYrCEddDbSpwhU
 
 Retorna ::
+
 		{
 		  "descripcion" : "exito",
 		  "estado" : 200,
@@ -58,4 +58,3 @@ https://opendata.aemet.es/opendata/sh/36188a6b
 
 Metadatos
 https://opendata.aemet.es/opendata/sh/dfd88b22
-
