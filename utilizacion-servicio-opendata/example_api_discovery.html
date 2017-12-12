@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>
@@ -68,8 +67,6 @@
       cache: true
     });
     $(document).ready(function() {
-
-
       $('#bt_send').on('click', function() {
         sendRequest();
       });
@@ -81,9 +78,7 @@
         }
       });
 
-
       function sendRequest() {
-
         var _data = {
           q: $('#text_filter_socrata').val(),
           limit: $('#num_results_socrata').val()
@@ -106,9 +101,7 @@
                   $('#mygrid').append('</li>');
                 });
                 $('#mygrid').append('</ul>');
-
               }
-
             } else {
               console.info(data);
               $('#results').html("An error occured:");
@@ -117,11 +110,8 @@
           error: function(xhr) {
             $('#results').html("An error occured: " + xhr.status + " " + xhr.statusText);
           }
-
         });
-
       }
-
     });
   </script>
 
