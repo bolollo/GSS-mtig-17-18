@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ejemplo Sentilo ACA &mdash; geotalleres-teoria 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/geotalleres.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.1.0/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="geotalleres-teoria 1 documentation" href="../index.html" />
+    <link rel="next" title="Herramientas de visualización geoservicios" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html" />
+    <link rel="prev" title="Ejemplo sensores port Barcelona" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GeoTalleres</a>
+        <span class="navbar-text navbar-version pull-left"><b>1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Nav <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduccion-smart-cities/introduccion-smart-cities.html">Introducción a las Smart Cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion-smart-cities/introduccion-smart-cities.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptos-geoservicios/conceptos_geoservicios.html">Conceptos básicos de Geoservicios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../conceptos-geoservicios/conceptos_geoservicios.html#geoservicio">Geoservicio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html">Geoservicios realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptos-sensores/conceptos-sensores.html">Conceptos sensores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../conceptos-sensores/conceptos-sensores.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptos-opendata/conceptos-opendata.html">Conceptos Open data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../conceptos-opendata/conceptos-opendata.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html">Herramientas de visualización Opendata</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html#librerias">Librerias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html#servicios">Servicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-opendata/utilizacion-servicio-opendata.html">Utilización de servicios Open data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html">Servicios realtime Open data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html">Ejemplo servicio bicing Barcelona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html">Ejemplo sensores port Barcelona</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html#acceso-al-servicio-de-datos-de-sensores-del-port-de-barcelona">Acceso al servicio de datos de sensores del Port de Barcelona</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo Sentilo ACA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html">Herramientas de visualización geoservicios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html#librerias">Librerias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html#servicios">Servicios</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html">Utilización de geoservicios realtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html#apartado">Apartado</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html">Ejemplo Mapzen Mobility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#acceso-a-los-servicios-de-mapzen-mobility">Acceso a los servicios de Mapzen Mobility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html">¿Cómo crear un geoservicio?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html#apartado">Apartado</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Ejemplo Sentilo ACA</a><ul>
+<li><a class="reference internal" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a><ul>
+<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a><ul>
+<li><a class="reference internal" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html" title="Previous Chapter: Ejemplo sensores port Barcelona"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Ejemplo senso...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios.html" title="Next Chapter: Herramientas de visualización geoservicios"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Herramientas ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/ejemplo-sentilo-aca/ejemplo-sentilo-aca.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ejemplo-sentilo-aca">
+<h1>Ejemplo Sentilo ACA<a class="headerlink" href="#ejemplo-sentilo-aca" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Fecha</th>
+<th class="head">Autores</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>8 Noviembre 2017</td>
+<td><ul class="first last simple">
+<li>Wladimir Szczerban</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>X Noviembre 2017</td>
+<td><ul class="first last simple">
+<li>Victor Pascual</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>©2017 Wladimir Szczerban</p>
+</div></blockquote>
+<p class="last">Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">http://creativecommons.org/licenses/by-sa/3.0/deed.es</a>)</p>
+</div>
+<div class="section" id="acceso-al-servicios-de-sensores-sentilo-de-la-aca">
+<h2>Acceso al servicios de sensores Sentilo de la ACA<a class="headerlink" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca" title="Permalink to this headline">¶</a></h2>
+<p>En la página de la ACA <a class="footnote-reference" href="#id12" id="id1">[1]</a> en el apartado de consulta de datos podemos encotrar un subapartado de datos en tiempo real, estos datos los sirven utilizando la plataforma Sentilo <a class="footnote-reference" href="#id13" id="id2">[2]</a>. En esta caso los sensores dan información sobre los diferentes embalses que hay en Cataluña.</p>
+<p>En la página existe un acceso a un mapa con los datos de los diferentes sensores <a class="footnote-reference" href="#id14" id="id3">[3]</a> este mapa es que ofrece la plataforma de Sentilo y está basado en tecnología de Google Maps.</p>
+<p>También encontramos la documentación <a class="footnote-reference" href="#id15" id="id4">[4]</a> para usar la API, lo que nos permite acceder a los datos y generar nuestro propio visor.</p>
+<div class="section" id="creacion-de-un-visor">
+<h3>Creación de un visor<a class="headerlink" href="#creacion-de-un-visor" title="Permalink to this headline">¶</a></h3>
+<p>Para crear un visor de mapas utilizaremos la librería de mapas Leaflet <a class="footnote-reference" href="#id16" id="id5">[5]</a>.</p>
+<ol class="arabic">
+<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>visor-aca</em>.</p>
+</li>
+<li><p class="first">Dentro de esta carpeta creamos un archivo con el nombre de <em>index.html</em>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código. ::</dt>
+<dd><p class="first">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;meta charset=&#8221;UTF-8&#8221;&gt;</p>
+</div></blockquote>
+<p>&lt;meta name=&#8221;viewport&#8221; content=&#8221;width=device-width, initial-scale=1.0&#8221;&gt;
+&lt;meta http-equiv=&#8221;X-UA-Compatible&#8221; content=&#8221;ie=edge&#8221;&gt;</p>
+<blockquote>
+<div><p>&lt;title&gt;Ejemplo Sentilo ACA&lt;/title&gt;
+&lt;link rel=&#8221;stylesheet&#8221; href=&#8221;<a class="reference external" href="https://unpkg.com/leaflet&#64;1.2.0/dist/leaflet.css">https://unpkg.com/leaflet&#64;1.2.0/dist/leaflet.css</a>&#8221; /&gt;
+&lt;style&gt;
+#map {</p>
+<blockquote>
+<div><p>height: 100%;
+width: 100%;
+position: absolute;</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>&lt;/style&gt;</p>
+</div></blockquote>
+<p>&lt;/head&gt;
+&lt;body&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>&lt;div id=&#8221;map&#8221;&gt;</p>
+</div></blockquote>
+<p>&lt;/div&gt;</p>
+<blockquote>
+<div><p>&lt;script src=&#8221;<a class="reference external" href="https://unpkg.com/leaflet&#64;1.2.0/dist/leaflet.js">https://unpkg.com/leaflet&#64;1.2.0/dist/leaflet.js</a>&#8220;&gt;&lt;/script&gt;
+&lt;script&gt;</p>
+<blockquote>
+<div><p>var map = L.map(&#8216;map&#8217;);</p>
+</div></blockquote>
+<p>map.setView([41.5087, 2.1777], 8);</p>
+<dl class="docutils">
+<dt>L.tileLayer(&#8216;<a class="reference external" href="http:/">http:/</a>/{s}.tile.osm.org/{z}/{x}/{y}.png&#8217;, {</dt>
+<dd><p class="first last">attribution: &#8216;&amp;copy; &lt;a href=&#8221;<a class="reference external" href="http://osm.org/copyright">http://osm.org/copyright</a>&#8220;&gt;OpenStreetMap&lt;/a&gt; contributors&#8217;</p>
+</dd>
+</dl>
+<p>}).addTo(map);
+&lt;/script&gt;</p>
+</div></blockquote>
+</div></blockquote>
+<p class="last">&lt;/body&gt;
+&lt;/html&gt;</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Cataluña.</p>
+</li>
+<li><p class="first">Si miramos la documentación de la API nos dice que la url de descripción del servicio es <a class="reference external" href="http://aca-web.gencat.cat/sdim2/apirest/catalog">http://aca-web.gencat.cat/sdim2/apirest/catalog</a>. Abrimos esta url en un navegador y vemos que nos responde un JSON con la información de los diferentes sensores.</p>
+</li>
+<li><p class="first">El JSON de salida tiene una propiedad <em>location</em> que nos indica las coordenadas de la ubicación del sensor. A pesar de que el JSON tiene coordenadas no es un GeoJSON y por lo tanto no lo podemos pintar automaticamente en nuestro mapa.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Para cargar este JSON en nuestro mapa utilizaremos un plugin de Leaflet llamado <em>leaflet-ajax</em> <a class="footnote-reference" href="#id17" id="id6">[6]</a>. Este plugin nos permite hacer una llama AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde cargarmos el leaflet ::</dt>
+<dd><p class="first last">&lt;script src=&#8221;<a class="reference external" href="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js">https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js</a>&#8220;&gt;&lt;/script&gt;</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Para agregar la capa al mapa llamaremos a la API de la ACA utilizando el plugin. Para ello al final de nuestro código agregamos lo siguiente: ::</dt>
+<dd><p class="first last">var geojsonLayer = new L.GeoJSON.AJAX(&#8216;<a class="reference external" href="http://aca-web.gencat.cat/sdim2/apirest/catalog').addTo(map">http://aca-web.gencat.cat/sdim2/apirest/catalog&#8217;).addTo(map</a>);</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Recargamos la página y vemos que no aparece ninguna información en el mapa. Si abrimos la consola de desarrollador del navegador (Ctrl+F12) podemos ver que nos aparece un mensaje de error <em>XMLHttpRequest cannot load ...</em> esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y nos da un error de CORS <a class="footnote-reference" href="#id18" id="id7">[7]</a>. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id19" id="id8">[8]</a> en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.</p>
+</li>
+<li><p class="first">Creación del proxy. En este caso crearemos un proxy utilizando Node.js <a class="footnote-reference" href="#id20" id="id9">[9]</a></p>
+</li>
+<li><p class="first">Instalación de Node. Nos descargamos la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalamos con las opciones por defecto. Una vez instalado el Node abrimos la consola para verificar que se ha instalado correctamente escribimos</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">En la consola navegamos hasta nuestra carpeta <em>visor-bicing</em>. Una vez en la carpeta escribimos:</p>
+<div class="highlight-python"><div class="highlight"><pre>        npm init
+
+Con este comando estamos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
+</pre></div>
+</div>
+</li>
+<li><p class="first">Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express <a class="footnote-reference" href="#id21" id="id10">[10]</a> como servidor web y el módulo http-proxy <a class="footnote-reference" href="#id22" id="id11">[11]</a> .</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Instalar el express y guardarlo en la lista de dependencias</p>
+<div class="highlight-python"><div class="highlight"><pre>npm install express --save
+</pre></div>
+</div>
+</li>
+<li><p class="first">Instalar el http-proxy y guardarlo en la lista de dependencias</p>
+<div class="highlight-python"><div class="highlight"><pre>npm install http-proxy --save
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Al ejecutar estos comandos vemos que se nos crea una carpeta llamada <em>node_modules</em> que es donde se guardan los módulos que hemos instalado.</p>
+</li>
+<li><p class="first">En nuestra carpeta creamos un archivo llamado <em>app.js</em> que contendrá nuestra aplicación que servirá de proxy con el servicio de la ACA. Para ello copiremos lo siguiente en este archivo.</p>
+<div class="highlight-python"><div class="highlight"><pre>var express  = require(&#39;express&#39;);
+var app      = express();
+var httpProxy = require(&#39;http-proxy&#39;);
+var apiProxy = httpProxy.createProxyServer();
+var serverAca = &#39;http://aca-web.gencat.cat/sdim2/apirest/catalog&#39;;
+
+app.get(&#39;/&#39;, function(req, res){
+        res.sendFile(__dirname + &#39;/index.html&#39;);
+});
+
+app.all(&quot;/aca/*&quot;, function(req, res) {
+    console.log(&#39;redirecting to Server1&#39;);
+    apiProxy.web(req, res, {
+        target: serverAca,
+        changeOrigin: false,
+        ignorePath: true
+    });
+});
+
+app.listen(3000);
+</pre></div>
+</div>
+</li>
+<li><p class="first">Para probar que nuestro proxy está funcionando vamos a la consola y escribimos:</p>
+<div class="highlight-python"><div class="highlight"><pre>node app.js
+</pre></div>
+</div>
+</li>
+<li><p class="first">Abrimos la url de nuestro proxy <a class="reference external" href="http://localhost:3000/aca/">http://localhost:3000/aca/</a> en el navegador.</p>
+</li>
+<li><p class="first">En el navegador escribimos <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> y debemos ver nuestro mapa.</p>
+</li>
+<li><p class="first">Modificamos el archivo index.html para que llame al proxy que hemos creado. Para ello cambiamos la url de la capa geojsonLayer <em>http://aca-web.gencat.cat/sdim2/apirest/catalog</em> por nuestro proxy <em>http://localhost:3000/aca/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/aca/</em>). Recargamos la aplicación con Ctrl+F5 y vemos que el error ha desaparecido.</p>
+</li>
+<li><p class="first">Continuamos sin ver ningún dato en nuestro mapa. Esto es debido a lo que ya mencionamos que lo que retorna la API no es un GeoJSON. Pero lo tanto tenemos que convertir la respuesta de la API en un GeoJSON, para ello utilizaremos la opción <em>middleware</em> que ofrece la capa GeoJSON.AJAX. Esta opción nos permite crear un funcion donde podemos manipular los datos antes de agregarlos al mapa.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Creamos una función que transforma los datos de Sentilo de la ACA en un GeoJSON. Al final de nuestro código escribimos ::</dt>
+<dd><blockquote class="first">
+<div><p>function sentiloAca2geoJSON(data){
+var geojson = {</p>
+<blockquote>
+<div><p>type: &#8220;FeatureCollection&#8221;,
+features: []</p>
+</div></blockquote>
+<p>};
+var sensors = data.providers[0].sensors;
+for (var i = sensors.length - 1; i &gt;= 0; i&#8211;) {</p>
+<blockquote>
+<div><p>var sensor = sensors[i];
+var location = sensor.location.split(&#8221; &#8221;);
+var feature = {</p>
+<blockquote>
+<div><blockquote>
+<div><p>type: &#8216;Feature&#8217;,
+properties: {</p>
+<blockquote>
+<div><p>description: sensor.description,
+id: sensor.component,
+nom: sensor.componentDesc,
+info: sensor.componentAdditionalInfo,
+unit: sensor.unit</p>
+</div></blockquote>
+<p>},
+geometry: {</p>
+<blockquote>
+<div><p>type: &#8216;Point&#8217;,
+coordinates: [location[1], location[0]]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>};
+geojson.features.push(feature);</p>
+</div></blockquote>
+</div></blockquote>
+<p>}
+return geojson;</p>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Luego modficamos la capa geojsonLayer para que el middleware llame a nuestra función de transformación. Cambiamos el código de la capa por lo siguiente: ::</dt>
+<dd><blockquote class="first">
+<div><p>var geojsonLayer = new L.GeoJSON.AJAX(&#8216;<a class="reference external" href="http://localhost:3000/aca/">http://localhost:3000/aca/</a>&#8216;, {
+middleware:function(data){</p>
+<blockquote>
+<div><p>return sentiloAca2geoJSON(data);</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p class="last">}).addTo(map);</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Recargarmos el mapa y ahora debemos ver los puntos de los embalses en el mapa.</p>
+</li>
+<li><p class="first">Para mostrar la información del punto vamos a agregar el evento click en cada unos de los puntos. Para ellos utilizaremos la opción de <em>onEachFeature</em> que ofrece las capa GeoJSON de Leaflet. Esta opción permite ejecutar una función en la creación de cada uno de los elementos de la capa. Es muy útil para agregar popups a los elementos o para agregar eventos en los elementos.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Creamos una función llamada <em>eachFeature</em> que recibe como parámetros un feature (elemento del GeoJSON) y un layer (elemento de Leaflet). Nuestra función sería la siguiente ::</dt>
+<dd><p class="first">function eachFeature(f,l){
+l.on(&#8216;click&#8217;,function(ev){</p>
+<blockquote>
+<div><p>console.log(f);
+console.log(l);
+});</p>
+</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Recargamos el mapa y hacemos click sobre un elemento. En la consola de desarrollador debemos ver que nos aparecen 2 entradas una que corresponde al feature y otra al layer.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Ahora tendríamos que llamar a la API de la ACA para pedir la última lectura del sensor y así obtener la información. La url para obtener la última lectura es <a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*</a>.&lt;id_sensor&gt;*/lastOb/. Por ejemplo ::</dt>
+<dd><p class="first last"><a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.L25075-72-00003/lastOb/">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.L25075-72-00003/lastOb/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Como estamos llamando una url que está fuera de nuestro dominio tenemos el mismo problema de CORS. Por lo tanto tendremos que modificar nuestro proxy. En nuestro archivo app.js escribimos justo debajo de la declaración de la variable <em>serverAca</em> ::</dt>
+<dd><p class="first last">var serverAcaLastOb = &#8216;<a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST</a>.&#8217;;</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Ahora agregamos justo antes del app.listen el código que nos va a ser de proxy. Copiamos lo siguiente ::</dt>
+<dd><dl class="first docutils">
+<dt>app.all(&#8220;/acalast/:id&#8221;, function(req, res){</dt>
+<dd><blockquote class="first">
+<div><p>console.log(&#8216;redirecting to Server2&#8217; + req.params.id);
+apiProxy.web(req, res, {
+target: serverAcaLastOb+req.params.id+&#8217;/lastOb/&#8217;,
+changeOrigin: false,
+ignorePath: true</p>
+</div></blockquote>
+<p class="last">});</p>
+</dd>
+</dl>
+<p class="last">});</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Para reiniciar nuestro servidor de node vamos a la consola y presionamos Crtl+c. Luego volvemos a escribir node app.js.</p>
+</li>
+<li><p class="first">En nuestro abrimos <a class="reference external" href="http://localhost:3000/acalast/L25075-72-00003">http://localhost:3000/acalast/L25075-72-00003</a> para comprovar que el proxy está funcionando correctamente.</p>
+</li>
+</ol>
+<div class="section" id="referencias">
+<h4>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h4>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://aca-web.gencat.cat/aca/appmanager/aca/aca?_nfpb=true&amp;_pageLabel=P56600137761453129970599">http://aca-web.gencat.cat/aca/appmanager/aca/aca?_nfpb=true&amp;_pageLabel=P56600137761453129970599</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://www.sentilo.io/wordpress/">http://www.sentilo.io/wordpress/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map">http://aca-web.gencat.cat/sentilo-catalog-web/component/map</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="http://aca-web.gencat.cat/aca/documents/Consulta_dades/dades_obertes_tempsreal/us_serveis_dades_API_REST.pdf">http://aca-web.gencat.cat/aca/documents/Consulta_dades/dades_obertes_tempsreal/us_serveis_dades_API_REST.pdf</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id16" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="http://leafletjs.com/">http://leafletjs.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id17" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://github.com/calvinmetcalf/leaflet-ajax">https://github.com/calvinmetcalf/leaflet-ajax</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id18" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS">https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id19" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id8">[8]</a></td><td><a class="reference external" href="https://es.wikipedia.org/wiki/Servidor_proxy">https://es.wikipedia.org/wiki/Servidor_proxy</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id20" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id9">[9]</a></td><td><a class="reference external" href="https://nodejs.org/es/">https://nodejs.org/es/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id21" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id10">[10]</a></td><td><a class="reference external" href="http://expressjs.com/">http://expressjs.com/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id22" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[11]</a></td><td><a class="reference external" href="https://github.com/nodejitsu/node-http-proxy">https://github.com/nodejitsu/node-http-proxy</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Varios.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

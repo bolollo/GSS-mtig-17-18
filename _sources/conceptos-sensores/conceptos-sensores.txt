@@ -19,6 +19,9 @@ Conceptos sensores
 Apartado
 ========
 
+Se pueden sacar conceptos de aqui http://sensor-widgets.readthedocs.io/es/latest/sos.html#conceptos
+
+
 
 
 Referencias

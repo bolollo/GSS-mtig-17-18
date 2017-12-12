@@ -7,35 +7,19 @@ Materiales:
    :maxdepth: 1
 
    introduccion-smart-cities/introduccion-smart-cities
-   conceptos-opendata/conceptos-opendata
-   servicios-realtime-opendata/servicios-realtime-opendata
-   herramientas-visualizacion-opendata/herramientas-visualizacion-opendata
-   utilizacion-servicio-opendata/utilizacion-servicio-opendata     
-   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn https://www.bicing.cat/availability_map/getJsonObject
    conceptos-geoservicios/conceptos_geoservicios
    geoservicios-realtime/geoservicios-realtime
-   herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios
-   utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime  
-   ejemplo-mapzen-mobility/ejemplo-mapzen-mobility https://mapzen.com/documentation/mobility/
    conceptos-sensores/conceptos-sensores
    servicios-realtime-sensores/servicios-realtime-sensores
+   conceptos-opendata/conceptos-opendata
+   herramientas-visualizacion-opendata/herramientas-visualizacion-opendata
+   utilizacion-servicio-opendata/utilizacion-servicio-opendata
+   servicios-realtime-opendata/servicios-realtime-opendata
+   ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn
    utilizacion-servicio-sensores/utilizacion-servicio-sensores
-   ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn    http://sensors.portdebarcelona.cat/
+   ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn
+   ejemplo-sentilo-aca/ejemplo-sentilo-aca
+   herramientas-visualizacion-geoservicios/herramientas-visualizacion-geoservicios
+   utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime
+   ejemplo-mapzen-mobility/ejemplo-mapzen-mobility
    como-crear-un-geoservicio/como-crear-un-geoservicio
-   conceptos-servidor-mapas/conceptos_servidor_mapas
-   geoserver/geoserver
-   mapserver/mapserver
-   mapserver-install/mapserver_install
-   mapserver-epsg/mapserver_epsg
-   mapserver-mapfile/mapserver_mapfile
-   mapserver-mapfile-shp/mapserver_mapfile_shp
-   mapserver-mapfile-shp-clasificado/mapserver_mapfile_shp_clasificado
-   mapserver-mapfile-raster/mapserver_mapfile_raster
-   mapserver-mapfile-raster-mosaico/mapserver_mapfile_raster_mosaico
-   clientes-mapas/clientes_mapas
-   cliente-web/cliente_web
-   leaflet-wms/leaflet_wms
-   leaflet-wmts/leaflet_wmts
-   qgis-wms/qgis_wms
-   qgis-wmts/qgis_wmts
-   visor-responsive/index
