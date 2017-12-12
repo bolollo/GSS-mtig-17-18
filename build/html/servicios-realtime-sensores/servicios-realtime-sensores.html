@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Servicios realtime sensores &mdash; geotalleres-teoria 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/geotalleres.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.1.0/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="geotalleres-teoria 1 documentation" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          GeoTalleres</a>
+        <span class="navbar-text navbar-version pull-left"><b>1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Nav <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="simple">
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Servicios realtime sensores</a><ul>
+<li><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a><ul>
+<li><a class="reference internal" href="#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
+<li><a class="reference internal" href="#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a><ul>
+<li><a class="reference internal" href="#referencias">Referencias</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/servicios-realtime-sensores/servicios-realtime-sensores.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="servicios-realtime-sensores">
+<h1>Servicios realtime sensores<a class="headerlink" href="#servicios-realtime-sensores" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Fecha</th>
+<th class="head">Autores</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>8 Noviembre 2017</td>
+<td><ul class="first last simple">
+<li>Wladimir Szczerban</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>X Noviembre 2017</td>
+<td><ul class="first last simple">
+<li>Victor Pascual</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>©2017 Wladimir Szczerban</p>
+</div></blockquote>
+<p class="last">Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">http://creativecommons.org/licenses/by-sa/3.0/deed.es</a>)</p>
+</div>
+<div class="section" id="algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">
+<h2>Algunos problemas que nos encontraremos al trabar con sensores<a class="headerlink" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Si bien existe el estandar SOS de la OGC <a class="footnote-reference" href="#id2" id="id1">[1]</a>, muchos de los desarrolladores de los sensores utilizan formatos propios, lo que dificulta la integración de sensores de diferentes provedores en un sólo sistema.</li>
+<li>Datos erroneos, puede haber datos falsos, ya sea por una mala lectura o por que el sensor no está funcionando correctamente. No tenemos la seguridad de saber si el dato es bueno. Ejemplo: <a class="reference external" href="http://sensors.portdebarcelona.cat/widget/?name=thermometer&amp;service=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fsos%2Fjson&amp;offering=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Fofferings%2310m&amp;feature=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Ffeatures%23P6&amp;property=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Fproperties%2332&amp;refresh_interval=120&amp;footnote=Nota%20al%20pie%20de%20ejemplo%20en%20el%20widget%20Term%C3%B3metro&amp;lang=es">http://sensors.portdebarcelona.cat/widget/?name=thermometer&amp;service=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fsos%2Fjson&amp;offering=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Fofferings%2310m&amp;feature=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Ffeatures%23P6&amp;property=http%3A%2F%2Fsensors.portdebarcelona.cat%2Fdef%2Fweather%2Fproperties%2332&amp;refresh_interval=120&amp;footnote=Nota%20al%20pie%20de%20ejemplo%20en%20el%20widget%20Term%C3%B3metro&amp;lang=es</a></li>
+</ul>
+<div class="section" id="ejemplo-de-buenas-practicas">
+<h3>Ejemplo de buenas prácticas<a class="headerlink" href="#ejemplo-de-buenas-practicas" title="Permalink to this headline">¶</a></h3>
+<p>Un buen ejemplo de servicios de sensores son los servicios de datos sobre embalses ofrecidos por la ACA <a class="reference external" href="http://aca-web.gencat.cat/aca/appmanager/aca/aca?_nfpb=true&amp;_pageLabel=P56600137761453129970599">http://aca-web.gencat.cat/aca/appmanager/aca/aca?_nfpb=true&amp;_pageLabel=P56600137761453129970599</a>. El servicio está bien documentado con ejemplos, el acceso es libre y gratuito, también tiene salida en un mapa para los ususarios que no sean desarrolladores.</p>
+<p>Ejemplo de salida
+<a class="reference external" href="http://aca-web.gencat.cat/sdim2/apirest/catalog?componentType=embassament">http://aca-web.gencat.cat/sdim2/apirest/catalog?componentType=embassament</a></p>
+<p>Si bien el formato de salida es un JSON donde tiene una propiedad <em>location</em> no es un formato geográfico que podamos utilizar directamente para poner en un mapa, para ello tendríamos que hacer una transfromación a algún formato geo tipo GeoJSON.</p>
+</div>
+<div class="section" id="ejemplo-de-no-tan-buenas-practicas">
+<h3>Ejemplo de no tan buenas prácticas<a class="headerlink" href="#ejemplo-de-no-tan-buenas-practicas" title="Permalink to this headline">¶</a></h3>
+<p>Un ejemplo de no tan buenas prácticas es el caso del servicio de la DIBA <a class="reference external" href="https://www.diba.cat/es/web/smartregion/obtenir-acces-a-sentilo-diba">https://www.diba.cat/es/web/smartregion/obtenir-acces-a-sentilo-diba</a> para acceder a los servicios es necesaria una API Key, para obtenerla hay que enviar un email con nuestros datos y el motivo de uso. El simple hecho de tener que registrarse ya es una barrera. El acceso a la aplicación <a class="reference external" href="http://sentilo.diba.cat/sentilo-catalog-web/">http://sentilo.diba.cat/sentilo-catalog-web/</a> no está fácil de encontrar y no hay ninguna documentación.</p>
+<div class="section" id="referencias">
+<h4>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h4>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www.opengeospatial.org/standards/sos">http://www.opengeospatial.org/standards/sos</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2013, Varios.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
