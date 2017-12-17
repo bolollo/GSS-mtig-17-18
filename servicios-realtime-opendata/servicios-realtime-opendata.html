@@ -90,9 +90,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Servicios realtime Open data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problemas-frecuentes-al-trabajar-con-servicios-open-data">Problemas frecuentes al trabajar con servicios Open Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-malas-practicas">Ejemplo de malas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html">Herramientas de visualización Opendata</a><ul>
@@ -103,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html">Ejemplo servicio bicing Barcelona</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#creacion-de-un-visor">Creación de un visor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-servicio-bicing-bcn/ejemplo-servicio-bicing-bcn.html#creacion-del-proxy">Creación del proxy</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
@@ -171,9 +172,9 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Servicios realtime Open data</a><ul>
-<li><a class="reference internal" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
+<li><a class="reference internal" href="#problemas-frecuentes-al-trabajar-con-servicios-open-data">Problemas frecuentes al trabajar con servicios Open Data</a></li>
 <li><a class="reference internal" href="#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
-<li><a class="reference internal" href="#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
+<li><a class="reference internal" href="#ejemplo-de-malas-practicas">Ejemplo de malas prácticas</a></li>
 </ul>
 </li>
 </ul>
@@ -251,24 +252,24 @@
 </div></blockquote>
 <p class="last">Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">http://creativecommons.org/licenses/by-sa/3.0/deed.es</a>)</p>
 </div>
-<div class="section" id="algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">
-<h2>Algunos problemas que nos encontraremos al trabar con servicios Open Data<a class="headerlink" href="#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problemas-frecuentes-al-trabajar-con-servicios-open-data">
+<h2>Problemas frecuentes al trabajar con servicios Open Data<a class="headerlink" href="#problemas-frecuentes-al-trabajar-con-servicios-open-data" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Al trabajar con servicios Open Data nos encotraremos con infinidad de diferentes implementaciones desde datos en formatos cerrados o no reutilizables como el pdf, hasta servicios bien pensados que ofrecen soluciones a los diferentes niveles de usuarios ya sea mediante aplicaciones finales como mapas o gráficas hasta APIs y ejemplos para desarrolladores.</li>
-<li>Otro problema común es el cambio de las direcciones de los recursos. Es muy frecuente que por un cambio de nombre de servidor o al cambiar la técnología del portal las URLs cambien. Esto hace que todas las aplicaciones y servicios que consumen estos datos dejen de funcionar.</li>
-<li>Falta de cuidado en los datos, inconsistencia, falta de normalización, datos erroneos, etc. Ejemplo <a class="reference external" href="https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i">https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i</a></li>
+<li>Ausencia de normalización u homogeneidad en los portales y servicios.</li>
+<li>Datos en formatos cerrados o no reutilizables como el pdf.</li>
+<li>Cambio de las direcciones de los recursos. Por ejemplo, suele ocurrir que cuando se cambia el nombre de un servidor ó la técnología del portal ocasiona un cambio en las URLs y dejan de funcionar las aplicaciones y servicios que consumen esos datos.</li>
+<li>Datos poco fiables, erróneos, inconsistentes. Falta de  normalización y homogeneidad también en los datos. Ejemplo <a class="reference external" href="https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i">https://analisi.transparenciacatalunya.cat/Urbanisme-infraestructures/Equipaments-de-Catalunya/8gmd-gz7i</a></li>
 </ul>
 </div>
 <div class="section" id="ejemplo-de-buenas-practicas">
 <h2>Ejemplo de buenas prácticas<a class="headerlink" href="#ejemplo-de-buenas-practicas" title="Permalink to this headline">¶</a></h2>
-<p>Un buen ejemplo de servicios realtime Open Data son los servicios de notificación de terremotos ofrecidos por el USGS. El USGS ofrece una serie de servicios que están muy bien documentados y tienen salida en múltiples formatos y son gratuitos y de libre acceso.</p>
-<p>En nuestro caso nos centraremos en el GeoJSON Summary Format <a class="reference external" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php</a> vemos que está muy bien documentado.</p>
-<p>Ofrece diferentes salidas desde salidas ya procesadas como mapas, gráficos, etc, para los no desarrolladores hasta una API para los desarrolladores.</p>
+<p>Un buen ejemplo de servicios realtime Open Data son los servicios de notificación de terremotos de el USGS porque están muy bien documentados, tienen salida en múltiples formatos, son gratuitos y de libre acceso y ofrecen diferentes niveles de usuarios (programadores y no programadores)</p>
+<p><a class="reference external" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php</a></p>
 </div>
-<div class="section" id="ejemplo-de-no-tan-buenas-practicas">
-<h2>Ejemplo de no tan buenas prácticas<a class="headerlink" href="#ejemplo-de-no-tan-buenas-practicas" title="Permalink to this headline">¶</a></h2>
-<p>Un ejemplo de no tan buenas prácticas es el caso del servicio OpenData de la AEMET <a class="reference external" href="http://www.aemet.es/es/datos_abiertos/AEMET_OpenData">http://www.aemet.es/es/datos_abiertos/AEMET_OpenData</a> para acceder a los servicios es necesaria una API Key, para obtenerla hay que dar una dirección de email y resolver un captcha. Si bien no parece haber restricciones de uso, el simple hecho de tener que registrarse ya es una barrera.</p>
-<p>En este caso hay una diferencia clara entre desarrolladores y acceso general. En ninguno de los casos hay un uso fácil ni claro de los recuros. Al solicitar un recurso te retorna un json que apunta a otro recurso. Ejemplo</p>
+<div class="section" id="ejemplo-de-malas-practicas">
+<h2>Ejemplo de malas prácticas<a class="headerlink" href="#ejemplo-de-malas-practicas" title="Permalink to this headline">¶</a></h2>
+<p>En el servicio OpenData de la AEMET <a class="reference external" href="http://www.aemet.es/es/datos_abiertos/AEMET_OpenData">http://www.aemet.es/es/datos_abiertos/AEMET_OpenData</a> observamos que nos solicitan una API Key para acceder a los servicios y para obtenerla hay que dar una dirección de email y resolver un captcha, lo que constituye una barrera de entrada.</p>
+<p>Luego, existe una diferencia clara entre desarrolladores y el acceso general. Y en ninguno de los perfiles de usuarios hay un acceso fácil, directo y claro a la información. Lo vemos cuando solicitamos un recurso, que nos retorna un json apuntando a otro recurso. Ejemplo</p>
 <p><a class="reference external" href="https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/08001?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJib2xvc2lnQGdtYWlsLmNvbSIsImp0aSI6ImFkMzFlYjhmLTYxYmQtNGUxMi05Y2E0LTE4MGU4M2UzYzkwNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNTExOTgzOTI2LCJ1c2VySWQiOiJhZDMxZWI4Zi02MWJkLTRlMTItOWNhNC0xODBlODNlM2M5MDUiLCJyb2xlIjoiIn0.YYQ93aedA5RM6WTp8XR-gDw3XyMeMxYrCEddDbSpwhU">https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/08001?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJib2xvc2lnQGdtYWlsLmNvbSIsImp0aSI6ImFkMzFlYjhmLTYxYmQtNGUxMi05Y2E0LTE4MGU4M2UzYzkwNSIsImlzcyI6IkFFTUVUIiwiaWF0IjoxNTExOTgzOTI2LCJ1c2VySWQiOiJhZDMxZWI4Zi02MWJkLTRlMTItOWNhNC0xODBlODNlM2M5MDUiLCJyb2xlIjoiIn0.YYQ93aedA5RM6WTp8XR-gDw3XyMeMxYrCEddDbSpwhU</a></p>
 <p>Retorna</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>

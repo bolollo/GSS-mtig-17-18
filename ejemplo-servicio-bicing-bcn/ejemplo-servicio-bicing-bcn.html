@@ -90,9 +90,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html">Servicios realtime Open data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-servicios-open-data">Algunos problemas que nos encontraremos al trabar con servicios Open Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#problemas-frecuentes-al-trabajar-con-servicios-open-data">Problemas frecuentes al trabajar con servicios Open Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-opendata/servicios-realtime-opendata.html#ejemplo-de-malas-practicas">Ejemplo de malas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../herramientas-visualizacion-opendata/herramientas-visualizacion-opendata.html">Herramientas de visualización Opendata</a><ul>
@@ -103,6 +103,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo servicio bicing Barcelona</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-del-proxy">Creación del proxy</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
@@ -172,7 +173,8 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ejemplo servicio bicing Barcelona</a><ul>
 <li><a class="reference internal" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona">Acceso al servicio de datos del Bicing de Barcelona</a></li>
-<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a><ul>
+<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a></li>
+<li><a class="reference internal" href="#creacion-del-proxy">Creación del proxy</a><ul>
 <li><a class="reference internal" href="#referencias">Referencias</a></li>
 </ul>
 </li>
@@ -256,7 +258,7 @@
 <div class="section" id="acceso-al-servicio-de-datos-del-bicing-de-barcelona">
 <h2>Acceso al servicio de datos del Bicing de Barcelona<a class="headerlink" href="#acceso-al-servicio-de-datos-del-bicing-de-barcelona" title="Permalink to this headline">¶</a></h2>
 <p>En el portal Open data del Ayuntamiento de Barcelona podemos encontrar un dataset (conjunto de datos) que contiene las <a class="reference external" href="http://opendata-ajuntament.barcelona.cat/data/es/dataset/bicing">estaciones del servicio de Bicing</a></p>
-<p>Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los datos del Bicing como un servicio si tiene un servicio que nos ofrece los datos en tiempo real. La url de este servicio la podemos encontrar si presionamos el botón de Descargar del recurso bicing.json</p>
+<p>Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los datos del Bicing como un servicio, si que tiene un servicio de datos en tiempo real. La url la podemos encontrar presionando el botón de Descargar del recurso bicing.json</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -268,19 +270,19 @@
 </tbody>
 </table>
 </div></blockquote>
-<p>Si abrimos la url del servicio <a class="reference external" href="http://wservice.viabicing.cat/v2/stations">http://wservice.viabicing.cat/v2/stations</a> en nuestro navegador podemos ver que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing y también nos ofrece otros datos como la disponibilidad de bicis, las estaciones más cercanas, etc.</p>
-<p>Aquí podemos ver un ejemplo de visualización de los datos del Bicing en la plataforma Instamaps <a class="reference external" href="https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/">https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/</a><a href="#id17"><span class="problematic" id="id18">Estacions_bicing_i_carrils_bici_a_BCN_</span></a>.html?3D=false#14/41.3962/2.1714</p>
-<p>El si bien archivo json que retorna el servicio tiene coordenadas no es un fichero GeoJSON <a class="footnote-reference" href="#id9" id="id1">[1]</a>.</p>
+<p>Al abrir la url <a class="reference external" href="http://wservice.viabicing.cat/v2/stations">http://wservice.viabicing.cat/v2/stations</a> en nuestro navegador observaremos que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing, la disponibilidad de bicis, las estaciones más cercanas, etc.</p>
+<p>Ejemplo de mapa que utiliza este servicio, creado en la plataforma Instamaps <a class="reference external" href="https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/">https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/</a><a href="#id17"><span class="problematic" id="id18">Estacions_bicing_i_carrils_bici_a_BCN_</span></a>.html?3D=false#14/41.3962/2.1714</p>
+<p>El archivo json que retorna el servicio tiene coordenadas pero no es un fichero GeoJSON <a class="footnote-reference" href="#id9" id="id1">[1]</a>.</p>
 <p>Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet <a class="footnote-reference" href="#id10" id="id2">[2]</a>.</p>
 </div>
 <div class="section" id="creacion-de-un-visor">
 <h2>Creación de un visor<a class="headerlink" href="#creacion-de-un-visor" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>visor-bicing</em>.</p>
+<li><p class="first">Crer una carpeta con el nombre de <em>visor-bicing</em>.</p>
 </li>
-<li><p class="first">Dentro de esta carpeta creamos un archivo con el nombre de <em>index.html</em>.</p>
+<li><p class="first">Crear un archivo con el nombre de <em>index.html</em> dentro de la carpeta</p>
 </li>
-<li><p class="first">Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código.</p>
+<li><p class="first">Abrir el archivo index.html con un editor de texto y copiar el siguiente código.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -316,14 +318,14 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Barcelona.</p>
+<li><p class="first">Abrir el archivo index.html en el navegador que carga un mapa centrado en Barcelona.</p>
 </li>
-<li><p class="first">Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime <a class="footnote-reference" href="#id11" id="id3">[3]</a>. Para agregar el plugin copiaremos lo siguiente justo después de cuando cargamos la libreria de Leaflet.</p>
+<li><p class="first">Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime <a class="footnote-reference" href="#id11" id="id3">[3]</a>.  Copiar lo siguiente justo después de cuando carguemos la libreria de Leaflet.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.1.0/leaflet-realtime.min.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa debemos copiar lo siguiente al final de nuestro códogp de javascript.</p>
+<li><p class="first">Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa, copiar lo siguiente al final de nuestro código de javascript.</p>
 <div class="highlight-python"><div class="highlight"><pre>    var realtime = L.realtime({
     url: &#39;http://wservice.viabicing.cat/v2/stations&#39;,
     crossOrigin: true,
@@ -334,17 +336,22 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la página para ver nuestra capa de bicing y vemos que no aparece ningún dato, esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y nos da un error de CORS <a class="footnote-reference" href="#id12" id="id4">[4]</a>. Abrimos la consola de desarrollador del navegador presionando F12 y vemos que cada 3 segundos nos aparece un error. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id13" id="id5">[5]</a> en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.</p>
+<li><p class="first">Recargar la página para visualizar nuestra capa de bicing. Observaremos que no aparece ningún dato, esto es debido a que estamos llamando a un servicio que no está en nuestro dominio y nos da un error de CORS <a class="footnote-reference" href="#id12" id="id4">[4]</a>. Abrir la consola de desarrollador del navegador presionando F12 y veremos que cada 3 segundos aparecerá un error. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id13" id="id5">[5]</a> en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.</p>
 </li>
-<li><p class="first">Creación del proxy. En este caso crearemos un proxy utilizando Node.js <a class="footnote-reference" href="#id14" id="id6">[6]</a></p>
-</li>
-<li><p class="first">Instalación de Node. Nos descargamos la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalamos con las opciones por defecto. Una vez instalado el Node abrimos la consola para verificar que se ha instalado correctamente escribimos</p>
+</ol>
+</div>
+<div class="section" id="creacion-del-proxy">
+<h2>Creación del proxy<a class="headerlink" href="#creacion-del-proxy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Instalar Node.js <a class="footnote-reference" href="#id14" id="id6">[6]</a>. Descargar la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalaremos con las opciones por defecto. Una vez instalado el Node abrir la consola para verificar que se ha instalado correctamente. Escribir</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">-</span><span class="n">v</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">En la consola navegamos hasta nuestra carpeta <em>visor-bicing</em>. Con este comando estamos creando el archivo <em>package.json</em>. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos:</p>
+<li><p class="first">Navegar hasta nuestra carpeta <em>visor-bicing</em> y escribir:</p>
 <div class="highlight-python"><div class="highlight"><pre>npm init
+
+Con este comando estaremos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
 </pre></div>
 </div>
 </li>
@@ -362,11 +369,10 @@
 </div>
 </li>
 </ol>
+<p>Al ejecutar estos comandos veremos que se crea una carpeta llamada <em>node_modules</em> donde se guardan los módulos instalados.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Al ejecutar estos comandos vemos que se nos crea una carpeta llamada <em>node_modules</em> que es donde se guardan los módulos que hemos instalado.</p>
-</li>
-<li><p class="first">En nuestra carpeta creamos un archivo llamado <em>app.js</em> que contendrá nuestra aplicación que servirá de proxy con el servicio de Bicing. Para ello copiremos lo siguiente en este archivo.</p>
+<li><p class="first">Crear un archivo llamado <em>app.js</em> que servirá de proxy con el servicio de Bicing. Copiar lo siguiente en este archivo.</p>
 <div class="highlight-python"><div class="highlight"><pre>var express  = require(&#39;express&#39;);
 var app      = express();
 var httpProxy = require(&#39;http-proxy&#39;);
@@ -389,23 +395,23 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Para probar que nuestro proxy está funcionando vamos a la consola y escribimos:</p>
+<li><p class="first">Probar que nuestro proxy está funcionando, escribiendo:</p>
 <div class="highlight-python"><div class="highlight"><pre>node app.js
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos la url de nuestro proxy <a class="reference external" href="http://localhost:3000/bicing/">http://localhost:3000/bicing/</a> en el navegador.</p>
+<li><p class="first">Abrir la url de nuestro proxy <a class="reference external" href="http://localhost:3000/bicing/">http://localhost:3000/bicing/</a> en el navegador.</p>
 </li>
-<li><p class="first">Creamos una carpeta llamada <em>public</em> en nuestra carpeta y movemos el archivo index.html dentro de esa carpeta. Con esto ya podemos ver nuestra aplicación del mapa servida desde un servidor web y no abriendola directamente como habíamos ellos hasta ahora.</p>
+<li><p class="first">Crear una carpeta llamada <em>public</em> dentro de nuestra carpeta y mover el archivo index.html dentro de esa carpeta. Con esto ya podemos ver nuestra aplicación del mapa servida desde un servidor web y no abriendola directamente como habíamos hecho hasta ahora.</p>
 </li>
-<li><p class="first">En el navegador escribimos <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> y debemos ver nuestro mapa.</p>
+<li><p class="first">Escribir en el navegador <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> para ver nuestro mapa.</p>
 </li>
-<li><p class="first">Modificamos el archivo index.html para que llame al proxy que hemos creado. Para ello cambiamos la url del servicio de bicing <em>http://wservice.viabicing.cat/v2/stations</em> por nuestro proxy <em>http://localhost:3000/bicing/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/bicing/</em>). Recargamos la aplicación con Ctrl+F5 y vemos que el error que nos da ahora es diferente.</p>
+<li><p class="first">Modificar el archivo index.html para que llame al proxy que hemos creado. Cambiar la url del servicio de bicing <em>http://wservice.viabicing.cat/v2/stations</em> por nuestro proxy <em>http://localhost:3000/bicing/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/bicing/</em>). Recargar la aplicación con Ctrl+F5 y veremos que el error que nos da ahora es diferente.</p>
 <blockquote>
-<div><p>En este caso el error es <em>Error: Invalid GeoJSON object.</em>. Este error es debido a lo que ya comentamos que la respuesta del servicio de Bicing no es un GeoJSON.</p>
+<div><p>En este caso el error es <em>Error: Invalid GeoJSON object.</em>. Este error es debido a lo que ya comentamos; la respuesta del servicio de Bicing no es un GeoJSON.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Antes de la declaración de nuestra capa de realtime creamos una variable llamada geojson que será la que contendrá el GeoJSON resultante de la transformación.</p>
+<li><p class="first">Crear una variable llamada geojson que será la que contendrá el GeoJSON resultante de la transformación, antes de la declaración de nuestra capa de realtime</p>
 <div class="highlight-python"><div class="highlight"><pre>        var geojson = {
     type: &#39;FeatureCollection&#39;,
     features: []
@@ -413,7 +419,7 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Modificar la aplicación para transformar la respuesta del bicing en un GeoJSON, para ello debemos modificar nuestra capa realtime con el siguiente código</p>
+<li><p class="first">Modificar la aplicación para transformar la respuesta del bicing en un GeoJSON. Modificar nuestra capa realtime con el siguiente código</p>
 <div class="highlight-python"><div class="highlight"><pre>    var realtime = L.realtime(function(success, error) {
     fetch(&#39;/bicing/&#39;)
     .then(function(response) {
@@ -452,9 +458,9 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la aplicación y debemos ver los puntos de las estaciones de bicing. Si vamos a la pestaña de red (network) en la consola de desarrollador del navegador podemos ver que cada 3 segundos se hace una llamada a nuetro proxy.</p>
+<li><p class="first">Recargar la aplicación y veremos los puntos de las estaciones de bicing. Si vamos a la pestaña de red (network) en la consola de desarrollador del navegador podremos ver que cada 3 segundos se hace una llamada a nuetro proxy.</p>
 </li>
-<li><p class="first">Ver información de la estación al seleccionarla. Para ver la información crearemos un popup en cada uno de los elementos de la capa realtime. Justo desdepues de donde definimos el intervalo escribimos</p>
+<li><p class="first">Crear un popup para ver la información de la estación al seleccionarla. Escribir justo después de donde definimos el intervalo</p>
 <div class="highlight-python"><div class="highlight"><pre>        ,onEachFeature(f, l) {
     l.bindPopup(function() {
         return &#39;&lt;h3&gt;&#39; + f.properties.id + &#39;&lt;/h3&gt;&#39; +
@@ -466,7 +472,7 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la página y si hacemos click sobre alguna estación podemos ver su información en tiempo real.</p>
+<li><p class="first">Recargar la página y hacer click sobre alguna estación para ver su información en tiempo real.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>

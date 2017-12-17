@@ -18,7 +18,7 @@ Herramientas de visualización Opendata
 Librerias
 ---------
 
-Debido a que los datos que podemos encotrar en un porta de Opendata pueden variar mucho tanto en formato como en tipo de datos lo mejor para visualizar estos datos es utilizar librerías genéricas de visualización de datos. Entre las principales tenemos: 
+Debido a que los datos que podemos encotrar en un portal de Opendata pueden variar mucho tanto en formato como en el tipo; lo mejor para visualizarlos es utilizar librerías genéricas de visualización de datos. Entre las principales tenemos: 
 
 - https://d3js.org/
 
@@ -34,7 +34,7 @@ Debido a que los datos que podemos encotrar en un porta de Opendata pueden varia
 Servicios
 ---------
 
-Aparte de estas librerias que nos permiten desarrollar nuestras aplicaciones de visualización de datos también existen algunos servicios que en ocaciones llaman de BI (Business Intelligence) que aparte de mostrar los datos también permiten hacer ciertos análisis. Algunos de los principales servicios son: 
+Aparte de estas librerias que nos permiten desarrollar nuestras aplicaciones de visualización de datos también existen algunos servicios conocidos como BI (Business Intelligence) que aparte de mostrar los datos también nos permiten hacer ciertos análisis. Algunos de los principales servicios son: 
 
 - https://www.tableau.com/
 

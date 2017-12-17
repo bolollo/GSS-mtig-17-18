@@ -20,7 +20,7 @@ Acceso al servicio de datos del Bicing de Barcelona
 
 En el portal Open data del Ayuntamiento de Barcelona podemos encontrar un dataset (conjunto de datos) que contiene las `estaciones del servicio de Bicing <http://opendata-ajuntament.barcelona.cat/data/es/dataset/bicing>`_ 
 
-Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los datos del Bicing como un servicio si tiene un servicio que nos ofrece los datos en tiempo real. La url de este servicio la podemos encontrar si presionamos el botón de Descargar del recurso bicing.json 
+Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los datos del Bicing como un servicio, si que tiene un servicio de datos en tiempo real. La url la podemos encontrar presionando el botón de Descargar del recurso bicing.json 
 
 		.. |bicing_bcn| image:: _images/bicing.png
 		  :align: middle
@@ -31,20 +31,20 @@ Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los da
 		+--------------+
 
 
-Si abrimos la url del servicio http://wservice.viabicing.cat/v2/stations en nuestro navegador podemos ver que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing y también nos ofrece otros datos como la disponibilidad de bicis, las estaciones más cercanas, etc.
+Al abrir la url http://wservice.viabicing.cat/v2/stations en nuestro navegador observaremos que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing, la disponibilidad de bicis, las estaciones más cercanas, etc.
 
-Aquí podemos ver un ejemplo de visualización de los datos del Bicing en la plataforma Instamaps https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714
+Ejemplo de mapa que utiliza este servicio, creado en la plataforma Instamaps https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714
 
-El si bien archivo json que retorna el servicio tiene coordenadas no es un fichero GeoJSON [#]_.
+El archivo json que retorna el servicio tiene coordenadas pero no es un fichero GeoJSON [#]_.
 
 Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet [#]_.
 
 Creación de un visor 
 --------------------
 
-#. En nuestro ordenador creamos una carpeta con el nombre de *visor-bicing*.
-#. Dentro de esta carpeta creamos un archivo con el nombre de *index.html*.
-#. Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código. ::
+#. Crer una carpeta con el nombre de *visor-bicing*.
+#. Crear un archivo con el nombre de *index.html* dentro de la carpeta
+#. Abrir el archivo index.html con un editor de texto y copiar el siguiente código. ::
 
 		<!DOCTYPE html>
 		<html>
@@ -79,13 +79,13 @@ Creación de un visor
 		</body>
 		</html>
 
-#. Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Barcelona.
+#. Abrir el archivo index.html en el navegador que carga un mapa centrado en Barcelona.
 
-#. Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime [#]_. Para agregar el plugin copiaremos lo siguiente justo después de cuando cargamos la libreria de Leaflet. ::
+#. Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime [#]_.  Copiar lo siguiente justo después de cuando carguemos la libreria de Leaflet. ::
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.1.0/leaflet-realtime.min.js"></script>
 
-#. Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa debemos copiar lo siguiente al final de nuestro códogp de javascript. ::
+#. Agregar la capa de realtime del bicing a nuestro mapa. Siguiendo el ejemplo básico del plugin para cagar una capa, copiar lo siguiente al final de nuestro código de javascript. ::
 
 		var realtime = L.realtime({
 	        url: 'http://wservice.viabicing.cat/v2/stations',
@@ -95,17 +95,21 @@ Creación de un visor
 	        interval: 3 * 1000
 	    }).addTo(map);
 
-#. Recargamos la página para ver nuestra capa de bicing y vemos que no aparece ningún dato, esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y nos da un error de CORS [#]_. Abrimos la consola de desarrollador del navegador presionando F12 y vemos que cada 3 segundos nos aparece un error. Para evitar el error de CORS necesitamos un proxy [#]_ en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.
+#. Recargar la página para visualizar nuestra capa de bicing. Observaremos que no aparece ningún dato, esto es debido a que estamos llamando a un servicio que no está en nuestro dominio y nos da un error de CORS [#]_. Abrir la consola de desarrollador del navegador presionando F12 y veremos que cada 3 segundos aparecerá un error. Para evitar el error de CORS necesitamos un proxy [#]_ en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.
 
-#. Creación del proxy. En este caso crearemos un proxy utilizando Node.js [#]_
 
-#. Instalación de Node. Nos descargamos la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalamos con las opciones por defecto. Una vez instalado el Node abrimos la consola para verificar que se ha instalado correctamente escribimos ::
+Creación del proxy
+------------------
+
+#. Instalar Node.js [#]_. Descargar la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalaremos con las opciones por defecto. Una vez instalado el Node abrir la consola para verificar que se ha instalado correctamente. Escribir ::
 
 		node -v
 
-#. En la consola navegamos hasta nuestra carpeta *visor-bicing*. Con este comando estamos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos: ::
+#. Navegar hasta nuestra carpeta *visor-bicing* y escribir: ::
 
 		npm init
+
+		Con este comando estaremos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.		
 
 #. Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express [#]_ como servidor web y el módulo http-proxy [#]_ .
 
@@ -117,9 +121,9 @@ Creación de un visor
 
 			npm install http-proxy --save
 
-#. Al ejecutar estos comandos vemos que se nos crea una carpeta llamada *node_modules* que es donde se guardan los módulos que hemos instalado.
+	Al ejecutar estos comandos veremos que se crea una carpeta llamada *node_modules* donde se guardan los módulos instalados.
 
-#. En nuestra carpeta creamos un archivo llamado *app.js* que contendrá nuestra aplicación que servirá de proxy con el servicio de Bicing. Para ello copiremos lo siguiente en este archivo. ::
+#. Crear un archivo llamado *app.js* que servirá de proxy con el servicio de Bicing. Copiar lo siguiente en este archivo. ::
 
 		var express  = require('express');
 		var app      = express();
@@ -141,28 +145,28 @@ Creación de un visor
 
 		app.listen(3000);
 
-#. Para probar que nuestro proxy está funcionando vamos a la consola y escribimos: ::
+#. 	Probar que nuestro proxy está funcionando, escribiendo: ::
 
 		node app.js
 
-#. Abrimos la url de nuestro proxy http://localhost:3000/bicing/ en el navegador.
+#. Abrir la url de nuestro proxy http://localhost:3000/bicing/ en el navegador.
 
-#. Creamos una carpeta llamada *public* en nuestra carpeta y movemos el archivo index.html dentro de esa carpeta. Con esto ya podemos ver nuestra aplicación del mapa servida desde un servidor web y no abriendola directamente como habíamos ellos hasta ahora. 
+#. Crear una carpeta llamada *public* dentro de nuestra carpeta y mover el archivo index.html dentro de esa carpeta. Con esto ya podemos ver nuestra aplicación del mapa servida desde un servidor web y no abriendola directamente como habíamos hecho hasta ahora. 
 
-#. En el navegador escribimos http://localhost:3000 y debemos ver nuestro mapa.
+#. Escribir en el navegador http://localhost:3000 para ver nuestro mapa.
 
-#. Modificamos el archivo index.html para que llame al proxy que hemos creado. Para ello cambiamos la url del servicio de bicing *http://wservice.viabicing.cat/v2/stations* por nuestro proxy *http://localhost:3000/bicing/* (como el proxy y la aplicación están en el mismo servidor podríamos usar */bicing/*). Recargamos la aplicación con Ctrl+F5 y vemos que el error que nos da ahora es diferente.
+#. Modificar el archivo index.html para que llame al proxy que hemos creado. Cambiar la url del servicio de bicing *http://wservice.viabicing.cat/v2/stations* por nuestro proxy *http://localhost:3000/bicing/* (como el proxy y la aplicación están en el mismo servidor podríamos usar */bicing/*). Recargar la aplicación con Ctrl+F5 y veremos que el error que nos da ahora es diferente.
 
-	En este caso el error es *Error: Invalid GeoJSON object.*. Este error es debido a lo que ya comentamos que la respuesta del servicio de Bicing no es un GeoJSON.
+	En este caso el error es *Error: Invalid GeoJSON object.*. Este error es debido a lo que ya comentamos; la respuesta del servicio de Bicing no es un GeoJSON.
 
-#. Antes de la declaración de nuestra capa de realtime creamos una variable llamada geojson que será la que contendrá el GeoJSON resultante de la transformación. ::
+#. Crear una variable llamada geojson que será la que contendrá el GeoJSON resultante de la transformación, antes de la declaración de nuestra capa de realtime ::
 
 		var geojson = {
             type: 'FeatureCollection',
             features: []
         };
 
-#. Modificar la aplicación para transformar la respuesta del bicing en un GeoJSON, para ello debemos modificar nuestra capa realtime con el siguiente código ::
+#. Modificar la aplicación para transformar la respuesta del bicing en un GeoJSON. Modificar nuestra capa realtime con el siguiente código ::
 
 		var realtime = L.realtime(function(success, error) {
 	        fetch('/bicing/')
@@ -200,9 +204,9 @@ Creación de un visor
 	        interval: 3 * 1000
 	    }).addTo(map);
 
-#. Recargamos la aplicación y debemos ver los puntos de las estaciones de bicing. Si vamos a la pestaña de red (network) en la consola de desarrollador del navegador podemos ver que cada 3 segundos se hace una llamada a nuetro proxy.
+#. Recargar la aplicación y veremos los puntos de las estaciones de bicing. Si vamos a la pestaña de red (network) en la consola de desarrollador del navegador podremos ver que cada 3 segundos se hace una llamada a nuetro proxy.
 
-#. Ver información de la estación al seleccionarla. Para ver la información crearemos un popup en cada uno de los elementos de la capa realtime. Justo desdepues de donde definimos el intervalo escribimos ::
+#. Crear un popup para ver la información de la estación al seleccionarla. Escribir justo después de donde definimos el intervalo ::
 
 		,onEachFeature(f, l) {
             l.bindPopup(function() {
@@ -213,7 +217,7 @@ Creación de un visor
             });
     	} 
 
-#. Recargamos la página y si hacemos click sobre alguna estación podemos ver su información en tiempo real.
+#. Recargar la página y hacer click sobre alguna estación para ver su información en tiempo real.
 
 
 		.. |mapa_bicing_bcn| image:: _images/mapa_bicing.png
