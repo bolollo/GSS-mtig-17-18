@@ -33,13 +33,13 @@ Si bien el Ayuntamiento de Barcelona no ofrece explicitamente el acceso a los da
 
 Al abrir la url http://wservice.viabicing.cat/v2/stations en nuestro navegador observaremos que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing, la disponibilidad de bicis, las estaciones más cercanas, etc.
 
-Ejemplo de mapa que utiliza este servicio, creado en la plataforma Instamaps https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714
+Mapa que utiliza este servicio, `Ejemplo creado en la plataforma Instamaps <https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714>`_
 
 El archivo json que retorna el servicio tiene coordenadas pero no es un fichero GeoJSON [#]_.
 
 Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet [#]_.
 
-Creación de un visor 
+Creación de un visor
 --------------------
 
 #. Crer una carpeta con el nombre de *visor-bicing*.
@@ -79,7 +79,7 @@ Creación de un visor
 		</body>
 		</html>
 
-#. Abrir el archivo index.html en el navegador que carga un mapa centrado en Barcelona.
+#. Abrir el archivo index.html en el navegador para ver que carga un mapa centrado en Barcelona.
 
 #. Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime [#]_.  Copiar lo siguiente justo después de cuando carguemos la libreria de Leaflet. ::
 

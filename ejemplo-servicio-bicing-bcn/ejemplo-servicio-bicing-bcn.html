@@ -107,9 +107,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#problemas-frecuentes-al-trabajar-con-sensores">Problemas frecuentes al trabajar con sensores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-malas-practicas">Ejemplo de malas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-sensores-port-bcn/ejemplo-sensores-port-bcn.html">Ejemplo sensores port Barcelona</a><ul>
@@ -271,7 +271,7 @@
 </table>
 </div></blockquote>
 <p>Al abrir la url <a class="reference external" href="http://wservice.viabicing.cat/v2/stations">http://wservice.viabicing.cat/v2/stations</a> en nuestro navegador observaremos que la respuesta es un archivo json con un conjunto de elementos que tienen las coordenadas de la localización de la estación de bicing, la disponibilidad de bicis, las estaciones más cercanas, etc.</p>
-<p>Ejemplo de mapa que utiliza este servicio, creado en la plataforma Instamaps <a class="reference external" href="https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/">https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/</a><a href="#id17"><span class="problematic" id="id18">Estacions_bicing_i_carrils_bici_a_BCN_</span></a>.html?3D=false#14/41.3962/2.1714</p>
+<p>Mapa que utiliza este servicio, <a class="reference external" href="https://www.instamaps.cat/instavisor/1611695/dc769e48513f5df888691d2048005934/Estacions_bicing_i_carrils_bici_a_BCN_.html?3D=false#14/41.3962/2.1714">Ejemplo creado en la plataforma Instamaps</a></p>
 <p>El archivo json que retorna el servicio tiene coordenadas pero no es un fichero GeoJSON <a class="footnote-reference" href="#id9" id="id1">[1]</a>.</p>
 <p>Para ver estos datos sobre un mapa crearemos un visor utilizando Leaflet <a class="footnote-reference" href="#id10" id="id2">[2]</a>.</p>
 </div>
@@ -318,7 +318,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrir el archivo index.html en el navegador que carga un mapa centrado en Barcelona.</p>
+<li><p class="first">Abrir el archivo index.html en el navegador para ver que carga un mapa centrado en Barcelona.</p>
 </li>
 <li><p class="first">Agregar el plugin para cargar datos en tiempo real. Para ellos utilizaremos el plugin Leaflet Realtime <a class="footnote-reference" href="#id11" id="id3">[3]</a>.  Copiar lo siguiente justo después de cuando carguemos la libreria de Leaflet.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/leaflet-realtime/2.1.0/leaflet-realtime.min.js&quot;&gt;&lt;/script&gt;

@@ -107,9 +107,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html">Servicios realtime sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#algunos-problemas-que-nos-encontraremos-al-trabar-con-sensores">Algunos problemas que nos encontraremos al trabar con sensores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#problemas-frecuentes-al-trabajar-con-sensores">Problemas frecuentes al trabajar con sensores</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-buenas-practicas">Ejemplo de buenas prácticas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-no-tan-buenas-practicas">Ejemplo de no tan buenas prácticas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../servicios-realtime-sensores/servicios-realtime-sensores.html#ejemplo-de-malas-practicas">Ejemplo de malas prácticas</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo sensores port Barcelona</a><ul>
@@ -256,20 +256,20 @@
 </div>
 <div class="section" id="acceso-al-servicio-de-datos-de-sensores-del-port-de-barcelona">
 <h2>Acceso al servicio de datos de sensores del Port de Barcelona<a class="headerlink" href="#acceso-al-servicio-de-datos-de-sensores-del-port-de-barcelona" title="Permalink to this headline">¶</a></h2>
-<p>El portal de sensores del Port de Barcelona <a class="footnote-reference" href="#id7" id="id1">[1]</a> contiene una serie de componentes gráficos o widgets que permiten acceder a los datos de los diferentes sensores SOS <a class="footnote-reference" href="#id8" id="id2">[2]</a>. También podemos acceder directamente al servicio <a class="reference external" href="http://sensors.portdebarcelona.cat/sos/json">http://sensors.portdebarcelona.cat/sos/json</a> si queremos implementar nuestros propios componentes o procesar los datos directamente.</p>
-<p>Estos widgets implementan un cliente SOS que soporta la versión 2.0 de estándard, y, en estos momentos, necesitan un endpoint en formato JSON, que resulta no ser un requisito del estándar, sino una funcionalidad opcional que proporciona la implementación de servidor SOS de 52 north en su versión 4.0.0 o superior.</p>
-<p>La ventaja de utilizar los widgets es que agregan una capa de abstracción que hace el trabajo sucio y nos evita trabajar directamente con el servicio.</p>
-<p>La implementación de los widgets es open source <a class="footnote-reference" href="#id9" id="id3">[3]</a> y extensible lo que nos permite poder desarrollar nuestros propios widgets.</p>
+<p>En el portal de sensores del Port de Barcelona <a class="footnote-reference" href="#id7" id="id1">[1]</a> podemos encontrar una serie de componentes gráficos o widgets que permiten acceder a los datos de los diferentes sensores SOS <a class="footnote-reference" href="#id8" id="id2">[2]</a>. También podemos acceder directamente al servicio <a class="reference external" href="http://sensors.portdebarcelona.cat/sos/json">http://sensors.portdebarcelona.cat/sos/json</a> si queremos implementar nuestros propios componentes o procesar los datos directamente.</p>
+<p>En la documentación del servicio vemos que estos widgets implementan un cliente SOS que soporta la versión 2.0 de estándard. Los widgets necesitan un endpoint en formato JSON. Lo cual resulta no ser un requisito del estándar si no una funcionalidad opcional que proporciona la implementación del servidor SOS de 52 north en su versión 4.0.0 o superior.</p>
+<p>La ventaja de utilizar los widgets es que proporcionan una capa de abstracción que hace el &#8220;trabajo sucio&#8221; y evita trabajar directamente con el servicio.</p>
+<p>La implementación de los widgets es open source <a class="footnote-reference" href="#id9" id="id3">[3]</a> y extensible, lo que permite poder desarrollar nuestros propios widgets.</p>
 </div>
 <div class="section" id="creacion-de-un-visor">
 <h2>Creación de un visor<a class="headerlink" href="#creacion-de-un-visor" title="Permalink to this headline">¶</a></h2>
 <p>Para crear un visor de mapas utilizaremos el widget de Mapa <a class="footnote-reference" href="#id10" id="id4">[4]</a> que está basado en la librería de mapas Leaflet <a class="footnote-reference" href="#id11" id="id5">[5]</a>.</p>
 <ol class="arabic">
-<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>visor-port</em>.</p>
+<li><p class="first">Crear una carpeta con el nombre de <em>visor-port</em>.</p>
 </li>
-<li><p class="first">Dentro de esta carpeta creamos un archivo con el nombre de <em>index.html</em>.</p>
+<li><p class="first">Crear un archivo con el nombre de <em>index.html</em> dentro de la carpeta.</p>
 </li>
-<li><p class="first">Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código.:</p>
+<li><p class="first">Abrir el archivo index.html con un editor de texto y copiar el siguiente código.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -304,9 +304,9 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa del mundo. Este mapa no contiene ninguna información.</p>
+<li><p class="first">Abrir el archivo index.html en el navegador para confirmar que carga un mapa del mundo. Este mapa no contiene ninguna información.</p>
 </li>
-<li><p class="first">Agregamos algunas features (sensores) en la matriz de features. Para obtenter la features tendríamos que hacer una peticón de GetFeatureOfInterest <a class="footnote-reference" href="#id12" id="id6">[6]</a> .Para agregar algunos elementos en nuestro mapa reemplazamos la propiedad features por lo siguiente:</p>
+<li><p class="first">Agregar algunas features (sensores) en la matriz de features. Para obtenter las features tendríamos que hacer una petición de GetFeatureOfInterest <a class="footnote-reference" href="#id12" id="id6">[6]</a> . Para agregar algunos elementos en el mapa reemplazar la propiedad features por lo siguiente:</p>
 <div class="highlight-python"><div class="highlight"><pre>&quot;features&quot;: [
     &quot;http://sensors.portdebarcelona.cat/def/weather/features#01&quot;,
     &quot;http://sensors.portdebarcelona.cat/def/weather/features#02&quot;,
@@ -319,9 +319,9 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos el mapa y vemos que nos aparecen unos puntos en el puerto de Barcelona.</p>
+<li><p class="first">Recargar el mapa y confirmar que aparecen unos puntos en el puerto de Barcelona.</p>
 </li>
-<li><p class="first">Ya tenemos algunos sensores en nuestro mapa pero no tenemos ningún dato. Para ver algunos valores tendremos que indicar que propiedades queremos observar. Esto lo indicaremos en la matriz de properties de nuestro mapa. Para ver la temperatúra agregamos las siguientes propiedades:</p>
+<li><p class="first">Agregar propiedades a los sensores. Ya tenemos algunos sensores en nuestro mapa pero no tenemos datos asociados a los mismos. Para ello indicar que propiedades queremos observar. Esto lo indicaremos en la matriz de properties de nuestro mapa. Agregar las siguientes propiedades para ver la temperatura</p>
 <div class="highlight-python"><div class="highlight"><pre>    &quot;properties&quot;: [
     &quot;http://sensors.portdebarcelona.cat/def/weather/properties#32M&quot;,
     &quot;http://sensors.portdebarcelona.cat/def/weather/properties#32&quot;,
@@ -330,9 +330,9 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Ahora si recargamos el mapa y pasamos el cursor sobre algún elemento vemos que se despliega un panel con las temperaturas.</p>
+<li><p class="first">Recargar el mapa y pasar el cursor sobre algún elemento para ver que se despliega un panel con las temperaturas.</p>
 </li>
-<li><p class="first">En nuestro mapa podemos combinar varios widgets por ejemplo podemos hacer que al hacer click sobre un elemento se muestre un popup con un widget. Pare ellos debemos utilizar la opción <em>popup_widget</em> del mapa. En este caso cargaremos un widget de tipo serie de tiempoi con las temperaturas. En nuestro mapa justo debajo de las propertities escribimos lo siguiente:</p>
+<li><p class="first">Combinar varios widgets en la aplicación. Mostar un popup con un widget al hacer click sobre un elemento. Utilizar la opción <em>popup_widget</em> del mapa. Cargar un widget de tipo serie de tiempo con las temperaturas. Escribir justo debajo de las propertities lo siguiente:</p>
 <div class="highlight-python"><div class="highlight"><pre>&quot;popup_widget&quot;: {
     &quot;name&quot;: &quot;timechart&quot;,
     &quot;title&quot;: &quot;Temperatures&quot;,
@@ -347,14 +347,14 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la página y al hacer click sobre un elemento se nos muestra un popup con una serie temporal de las temperaturas.</p>
+<li><p class="first">Recargar la página y clicar sobre un elemento para ver un popup con la serie temporal de las temperaturas.</p>
 </li>
-<li><p class="first">También podemos hacer que al clicar sobre un elemento se nos muestre un widget en un elemento fuera del mapa. Para ellos vamos a crear un nuevo div. En nuestro html juesto debajo de donde declaramos el div del mapa escribimos</p>
+<li><p class="first">Mostrar un widget en un div fuera del mapa al hacer click sobre un elemento. Escribir justo debajo de donde declaramos el div del mapa lo siguiente</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;div id=&quot;info-container&quot;&gt;&lt;/div&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">En nuestro apartado de estilo creamos un nuevo estilo para este elemento.</p>
+<li><p class="first">Crear un nuevo estilo para este div. Escibir en nuestro apartado de estilo css</p>
 <div class="highlight-python"><div class="highlight"><pre>        #info-container {
         position: absolute;
     top: 0;
@@ -366,21 +366,23 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">En nuestro mapa quitaremos la opción de <em>popup_widget</em> y en este caso utilizaremos la opción de <em>on_click</em> que llama a una función que se ejecuta al hacer click sobre un elemento del mapa. Debajo de las properties copiamos lo siguiente:</p>
+<li><p class="first">Quitar la opción de <em>popup_widget</em> del mapa.</p>
+</li>
+<li><p class="first">Utilizar la opción de <em>on_click</em> del mapa. Esta opción permite definir una función que se ejecuta al hacer click sobre un elemento del mapa. Copiar debajo de las properties lo siguiente:</p>
 <div class="highlight-python"><div class="highlight"><pre>&quot;on_click&quot;: function(el){
         console.log(el);
 }
 </pre></div>
 </div>
 </li>
-<li><p class="first">Volvemos a cargar la página y ahora al hacer click sobre un elemento en la consola de desarrollador nos aparece la información del elemento clicado.</p>
+<li><p class="first">Recargar la página y clicar sobre un elemento. Abrir la consola de desarrollador para ver que aparece la información del elemento clicado.</p>
 </li>
-<li><p class="first">Creamos una función que dado el id de un elemento nos cree un widget de tipo termómetro. Antes de donde cerramos el tag de script escribimos</p>
-<div class="highlight-python"><div class="highlight"><pre>function showTermometro(feature){
+<li><p class="first">Crear una función que recibe como parámetro el id de un elemento y crea un widget de tipo termómetro. Escribir antes de donde se cierra el tag de script</p>
+<div class="highlight-python"><div class="highlight"><pre>function showTermometro(feature_id){
         SensorWidget(&#39;thermometer&#39;, {
            &quot;service&quot;: &quot;http://sensors.portdebarcelona.cat/sos/json&quot;,
            &quot;offering&quot;: &quot;http://sensors.portdebarcelona.cat/def/weather/offerings#30m&quot;,
-           &quot;feature&quot;: feature,
+           &quot;feature&quot;: feature_id,
            &quot;property&quot;: &quot;http://sensors.portdebarcelona.cat/def/weather/properties#32&quot;,
            &quot;refresh_interval&quot;: 120,
            &quot;footnote&quot;: &quot;A sample footnote for Thermometer widget&quot;
@@ -389,12 +391,12 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Dentro de la función del <em>on_click</em> llamaremos a nuestra nueva función. Luego del console.log escribimos:</p>
+<li><p class="first">Llamar a la nueva función <strong>showTermometro</strong> dentro de la función del <em>on_click</em>. Escribir luego del console.log</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">showTermometro</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">id</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Ahora si recargamos nuestro mapa y hacemos click sobre un elemento se desplega el widget del termómetro con la temperatura actual.</p>
+<li><p class="first">Recargar el mapa y clicar sobre un elemento para ver como se desplega el widget del termómetro con la temperatura actual.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
