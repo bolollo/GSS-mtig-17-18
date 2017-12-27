@@ -18,10 +18,10 @@ Geoservicios realtime
 Geoservicios realtime
 ---------------------
 
-Muchos de los geoservicios más tradicionales como los WMS o WFS pueden ser Geoservicios realtime siempre y cuando los datos que se sirvan sean actualizados constantemente. Un ejemplo de esto es el servicio WMS sobre el estado del tráfico del Servei Català de Trànsit http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/
+Muchos de los geoservicios más tradicionales como los WMS o WFS pueden ser Geoservicios realtime, siempre y cuando los datos que se sirvan sean actualizados constantemente. Un ejemplo de esto es el servicio WMS sobre el estado del tráfico del Servei Català de Trànsit http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/
 
 
-Otro ejemplos de geoservicios o más bien geodatos en realtime sería la capa de Tráfico de Google Maps. https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer  
+Otro ejemplo de geoservicio o más bien geodatos en realtime sería la capa de Tráfico de Google Maps. https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer  
 
 
 Geocodificación

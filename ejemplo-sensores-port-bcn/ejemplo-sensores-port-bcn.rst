@@ -39,7 +39,7 @@ Para crear un visor de mapas utilizaremos el widget de Mapa [#]_ que está basad
 		<html>
 		<head>
 			<title>Sensores Port de Barcelona</title>
-			style>
+			<style>
 		        #map-container {
 		            position: absolute;
 		            top: 0;

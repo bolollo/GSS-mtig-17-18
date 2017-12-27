@@ -29,7 +29,3 @@ Materiales:
    ejemplo-mapzen-mobility/ejemplo-mapzen-mobility
    ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime
    
-
-   utilizacion-servicio-sensores/utilizacion-servicio-sensores
-   utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime
-   como-crear-un-geoservicio/como-crear-un-geoservicio
