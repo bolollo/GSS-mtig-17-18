@@ -80,7 +80,7 @@ Creación de un visor que permita el cáculo de Isócronas
 #. Crear una API key. Al revisar la documentación de la API del servicio de Mapzen Isochrone [#]_ vemos que es necesario tener una API key para poder utilizarlo. Para crear la API key hay que darse de alta en la página de Mapzen [#]_, esta tiene una verisón gratuita que tiene una cuotas de uso. Si se quiere hacer un uso más intesivo del servicio hay que pagar.
 #. Crear una variable donde guardaremos nuestra API key. Antes de la declaración de nuestro mapa escribir ::
 
-		var API_KEY = 'TU_API_KEY';
+		var API_KEY = '{TU_API_KEY}';
 
 #. Cargar la respuesta GeoJSON del servicio utilizando el plugin de Leaflet llamado *leaflet-ajax* [#]_. Este plugin permite hacer una llama AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde cargarmos el leaflet ::
 
@@ -152,7 +152,7 @@ Para agregar un buscador utilizaremos el plugin de Leaflet *Leaflet.OpenCage.Sea
 #. Agregar el control al mapa. Para utilizar el servicio de búsqueda tambíen es necesario pasar nuestra API key. Agregar lo siguiente antes de la declaraciṕn de nuestra función *crearUrlIsochrona* : ::
 
 		var options_g = {
-			key: 'API_KEY_OPENCAGE',
+			key: '{TU_API_KEY_OPENCAGE}',
 			limit: 10
 		};
 		var geocoder = L.Control.openCageSearch(options_g).addTo(map);
@@ -184,6 +184,27 @@ Para agregar un buscador utilizaremos el plugin de Leaflet *Leaflet.OpenCage.Sea
 		+-------------+
 
 
+Una alternativa al servicio de Isócrones de Mapzen
+--------------------------------------------------
+
+Utilizaremos el servicio de la API de Iso4App [#]_ que también está basado en datos de OSM.
+
+#. Crear una función que tenga como parámetro una posición (coordenada lat lon) y genere una url de llamada al servicio de isócronas de Iso4App para que haga el cálculo en la coordenada indicada. Al final de nuestro código copiar lo siguiente: ::
+
+		function crearUrlIsochrona2(latlng){
+            var lat = latlng.lat;
+            var lng = latlng.lng;
+            var url = 'http://www.iso4app.net/rest/1.3/isoline.geojson?&type=isochrone';
+            url+= '&value='+60*15;
+            url+= '&lat='+lat+'&lng='+lng+'&mobility=pedestrian'
+            url+= '&licKey={TU_API_KEY_ISO4APP}';
+            return url;
+        }
+
+#. Modificar la función que se llama al seleccionar un elemento del resultado de la búsqueda del geocodificador. En lugar de llamar a la función *crearUrlIsochrona* llamar a la nueva función **crearUrlIsochrona2**.
+#. Recargar la página y hacer click sobre el mapa para comprobar que se llama al servicio de Mapzen y se pintan dos isócronas.
+#. Hacer una búsqueda en el geocodificador y seleccionar un resultado para comprobar que se llama al servicio de Iso4App y se pinta una isócrona.  
+
 Referencias
 ###########
 
@@ -196,3 +217,4 @@ Referencias
 .. [#] https://mapzen.com/developers/sign_up
 .. [#] https://github.com/calvinmetcalf/leaflet-ajax
 .. [#] https://github.com/OpenCageData/leaflet-opencage-search
+.. [#] https://www.iso4app.net/

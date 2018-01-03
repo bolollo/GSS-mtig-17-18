@@ -28,7 +28,7 @@ Geocodificación
 ---------------
 
 - OpenCage Geocoder https://geocoder.opencagedata.com/
-- Mapzen Search https://mapzen.com/products/search/geocoding/
+- Mapzen Search https://mapzen.com/products/search/geocoding/ (Servicio disponible hasta el 1 Febrero de 2018)
 - Servicios basados en OSM http://wiki.openstreetmap.org/wiki/Search_engines
 
 
