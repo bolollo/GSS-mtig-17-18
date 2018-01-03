@@ -15,6 +15,11 @@ Ejemplo Mapzen Mobility
   Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: http://creativecommons.org/licenses/by-sa/3.0/deed.es)
 
 
+NOTA
+====
+
+Desafortunadamente Mapzen cierra operaciones a finales de Enero de 2018. Por lo tanto el servicio de Isócronas no estará disponibla a partir del 1 Febrero de 2018. Aquí se puede ver el anuncio del cierre https://mapzen.com/blog/shutdown/
+
 Acceso a los servicios de Mapzen Mobility
 -----------------------------------------
 
@@ -33,7 +38,7 @@ En nuestro caso crearemos un visor utilizando Leaflet y llamando directamente al
 Creación de un visor que permita el cáculo de Isócronas
 -------------------------------------------------------
 
-#. Crear una carpeta con el nombre de *visor-port*.
+#. Crear una carpeta con el nombre de *visor-mobility*.
 #. Crear un archivo con el nombre de *index.html* dentro de la carpeta.
 #. Abrir el archivo index.html con un editor de texto y copiar el siguiente código. ::
 
@@ -134,28 +139,40 @@ Creación de un visor que permita el cáculo de Isócronas
 Agregar un buscador de direcciones y puntos de interés al mapa
 --------------------------------------------------------------
 
-Para agregar un buscador utilizaremos el plugin de Leaflet *leaflet-geocoder* [#]_ desarrollado por Mapzen que permite de una forma fácil y rápida hacer llamadas al servicio de búsqueda de Mapzen.
+Para agregar un buscador utilizaremos el plugin de Leaflet *Leaflet.OpenCage.Search* [#]_ desarrollado por OpenCage que permite de una forma fácil y rápida hacer llamadas al servicio de búsqueda de Mapzen.
 
 #. Cargar la librería en nuestra aplicación. Copiar lo siguiente justo despúes de la carga del plugin de leaflet.ajax ::
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.js"></script>
+		<script src="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/js/L.Control.OpenCageSearch.dev.js"></script>
+
+#. Cargar el estilo del plugin. escribir lo siguiente justo debajo de donde cargamos el estilo de Leaflet ::
+
+		<link rel="stylesheet" href="http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/css/L.Control.OpenCageSearch.dev.css" />
+
 #. Agregar el control al mapa. Para utilizar el servicio de búsqueda tambíen es necesario pasar nuestra API key. Agregar lo siguiente antes de la declaraciṕn de nuestra función *crearUrlIsochrona* : ::
 
-		var geocoder = L.control.geocoder(API_KEY).addTo(map);
-#. Recargar el mapa y ver que aparece el control de búsqueda. Vemos que funciona pero que no tiene estilo, esto es debido a que no hemos cargado el estilo del control. Para esto escribir lo siguiente justo debajo de donde cargamos el estilo de Leaflet ::
+		var options_g = {
+			key: 'API_KEY_OPENCAGE',
+			limit: 10
+		};
+		var geocoder = L.Control.openCageSearch(options_g).addTo(map);
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-geocoder-mapzen/1.9.4/leaflet-geocoder-mapzen.css">
-#. Recargar el mapa y comprobar que aparece el control con estilo.
-#. Calcular las isócronas al seleccionar un resultado de la búsqueda. Para ello utilizar el evento *select* del control geocoder ::
+#. Recargar el mapa y comprobar que aparece el control.
 
-		geocoder.on('select', function (e) {
-            console.log(e);
-        });
+#. Calcular las isócronas al seleccionar un resultado de la búsqueda. Para ello modificamos la función *_geocodeResultSelected* del control geocoder ::
+
+		geocoder._geocodeResultSelected = function(result){
+			if (this.options.collapsed) {
+				this._collapse();
+			}
+			console.log(result);
+		};
 #. Refrescar el mapa y abrir la consola de desarrollados para ver que al seleccionar un resultado de la búsqueda aparece un objeto en la consola. Inspeccionar este objeto para ver que tiene una propiedad latlng que es lo que necesitamos para calcular las isócronas.
 #. Llamar a nuestra función *crearUrlIsochrona* en la función del evento select para generar la url, luego refrescar la capa de *geojsonLayer*, esto ya lo hemos hecho cuando el usuario hace click en el mapa. Por lo tanto copiar lo siguiente en la función ::
 
-		var url = crearUrlIsochrona(e.latlng);
-        geojsonLayer.refresh(url);
+		var url = crearUrlIsochrona(result.center);
+		geojsonLayer.refresh(url);	
+		
 #. Refrescar la página y al seleccionar un resultado de búsqueda ver que calculá las isócronas desde ese punto.
 
 		.. |isocrones| image:: _images/mapzen_isocrones.png
@@ -178,4 +195,4 @@ Referencias
 .. [#] https://mapzen.com/documentation/mobility/isochrone/api-reference/
 .. [#] https://mapzen.com/developers/sign_up
 .. [#] https://github.com/calvinmetcalf/leaflet-ajax
-.. [#] https://github.com/mapzen/leaflet-geocoder
+.. [#] https://github.com/OpenCageData/leaflet-opencage-search
