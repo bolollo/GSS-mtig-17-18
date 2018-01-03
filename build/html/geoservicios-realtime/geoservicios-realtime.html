@@ -120,12 +120,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html">Ejemplo Sentilo ACA</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#creacion-de-un-visor">Creación de un visor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#creacion-del-proxy">Creación del proxy</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Geoservicios realtime</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Geoservicios realtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#geocodificacion">Geocodificación</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#routing">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isocronas">Isócronas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#servicios-varios">Servicios varios</a></li>
 </ul>
 </li>
@@ -135,27 +137,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html">Ejemplo Mapzen Mobility</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#acceso-a-los-servicios-de-mapzen-mobility">Acceso a los servicios de Mapzen Mobility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#creacion-de-un-visor-que-permita-el-caculo-de-isocronas">Creación de un visor que permita el cáculo de Isócronas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">Agregar un buscador de direcciones y puntos de interés al mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#nota">NOTA</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html">Ejemplo Geoservicio realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#servicio-realtime-para-compartir-la-ubicacion">Servicio realtime para compartir la ubicación</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-mapa">Creación del mapa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html#apartado">Apartado</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html">Utilización de geoservicios realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html#apartado">Apartado</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html">¿Cómo crear un geoservicio?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html#apartado">Apartado</a></li>
 </ul>
 </li>
 </ul>
@@ -175,6 +163,7 @@
 <li><a class="reference internal" href="#id1">Geoservicios realtime</a></li>
 <li><a class="reference internal" href="#geocodificacion">Geocodificación</a></li>
 <li><a class="reference internal" href="#routing">Routing</a></li>
+<li><a class="reference internal" href="#isocronas">Isócronas</a></li>
 <li><a class="reference internal" href="#servicios-varios">Servicios varios</a></li>
 </ul>
 </li>
@@ -255,14 +244,14 @@
 </div>
 <div class="section" id="id1">
 <h2>Geoservicios realtime<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Muchos de los geoservicios más tradicionales como los WMS o WFS pueden ser Geoservicios realtime siempre y cuando los datos que se sirvan sean actualizados constantemente. Un ejemplo de esto es el servicio WMS sobre el estado del tráfico del Servei Català de Trànsit <a class="reference external" href="http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/">http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/</a></p>
-<p>Otro ejemplos de geoservicios o más bien geodatos en realtime sería la capa de Tráfico de Google Maps. <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer">https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer</a></p>
+<p>Muchos de los geoservicios más tradicionales como los WMS o WFS pueden ser Geoservicios realtime, siempre y cuando los datos que se sirvan sean actualizados constantemente. Un ejemplo de esto es el servicio WMS sobre el estado del tráfico del Servei Català de Trànsit <a class="reference external" href="http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/">http://transit.gencat.cat/ca/informacio_viaria/estat_del_transit/informacio_geografica/estat_del_transit/</a></p>
+<p>Otro ejemplo de geoservicio o más bien geodatos en realtime sería la capa de Tráfico de Google Maps. <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer">https://developers.google.com/maps/documentation/javascript/3.exp/reference?hl=es-419#TrafficLayer</a></p>
 </div>
 <div class="section" id="geocodificacion">
 <h2>Geocodificación<a class="headerlink" href="#geocodificacion" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>OpenCage Geocoder <a class="reference external" href="https://geocoder.opencagedata.com/">https://geocoder.opencagedata.com/</a></li>
-<li>Mapzen Search <a class="reference external" href="https://mapzen.com/products/search/geocoding/">https://mapzen.com/products/search/geocoding/</a></li>
+<li>Mapzen Search <a class="reference external" href="https://mapzen.com/products/search/geocoding/">https://mapzen.com/products/search/geocoding/</a> (Servicio disponible hasta el 1 Febrero de 2018)</li>
 <li>Servicios basados en OSM <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Search_engines">http://wiki.openstreetmap.org/wiki/Search_engines</a></li>
 </ul>
 </div>
@@ -270,6 +259,12 @@
 <h2>Routing<a class="headerlink" href="#routing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Comparador de servicios basados en OSM <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Routing/online_routers">http://wiki.openstreetmap.org/wiki/Routing/online_routers</a></li>
+</ul>
+</div>
+<div class="section" id="isocronas">
+<h2>Isócronas<a class="headerlink" href="#isocronas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Servicios basados en OSM <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Isochrone">http://wiki.openstreetmap.org/wiki/Isochrone</a></li>
 </ul>
 </div>
 <div class="section" id="servicios-varios">

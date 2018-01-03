@@ -18,7 +18,7 @@ Herramientas de visualización geoservicios
 Librerias
 ---------
 
-Para la visualización de datos geográficos en el la web existen diversas librerias entre las principales podemos mencionar:
+Para la visualización de datos geográficos en el la web existen diversas librerias, entre las principales podemos mencionar:
 
 - http://leafletjs.com/
 
@@ -32,7 +32,7 @@ Para la visualización de datos geográficos en el la web existen diversas libre
 Servicios
 ---------
 
-Aparte de la librerías que nos permiten desarrollar nuestras propias aplicaciones también podemos encontrar diferentes servicios que os ofrecen la posibilidad de crear o publicar nuestros mapas en la web de una forma rápida y sencilla sin tener que programar. Estos servicios también permiten hacer algunos análisis sobre nuestros datos. Entre los principales están:
+Aparte de la librerías que permiten desarrollar nuestras propias aplicaciones, también podemos encontrar diferentes servicios que os ofrecen la posibilidad de crear o publicar nuestros mapas en la web de una forma rápida y sencilla sin tener que programar. Estos servicios permiten hacer algunos análisis sobre nuestros datos. Entre los principales están:
 
 - https://carto.com/
 
