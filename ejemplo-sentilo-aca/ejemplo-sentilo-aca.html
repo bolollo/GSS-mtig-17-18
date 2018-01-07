@@ -118,14 +118,16 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Ejemplo Sentilo ACA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acceso-al-servicio-de-sensores-sentilo-de-la-aca">Acceso al servicio de sensores Sentilo de la ACA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-del-proxy">Creación del proxy</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html">Geoservicios realtime</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#id1">Geoservicios realtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#geocodificacion">Geocodificación</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#routing">Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#isocronas">Isócronas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../geoservicios-realtime/geoservicios-realtime.html#servicios-varios">Servicios varios</a></li>
 </ul>
 </li>
@@ -135,27 +137,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html">Ejemplo Mapzen Mobility</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#acceso-a-los-servicios-de-mapzen-mobility">Acceso a los servicios de Mapzen Mobility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#creacion-de-un-visor-que-permita-el-caculo-de-isocronas">Creación de un visor que permita el cáculo de Isócronas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">Agregar un buscador de direcciones y puntos de interés al mapa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-mapzen-mobility/ejemplo-mapzen-mobility.html#nota">NOTA</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html">Ejemplo Geoservicio realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-de-un-servicio-realtime-para-compartir-la-ubicacion">Creación de un servicio realtime para compartir la ubicación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#servicio-realtime-para-compartir-la-ubicacion">Servicio realtime para compartir la ubicación</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-mapa">Creación del mapa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime.html#creacion-del-servicio-que-comparte-la-ubicacion-de-los-usuarios">Creación del servicio que comparte la ubicación de los usuarios</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html">Utilización de servicios de sensores</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-servicio-sensores/utilizacion-servicio-sensores.html#apartado">Apartado</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html">Utilización de geoservicios realtime</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../utilizacion-geoservicio-realtime/utilizacion-geoservicio-realtime.html#apartado">Apartado</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html">¿Cómo crear un geoservicio?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../como-crear-un-geoservicio/como-crear-un-geoservicio.html#apartado">Apartado</a></li>
 </ul>
 </li>
 </ul>
@@ -172,8 +160,9 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ejemplo Sentilo ACA</a><ul>
-<li><a class="reference internal" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
-<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a><ul>
+<li><a class="reference internal" href="#acceso-al-servicio-de-sensores-sentilo-de-la-aca">Acceso al servicio de sensores Sentilo de la ACA</a></li>
+<li><a class="reference internal" href="#creacion-de-un-visor">Creación de un visor</a></li>
+<li><a class="reference internal" href="#creacion-del-proxy">Creación del proxy</a><ul>
 <li><a class="reference internal" href="#referencias">Referencias</a></li>
 </ul>
 </li>
@@ -254,21 +243,21 @@
 </div></blockquote>
 <p class="last">Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">http://creativecommons.org/licenses/by-sa/3.0/deed.es</a>)</p>
 </div>
-<div class="section" id="acceso-al-servicios-de-sensores-sentilo-de-la-aca">
-<h2>Acceso al servicios de sensores Sentilo de la ACA<a class="headerlink" href="#acceso-al-servicios-de-sensores-sentilo-de-la-aca" title="Permalink to this headline">¶</a></h2>
-<p>En la página de la ACA <a class="footnote-reference" href="#id13" id="id1">[1]</a> en el apartado de consulta de datos podemos encotrar un subapartado de datos en tiempo real, estos datos los sirven utilizando la plataforma Sentilo <a class="footnote-reference" href="#id14" id="id2">[2]</a>. En esta caso los sensores dan información sobre los diferentes embalses que hay en Cataluña.</p>
-<p>En la página existe un acceso a un mapa con los datos de los diferentes sensores <a class="footnote-reference" href="#id15" id="id3">[3]</a> este mapa es que ofrece la plataforma de Sentilo y está basado en tecnología de Google Maps.</p>
-<p>También encontramos la documentación <a class="footnote-reference" href="#id16" id="id4">[4]</a> para usar la API, lo que nos permite acceder a los datos y generar nuestro propio visor.</p>
+<div class="section" id="acceso-al-servicio-de-sensores-sentilo-de-la-aca">
+<h2>Acceso al servicio de sensores Sentilo de la ACA<a class="headerlink" href="#acceso-al-servicio-de-sensores-sentilo-de-la-aca" title="Permalink to this headline">¶</a></h2>
+<p>En el apartado de consulta de datos de la página de la ACA <a class="footnote-reference" href="#id13" id="id1">[1]</a> encontraremos un subapartado de datos en tiempo real, estos datos los sirven utilizando la plataforma de sensores Sentilo <a class="footnote-reference" href="#id14" id="id2">[2]</a>. Los sensores dan información sobre los diferentes embalses/pantanos que hay en Cataluña.</p>
+<p>La página tiene un acceso a un mapa con los datos de los diferentes sensores <a class="footnote-reference" href="#id15" id="id3">[3]</a> este mapa es el que ofrece la plataforma de Sentilo y está basado en tecnología de Google Maps.</p>
+<p>También encontraremos la documentación <a class="footnote-reference" href="#id16" id="id4">[4]</a> para usar la API, lo que nos permite acceder a los datos y generar nuestro propio visor.</p>
 </div>
 <div class="section" id="creacion-de-un-visor">
 <h2>Creación de un visor<a class="headerlink" href="#creacion-de-un-visor" title="Permalink to this headline">¶</a></h2>
 <p>Para crear un visor de mapas utilizaremos la librería de mapas Leaflet <a class="footnote-reference" href="#id17" id="id5">[5]</a>.</p>
 <ol class="arabic">
-<li><p class="first">En nuestro ordenador creamos una carpeta con el nombre de <em>visor-aca</em>.</p>
+<li><p class="first">Crear una carpeta con el nombre de <em>visor-aca</em>.</p>
 </li>
-<li><p class="first">Dentro de esta carpeta creamos un archivo con el nombre de <em>index.html</em>.</p>
+<li><p class="first">Crear un archivo con el nombre de <em>index.html</em> dentro de la carpeta.</p>
 </li>
-<li><p class="first">Abrimos el archivo index.html con un editor de texto y copiamos el siguiente código.</p>
+<li><p class="first">Abrir el archivo index.html con un editor de texto y copiar el siguiente código.</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -306,33 +295,38 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos el archivo index.html en el navegador y vemos que se nos carga un mapa centrado en Cataluña.</p>
+<li><p class="first">Abrir el archivo index.html en el navegador para confirmar que se carga un mapa centrado en Cataluña.</p>
 </li>
-<li><p class="first">Si miramos la documentación de la API nos dice que la url de descripción del servicio es <a class="reference external" href="http://aca-web.gencat.cat/sdim2/apirest/catalog">http://aca-web.gencat.cat/sdim2/apirest/catalog</a>. Abrimos esta url en un navegador y vemos que nos responde un JSON con la información de los diferentes sensores.</p>
+<li><p class="first">Consultar la documentación de la API y buscar la url de descripción del servicio que es <a class="reference external" href="http://aca-web.gencat.cat/sdim2/apirest/catalog">http://aca-web.gencat.cat/sdim2/apirest/catalog</a>. Abrir esta url en el navegador y confirmar que responde un JSON con la información de los diferentes sensores.</p>
 </li>
-<li><p class="first">El JSON de salida tiene una propiedad <em>location</em> que nos indica las coordenadas de la ubicación del sensor. A pesar de que el JSON tiene coordenadas no es un GeoJSON y por lo tanto no lo podemos pintar automaticamente en nuestro mapa.</p>
+<li><p class="first">Revisar el JSON de salida y buscar la propiedad <em>location</em> que indica las coordenadas de la ubicación del sensor. A pesar de que el JSON tiene coordenadas no es un GeoJSON y por lo tanto no lo podemos pintar automáticamente en nuestro mapa.</p>
 </li>
-<li><p class="first">Para cargar este JSON en nuestro mapa utilizaremos un plugin de Leaflet llamado <em>leaflet-ajax</em> <a class="footnote-reference" href="#id18" id="id6">[6]</a>. Este plugin nos permite hacer una llama AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde cargarmos el leaflet</p>
+<li><p class="first">Cargar este JSON en nuestro mapa utilizando un plugin de Leaflet llamado <em>leaflet-ajax</em> <a class="footnote-reference" href="#id18" id="id6">[6]</a>. Este plugin permite hacer una llamada AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde hemos cargado el leaflet</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Para agregar la capa al mapa llamaremos a la API de la ACA utilizando el plugin. Para ello al final de nuestro código agregamos lo siguiente:</p>
+<li><p class="first">Utilizar el plugin para agregar la capa al mapa llamando a la API de la ACA. Agregar lo siguiente al final de nuestro código:</p>
 <div class="highlight-python"><div class="highlight"><pre>var geojsonLayer = new L.GeoJSON.AJAX(&#39;http://aca-web.gencat.cat/sdim2/apirest/catalog&#39;).addTo(map);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la página y vemos que no aparece ninguna información en el mapa. Si abrimos la consola de desarrollador del navegador (Ctrl+F12) podemos ver que nos aparece un mensaje de error <em>XMLHttpRequest cannot load ...</em> esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y nos da un error de CORS <a class="footnote-reference" href="#id19" id="id7">[7]</a>. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id20" id="id8">[8]</a> en nuestro servidor web que pueda hacer la llamada al servicio de bicing y que nos devuelva el contenido.</p>
+<li><p class="first">Recargar la página y confirmar que no aparece ninguna información en el mapa. Abrir la consola de desarrollador del navegador (Ctrl+F12) para ver que aparece un mensaje de error <em>XMLHttpRequest cannot load ...</em> ello es debido a que estamos llamando a un servicio que no está en nuestro dominio y por lo tanto da un error de CORS <a class="footnote-reference" href="#id19" id="id7">[7]</a>. Para evitar el error de CORS necesitamos un proxy <a class="footnote-reference" href="#id20" id="id8">[8]</a> en nuestro servidor web que pueda hacer la llamada al servicio de la ACA y que nos devuelva el contenido.</p>
 </li>
-<li><p class="first">Creación del proxy. En este caso crearemos un proxy utilizando Node.js <a class="footnote-reference" href="#id21" id="id9">[9]</a></p>
-</li>
-<li><p class="first">Instalación de Node. Nos descargamos la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalamos con las opciones por defecto. Una vez instalado el Node abrimos la consola para verificar que se ha instalado correctamente escribimos</p>
+</ol>
+</div>
+<div class="section" id="creacion-del-proxy">
+<h2>Creación del proxy<a class="headerlink" href="#creacion-del-proxy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Instalar Node.js <a class="footnote-reference" href="#id21" id="id9">[9]</a>. Descargar la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalaremos con las opciones por defecto. Abrir la consola para verificar que se ha instalado correctamente y escribir</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">-</span><span class="n">v</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">En la consola navegamos hasta nuestra carpeta <em>visor-bicing</em>. Con este comando estamos creando el archivo <em>package.json</em>. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados. Una vez en la carpeta escribimos:</p>
+<li><p class="first">Navegar hasta nuestra carpeta <em>visor-aca</em> y escribir:</p>
 <div class="highlight-python"><div class="highlight"><pre>npm init
+
+Con este comando estaremos creando el archivo *package.json*, el cual solicita varios elementos como por ejemplo; el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
 </pre></div>
 </div>
 </li>
@@ -350,11 +344,10 @@
 </div>
 </li>
 </ol>
+<p>Al ejecutar estos comandos veremos que se crea una carpeta llamada <em>node_modules</em> donde se guardan los módulos instalados.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Al ejecutar estos comandos vemos que se nos crea una carpeta llamada <em>node_modules</em> que es donde se guardan los módulos que hemos instalado.</p>
-</li>
-<li><p class="first">En nuestra carpeta creamos un archivo llamado <em>app.js</em> que contendrá nuestra aplicación que servirá de proxy con el servicio de la ACA. Para ello copiremos lo siguiente en este archivo.</p>
+<li><p class="first">Crear un archivo llamado <em>app.js</em> que servirá de proxy con el servicio de la ACA. Copiar lo siguiente en este archivo.</p>
 <div class="highlight-python"><div class="highlight"><pre>var express  = require(&#39;express&#39;);
 var app      = express();
 var httpProxy = require(&#39;http-proxy&#39;);
@@ -378,20 +371,20 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Para probar que nuestro proxy está funcionando vamos a la consola y escribimos:</p>
+<li><p class="first">Probar que nuestro proxy está funcionando, escribir:</p>
 <div class="highlight-python"><div class="highlight"><pre>node app.js
 </pre></div>
 </div>
 </li>
-<li><p class="first">Abrimos la url de nuestro proxy <a class="reference external" href="http://localhost:3000/aca/">http://localhost:3000/aca/</a> en el navegador.</p>
+<li><p class="first">Abrir la url de nuestro proxy <a class="reference external" href="http://localhost:3000/aca/">http://localhost:3000/aca/</a> en el navegador.</p>
 </li>
-<li><p class="first">En el navegador escribimos <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> y debemos ver nuestro mapa.</p>
+<li><p class="first">Escribir en el navegador <a class="reference external" href="http://localhost:3000">http://localhost:3000</a> y ver nuestro mapa.</p>
 </li>
-<li><p class="first">Modificamos el archivo index.html para que llame al proxy que hemos creado. Para ello cambiamos la url de la capa geojsonLayer <em>http://aca-web.gencat.cat/sdim2/apirest/catalog</em> por nuestro proxy <em>http://localhost:3000/aca/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/aca/</em>). Recargamos la aplicación con Ctrl+F5 y vemos que el error ha desaparecido.</p>
+<li><p class="first">Modificar el archivo index.html para que llame al proxy que hemos creado. Cambiar la url de la capa geojsonLayer <em>http://aca-web.gencat.cat/sdim2/apirest/catalog</em> por nuestro proxy <em>http://localhost:3000/aca/</em> (como el proxy y la aplicación están en el mismo servidor podríamos usar <em>/aca/</em>).</p>
 </li>
-<li><p class="first">Continuamos sin ver ningún dato en nuestro mapa. Esto es debido a lo que ya mencionamos que lo que retorna la API no es un GeoJSON. Pero lo tanto tenemos que convertir la respuesta de la API en un GeoJSON, para ello utilizaremos la opción <em>middleware</em> que ofrece la capa GeoJSON.AJAX. Esta opción nos permite crear un funcion donde podemos manipular los datos antes de agregarlos al mapa.</p>
+<li><p class="first">Recargar la aplicación con Ctrl+F5 y vemos que el error ha desaparecido. Continuaremos sin ver ningún dato en nuestro mapa. Esto es debido a lo que ya mencionamos; que la API no retorna un GeoJSON. Por lo tanto tendremos que convertir la respuesta de la API en un GeoJSON.</p>
 </li>
-<li><p class="first">Creamos una función que transforma los datos de Sentilo de la ACA en un GeoJSON. Al final de nuestro código escribimos</p>
+<li><p class="first">Convertir la respuesta en un GeoJSON utilizando la opción <em>middleware</em> que ofrece la capa GeoJSON.AJAX. Esta opción permite crear una funcion donde se pueden manipular los datos antes de agregarlos al mapa. Crear la función que transforma los datos de Sentilo de la ACA en un GeoJSON. Escribir al final de nuestro código</p>
 <div class="highlight-python"><div class="highlight"><pre>        function sentiloAca2geoJSON(data){
         var geojson = {
                 type: &quot;FeatureCollection&quot;,
@@ -422,7 +415,7 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Luego modficamos la capa geojsonLayer para que el middleware llame a nuestra función de transformación. Cambiamos el código de la capa por lo siguiente:</p>
+<li><p class="first">Modficar la capa geojsonLayer para que el middleware llame a nuestra función de transformación. Cambiar el código de la capa por lo siguiente:</p>
 <div class="highlight-python"><div class="highlight"><pre>    var geojsonLayer = new L.GeoJSON.AJAX(&#39;http://localhost:3000/aca/&#39;, {
     middleware:function(data){
             return sentiloAca2geoJSON(data);
@@ -431,11 +424,11 @@ app.listen(3000);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargarmos el mapa y ahora debemos ver los puntos de los embalses en el mapa.</p>
+<li><p class="first">Recargar el mapa y ver los puntos de los embalses en el mapa.</p>
 </li>
-<li><p class="first">Para mostrar la información del punto vamos a agregar el evento click en cada unos de los puntos. Para ellos utilizaremos la opción de <em>onEachFeature</em> que ofrece las capa GeoJSON de Leaflet. Esta opción permite ejecutar una función en la creación de cada uno de los elementos de la capa. Es muy útil para agregar popups a los elementos o para agregar eventos en los elementos.</p>
+<li><p class="first">Mostrar la información del punto. Agregar el evento click en cada unos de los puntos. Utilizar la opción de <em>onEachFeature</em> que ofrece las capa GeoJSON de Leaflet. Esta opción permite ejecutar una función en la creación de cada uno de los elementos de la capa. Es muy útil para agregar popups a los elementos ó para agregar eventos en los elementos.</p>
 </li>
-<li><p class="first">Creamos una función llamada <em>eachFeature</em> que recibe como parámetros un feature (elemento del GeoJSON) y un layer (elemento de Leaflet). Nuestra función sería la siguiente</p>
+<li><p class="first">Crear una función llamada <em>eachFeature</em> que recibe como parámetros un feature (elemento del GeoJSON) y un layer (elemento de Leaflet). La función sería la siguiente</p>
 <div class="highlight-python"><div class="highlight"><pre>function eachFeature(f,l){
 l.on(&#39;click&#39;,function(ev){
         console.log(f);
@@ -445,19 +438,21 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos el mapa y hacemos click sobre un elemento. En la consola de desarrollador debemos ver que nos aparecen 2 entradas una que corresponde al feature y otra al layer.</p>
+<li><p class="first">Recargar el mapa y hacer click sobre un elemento. En la consola de desarrollador ver que aparecen 2 entradas una que corresponde al feature y otra al layer.</p>
 </li>
-<li><p class="first">Ahora tendríamos que llamar a la API de la ACA para pedir la última lectura del sensor y así obtener la información. La url para obtener la última lectura es <a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*</a>.&lt;id_sensor&gt;*/lastOb/. Por ejemplo</p>
+<li><p class="first">Llamar a la API de la ACA para pedir la última lectura del sensor y así obtener la información. La url para obtener la última lectura es <a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*</a>.&lt;id_sensor&gt;*/lastOb/. Por ejemplo</p>
 <div class="highlight-python"><div class="highlight"><pre>http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.L25075-72-00003/lastOb/
+
+Como estamos llamando una url que está fuera de nuestro dominio tenemos el mismo problema de CORS.
 </pre></div>
 </div>
 </li>
-<li><p class="first">Como estamos llamando una url que está fuera de nuestro dominio tenemos el mismo problema de CORS. Por lo tanto tendremos que modificar nuestro proxy. En nuestro archivo app.js escribimos justo debajo de la declaración de la variable <em>serverAca</em></p>
+<li><p class="first">Modificar nuestro proxy para obtener la información de un sensor. Escribir en nuestro archivo app.js justo debajo de la declaración de la variable <em>serverAca</em></p>
 <div class="highlight-python"><div class="highlight"><pre>var serverAcaLastOb = &#39;http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.&#39;;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Ahora agregamos justo antes del app.listen el código que nos va a ser de proxy. Copiamos lo siguiente</p>
+<li><p class="first">Agregar justo antes del app.listen el código que nos va a ser de proxy. Copiar lo siguiente</p>
 <div class="highlight-python"><div class="highlight"><pre>app.all(&quot;/acalast/:id&quot;, function(req, res){
         console.log(&#39;redirecting to Server2&#39; + req.params.id);
         apiProxy.web(req, res, {
@@ -469,16 +464,16 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
-<li><p class="first">Para reiniciar nuestro servidor de node vamos a la consola y presionamos Crtl+c. Luego volvemos a escribir node app.js.</p>
+<li><p class="first">Reiniciar nuestro servidor de node, ir a la consola y presionar Crtl+c. Escribir node app.js.</p>
 </li>
-<li><p class="first">En nuestro abrimos <a class="reference external" href="http://localhost:3000/acalast/L25075-72-00003">http://localhost:3000/acalast/L25075-72-00003</a> para comprovar que el proxy está funcionando correctamente.</p>
+<li><p class="first">Abrir la url <a class="reference external" href="http://localhost:3000/acalast/L25075-72-00003">http://localhost:3000/acalast/L25075-72-00003</a> en el navegador para comprobar que el proxy está funcionando correctamente.</p>
 </li>
-<li><p class="first">Una vez tenemos el proxy que nos permite obtener la última lectura del sensor tendremos que modificar la función que se llama al hacer click sobre un elemento del mapa para que llame a nuestro proxy. Para hacer esta llamada ajax al proxy utilizaremos la librería JQuery <a class="footnote-reference" href="#id24" id="id12">[12]</a>. Para ellos escribiremos los siguiente justo debajo de donde cargarmos la librería de leaflet.ajax</p>
+<li><p class="first">Modificar la función que se llama al hacer click sobre un elemento del mapa para que llame a nuestro proxy. Esta función ejecutará una llamada ajax al proxy. Utilizar la librería JQuery <a class="footnote-reference" href="#id24" id="id12">[12]</a> para hacer la llamada ajax. Escribir los siguiente justo debajo de donde cargarmos la librería de leaflet.ajax</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://code.jquery.com/jquery-3.2.1.min.js&quot; integrity=&quot;sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Modificamos la función <em>eachFeature</em> con el siguiente código</p>
+<li><p class="first">Modificar la función <em>eachFeature</em> con el siguiente código</p>
 <div class="highlight-python"><div class="highlight"><pre>function eachFeature(f,l){
 l.on(&#39;click&#39;,function(ev){
         var url = &#39;http://localhost:3000/acalast/&#39;+f.properties.id;
@@ -492,9 +487,9 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos el mapa y al hacer click sobre un elemento vemos que en la consola del desarrollador nos aparece un objeto que contiene la respuesa del sensor con la información de la última lectura.</p>
+<li><p class="first">Recargar el mapa y hacer click sobre un elemento para ver que en la consola del desarrollador aparece un objeto que contiene la respuesa del sensor con la información de la última lectura.</p>
 </li>
-<li><p class="first">Para mostrar esta información en el mapa creamos una función <em>popUp</em> que recibe como parámetros un layer de Leaflet y unos datos del sensor. Esta función muestra un popup asociado al elemento con la información del sensor. Despues de la función eachFeature debemos escrbir</p>
+<li><p class="first">Crear una función llamada <em>popUp</em> para mostrar esta información en el mapa. La función recibe como parámetros un layer de Leaflet y unos datos del sensor. Esta función muestra un popup asociado al elemento con la información del sensor. Escribir después de la función eachFeature</p>
 <div class="highlight-python"><div class="highlight"><pre>function popUp(l, data){
         var out = [];
         out.push(&#39;&lt;strong&gt;&#39;+data.componentDesc+&#39;&lt;/strong&gt;&#39;);
@@ -510,7 +505,7 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
-<li><p class="first">Dentro de la función que se llama en el <em>done</em> de la llamada ajax debemos llamar a la función popUp. Para ellos escribimos</p>
+<li><p class="first">Llamar a la función popUp dentro de la función que se llama en el <em>done</em> de la llamada ajax. Escribir</p>
 <div class="highlight-python"><div class="highlight"><pre>.done(function(result) {
   console.log(result);
   popUp(l, result);
@@ -518,7 +513,7 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargamos la aplicación y al hacer click nos debe aparecer un popup con la información de la última lectura del sensor.</p>
+<li><p class="first">Recargar la aplicación y clicar sobre un elemento. Debe aparecer un popup con la información de la última lectura del sensor.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
