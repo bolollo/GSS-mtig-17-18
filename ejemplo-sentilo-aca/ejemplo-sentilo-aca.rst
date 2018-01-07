@@ -15,14 +15,14 @@ Ejemplo Sentilo ACA
   Excepto donde quede reflejado de otra manera, la presente documentación se halla bajo licencia: Creative Commons (Creative Commons - Attribution - Share Alike: http://creativecommons.org/licenses/by-sa/3.0/deed.es)
 
 
-Acceso al servicios de sensores Sentilo de la ACA
--------------------------------------------------
+Acceso al servicio de sensores Sentilo de la ACA
+------------------------------------------------
 
-En el apartado de consulta de datos de la página de la ACA [#]_ encontramos un subapartado de datos en tiempo real, estos datos los sirven utilizando la plataforma Sentilo [#]_. Estos sensores dan información sobre los diferentes embalses/pantanos que hay en Cataluña.
+En el apartado de consulta de datos de la página de la ACA [#]_ encontraremos un subapartado de datos en tiempo real, estos datos los sirven utilizando la plataforma de sensores Sentilo [#]_. Los sensores dan información sobre los diferentes embalses/pantanos que hay en Cataluña.
 
-La página tiene un acceso a un mapa con los datos de los diferentes sensores [#]_ este mapa és el que ofrece la plataforma de Sentilo y está basado en tecnología de Google Maps. 
+La página tiene un acceso a un mapa con los datos de los diferentes sensores [#]_ este mapa es el que ofrece la plataforma de Sentilo y está basado en tecnología de Google Maps.
 
-También encontramos la documentación [#]_ para usar la API, lo que nos permite acceder a los datos y generar nuestro propio visor.
+También encontraremos la documentación [#]_ para usar la API, lo que nos permite acceder a los datos y generar nuestro propio visor.
 
 Creación de un visor 
 --------------------
@@ -68,20 +68,20 @@ Para crear un visor de mapas utilizaremos la librería de mapas Leaflet [#]_.
 		</body>
 		</html>
 #. Abrir el archivo index.html en el navegador para confirmar que se carga un mapa centrado en Cataluña.
-#. Miramos la documentación de la API y buscar la url de descripción del servicio que es http://aca-web.gencat.cat/sdim2/apirest/catalog. Abrir esta url en el navegador y ver que responde un JSON con la información de los diferentes sensores.
-#. Revisar el JSON de salida y buscar la propiedad *location* que nos indica las coordenadas de la ubicación del sensor. A pesar de que el JSON tiene coordenadas no es un GeoJSON y por lo tanto no lo podemos pintar automaticamente en nuestro mapa.
-#. Cargar este JSON en nuestro mapa utilizando un plugin de Leaflet llamado *leaflet-ajax* [#]_. Este plugin permite hacer una llama AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde cargarmos el leaflet ::
+#. Consultar la documentación de la API y buscar la url de descripción del servicio que es http://aca-web.gencat.cat/sdim2/apirest/catalog. Abrir esta url en el navegador y confirmar que responde un JSON con la información de los diferentes sensores.
+#. Revisar el JSON de salida y buscar la propiedad *location* que indica las coordenadas de la ubicación del sensor. A pesar de que el JSON tiene coordenadas no es un GeoJSON y por lo tanto no lo podemos pintar automáticamente en nuestro mapa.
+#. Cargar este JSON en nuestro mapa utilizando un plugin de Leaflet llamado *leaflet-ajax* [#]_. Este plugin permite hacer una llamada AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde hemos cargado el leaflet ::
 
 		<script src="https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js"></script>
-#. Agregar la capa al mapa llamaremos a la API de la ACA utilizando el plugin. Para ello al final de nuestro código agregar lo siguiente: ::
+#. Utilizar el plugin para agregar la capa al mapa llamando a la API de la ACA. Agregar lo siguiente al final de nuestro código: ::
 
 		var geojsonLayer = new L.GeoJSON.AJAX('http://aca-web.gencat.cat/sdim2/apirest/catalog').addTo(map);
-#. Recargar la página y ver que no aparece ninguna información en el mapa. Abrir la consola de desarrollador del navegador (Ctrl+F12) para ver que aparece un mensaje de error *XMLHttpRequest cannot load ...* esto es debido a que estamos llamado a un servicio que no está en nuestro dominio y da un error de CORS [#]_. Para evitar el error de CORS necesitamos un proxy [#]_ en nuestro servidor web que pueda hacer la llamada al servicio de la ACA y que nos devuelva el contenido.
+#. Recargar la página y confirmar que no aparece ninguna información en el mapa. Abrir la consola de desarrollador del navegador (Ctrl+F12) para ver que aparece un mensaje de error *XMLHttpRequest cannot load ...* ello es debido a que estamos llamando a un servicio que no está en nuestro dominio y por lo tanto da un error de CORS [#]_. Para evitar el error de CORS necesitamos un proxy [#]_ en nuestro servidor web que pueda hacer la llamada al servicio de la ACA y que nos devuelva el contenido.
 
 Creación del proxy
 ------------------
 
-#. Instalar Node.js [#]_. Descargar la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalaremos con las opciones por defecto. Una vez instalado el Node abrir la consola para verificar que se ha instalado correctamente. Escribir ::
+#. Instalar Node.js [#]_. Descargar la última versión LTS (en este momento es la 8.9.1 LTS) y lo instalaremos con las opciones por defecto. Abrir la consola para verificar que se ha instalado correctamente y escribir ::
 
 		node -v
 
@@ -89,7 +89,7 @@ Creación del proxy
 
 		npm init
 
-		Con este comando estaremos creando el archivo *package.json*. Este comando solicita varios elementos como, por ejemplo, el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
+		Con este comando estaremos creando el archivo *package.json*, el cual solicita varios elementos como por ejemplo; el nombre y la versión de la aplicación. Por ahora, sólo hay que pulsar ENTER para aceptar los valores predeterminados.
 
 #. Instalar las dependencias para crear nuestro servicio de proxy. En este caso utilizaremos Express [#]_ como servidor web y el módulo http-proxy [#]_ .
 
@@ -126,7 +126,7 @@ Creación del proxy
 
 		app.listen(3000);
 
-#. 	Probar que nuestro proxy está funcionando, escribiendo: ::
+#. 	Probar que nuestro proxy está funcionando, escribir: ::
 
 		node app.js
 
@@ -136,9 +136,9 @@ Creación del proxy
 
 #. Modificar el archivo index.html para que llame al proxy que hemos creado. Cambiar la url de la capa geojsonLayer *http://aca-web.gencat.cat/sdim2/apirest/catalog* por nuestro proxy *http://localhost:3000/aca/* (como el proxy y la aplicación están en el mismo servidor podríamos usar */aca/*). 
 
-#. Recargar la aplicación con Ctrl+F5 y vemos que el error ha desaparecido. Continuamos sin ver ningún dato en nuestro mapa. Esto es debido a lo que ya mencionamos que lo que retorna la API no es un GeoJSON. Por lo tanto tenemos que convertir la respuesta de la API en un GeoJSON, 
+#. Recargar la aplicación con Ctrl+F5 y vemos que el error ha desaparecido. Continuaremos sin ver ningún dato en nuestro mapa. Esto es debido a lo que ya mencionamos; que la API no retorna un GeoJSON. Por lo tanto tendremos que convertir la respuesta de la API en un GeoJSON. 
 
-#. Convertir la respuesta en un GeoJSON utilizando la opción *middleware* que ofrece la capa GeoJSON.AJAX. Esta opción permite crear una funcion donde se pueden manipular los datos antes de agregarlos al mapa. Crear la función que transforma los datos de Sentilo de la ACA en un GeoJSON. Al final de nuestro código escribir ::
+#. Convertir la respuesta en un GeoJSON utilizando la opción *middleware* que ofrece la capa GeoJSON.AJAX. Esta opción permite crear una funcion donde se pueden manipular los datos antes de agregarlos al mapa. Crear la función que transforma los datos de Sentilo de la ACA en un GeoJSON. Escribir al final de nuestro código ::
 
 		function sentiloAca2geoJSON(data){
         	var geojson = {
@@ -178,7 +178,7 @@ Creación del proxy
 
 #. Recargar el mapa y ver los puntos de los embalses en el mapa.
 
-#. Mostrar la información del punto. Agregar el evento click en cada unos de los puntos. Para ello utilizar la opción de *onEachFeature* que ofrece las capa GeoJSON de Leaflet. Esta opción permite ejecutar una función en la creación de cada uno de los elementos de la capa. Es muy útil para agregar popups a los elementos o para agregar eventos en los elementos.
+#. Mostrar la información del punto. Agregar el evento click en cada unos de los puntos. Utilizar la opción de *onEachFeature* que ofrece las capa GeoJSON de Leaflet. Esta opción permite ejecutar una función en la creación de cada uno de los elementos de la capa. Es muy útil para agregar popups a los elementos ó para agregar eventos en los elementos.
 
 #. Crear una función llamada *eachFeature* que recibe como parámetros un feature (elemento del GeoJSON) y un layer (elemento de Leaflet). La función sería la siguiente ::
 
@@ -197,7 +197,7 @@ Creación del proxy
 
 		Como estamos llamando una url que está fuera de nuestro dominio tenemos el mismo problema de CORS. 
 
-#. Modificar nuestro proxy para obtener la información de un sensor. En nuestro archivo app.js escribir justo debajo de la declaración de la variable *serverAca* ::
+#. Modificar nuestro proxy para obtener la información de un sensor. Escribir en nuestro archivo app.js justo debajo de la declaración de la variable *serverAca* ::
 
 		var serverAcaLastOb = 'http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.';
 
@@ -212,11 +212,11 @@ Creación del proxy
 		    });
 		});
 
-#. Reiniciar nuestro servidor de node, ir a la consola y presionar Crtl+c. Luego escribir node app.js.
+#. Reiniciar nuestro servidor de node, ir a la consola y presionar Crtl+c. Escribir node app.js.
 
-#. Abrir la url http://localhost:3000/acalast/L25075-72-00003 en el navegador para comprovar que el proxy está funcionando correctamente.
+#. Abrir la url http://localhost:3000/acalast/L25075-72-00003 en el navegador para comprobar que el proxy está funcionando correctamente.
 
-#. Modificar la función que se llama al hacer click sobre un elemento del mapa para que llame a nuestro proxy. Esta función ejecutará una llamada ajax al proxy. Utilizaremos la librería JQuery [#]_ para hacer la llamada ajax. Escribir los siguiente justo debajo de donde cargarmos la librería de leaflet.ajax ::
+#. Modificar la función que se llama al hacer click sobre un elemento del mapa para que llame a nuestro proxy. Esta función ejecutará una llamada ajax al proxy. Utilizar la librería JQuery [#]_ para hacer la llamada ajax. Escribir los siguiente justo debajo de donde cargarmos la librería de leaflet.ajax ::
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -235,7 +235,7 @@ Creación del proxy
 
 #. Recargar el mapa y hacer click sobre un elemento para ver que en la consola del desarrollador aparece un objeto que contiene la respuesa del sensor con la información de la última lectura.
 
-#. Creamos una función llamada *popUp* para mostrar esta información en el mapa. La función recibe como parámetros un layer de Leaflet y unos datos del sensor. Esta función muestra un popup asociado al elemento con la información del sensor. Despues de la función eachFeature escrbir ::
+#. Crear una función llamada *popUp* para mostrar esta información en el mapa. La función recibe como parámetros un layer de Leaflet y unos datos del sensor. Esta función muestra un popup asociado al elemento con la información del sensor. Escribir después de la función eachFeature ::
 
 		function popUp(l, data){
 			var out = [];
@@ -250,14 +250,14 @@ Creación del proxy
 		    l.bindPopup(out.join("<br />")).togglePopup();
 		}
 
-#. Llamar a la función popUp dentro de la función que se llama en el *done* de la llamada ajax. Para ello escribir ::
+#. Llamar a la función popUp dentro de la función que se llama en el *done* de la llamada ajax. Escribir ::
 
 		.done(function(result) {
 		  console.log(result);
 		  popUp(l, result);
 		});
 
-#. Recargar la aplicación y hacer click sobre un elemento, debe aparecer un popup con la información de la última lectura del sensor.
+#. Recargar la aplicación y clicar sobre un elemento. Debe aparecer un popup con la información de la última lectura del sensor.
 
 		.. |sentilo_aca| image:: _images/sentilo_aca.png
 		  :align: middle
