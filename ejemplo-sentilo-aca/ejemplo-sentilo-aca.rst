@@ -189,6 +189,19 @@ Creación del proxy
 			});
 		}
 
+#. Llamar a la funcion eachFeature en la opción *onEachFeature* de la capa geojsonLayer. Escribir lo siguiente luego de la opción del middleware ::
+
+		,onEachFeature: eachFeature
+
+#. Revisar que el código de la capa *geojsonLayer* es el siguiente: ::
+
+		var geojsonLayer = new L.GeoJSON.AJAX('http://localhost:3000/aca/', {
+	    	middleware:function(data){
+	    		return sentiloAca2geoJSON(data);
+	        }
+	        ,onEachFeature: eachFeature
+	    }).addTo(map);
+
 #. Recargar el mapa y hacer click sobre un elemento. En la consola de desarrollador ver que aparecen 2 entradas una que corresponde al feature y otra al layer.
 
 #. Llamar a la API de la ACA para pedir la última lectura del sensor y así obtener la información. La url para obtener la última lectura es http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*.<id_sensor>*/lastOb/. Por ejemplo ::
