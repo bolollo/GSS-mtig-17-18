@@ -438,6 +438,21 @@ l.on(&#39;click&#39;,function(ev){
 </pre></div>
 </div>
 </li>
+<li><p class="first">Llamar a la funcion eachFeature en la opción <em>onEachFeature</em> de la capa geojsonLayer. Escribir lo siguiente luego de la opción del middleware</p>
+<div class="highlight-python"><div class="highlight"><pre>,onEachFeature: eachFeature
+</pre></div>
+</div>
+</li>
+<li><p class="first">Revisar que el código de la capa <em>geojsonLayer</em> es el siguiente:</p>
+<div class="highlight-python"><div class="highlight"><pre>    var geojsonLayer = new L.GeoJSON.AJAX(&#39;http://localhost:3000/aca/&#39;, {
+    middleware:function(data){
+            return sentiloAca2geoJSON(data);
+    }
+    ,onEachFeature: eachFeature
+}).addTo(map);
+</pre></div>
+</div>
+</li>
 <li><p class="first">Recargar el mapa y hacer click sobre un elemento. En la consola de desarrollador ver que aparecen 2 entradas una que corresponde al feature y otra al layer.</p>
 </li>
 <li><p class="first">Llamar a la API de la ACA para pedir la última lectura del sensor y así obtener la información. La url para obtener la última lectura es <a class="reference external" href="http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*">http://aca-web.gencat.cat/sentilo-catalog-web/component/map/EMBASSAMENT-EST.*</a>.&lt;id_sensor&gt;*/lastOb/. Por ejemplo</p>

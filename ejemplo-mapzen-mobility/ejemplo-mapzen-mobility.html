@@ -118,7 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html">Ejemplo Sentilo ACA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#acceso-al-servicios-de-sensores-sentilo-de-la-aca">Acceso al servicios de sensores Sentilo de la ACA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#acceso-al-servicio-de-sensores-sentilo-de-la-aca">Acceso al servicio de sensores Sentilo de la ACA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#creacion-de-un-visor">Creación de un visor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ejemplo-sentilo-aca/ejemplo-sentilo-aca.html#creacion-del-proxy">Creación del proxy</a></li>
 </ul>
@@ -164,7 +164,7 @@
 <li><a class="reference internal" href="#acceso-a-los-servicios-de-mapzen-mobility">Acceso a los servicios de Mapzen Mobility</a></li>
 <li><a class="reference internal" href="#creacion-de-un-visor-que-permita-el-caculo-de-isocronas">Creación de un visor que permita el cáculo de Isócronas</a></li>
 <li><a class="reference internal" href="#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">Agregar un buscador de direcciones y puntos de interés al mapa</a></li>
-<li><a class="reference internal" href="#una-alternativa-al-servicio-de-isocrones-de-mapzen">Una alternativa al servicio de Isócrones de Mapzen</a><ul>
+<li><a class="reference internal" href="#una-alternativa-al-servicio-de-isocronas-de-mapzen">Una alternativa al servicio de Isócronas de Mapzen</a><ul>
 <li><a class="reference internal" href="#referencias">Referencias</a></li>
 </ul>
 </li>
@@ -249,16 +249,16 @@
 </div>
 <div class="section" id="nota">
 <h2>NOTA<a class="headerlink" href="#nota" title="Permalink to this headline">¶</a></h2>
-<p>Desafortunadamente Mapzen cierra operaciones a finales de Enero de 2018. Por lo tanto el servicio de Isócronas no estará disponibla a partir del 1 Febrero de 2018. Aquí se puede ver el anuncio del cierre <a class="reference external" href="https://mapzen.com/blog/shutdown/">https://mapzen.com/blog/shutdown/</a></p>
+<p>Desafortunadamente Mapzen cierra operaciones a finales de Enero de 2018. Por lo tanto el servicio de Isócronas no estará disponible a partir del 1 Febrero de 2018. Podéis ver el anuncio del cierre aquí <a class="reference external" href="https://mapzen.com/blog/shutdown/">https://mapzen.com/blog/shutdown/</a></p>
 <div class="section" id="acceso-a-los-servicios-de-mapzen-mobility">
 <h3>Acceso a los servicios de Mapzen Mobility<a class="headerlink" href="#acceso-a-los-servicios-de-mapzen-mobility" title="Permalink to this headline">¶</a></h3>
-<p>Mapzen Mobility <a class="footnote-reference" href="#id11" id="id1">[1]</a> es un kit de herramientas para el transporte multimodal, está basado en software libre y usa datos abiertos (principalmente datos de OpenStreetMap). Consta de varias herramientas como son:
-- Mapzen Turn-by-Turn: es un servicio de navegación para el mundo, ya sea en automóvil, bicicleta, pie y combinaciones multimodales que implican caminar y andar en transporte público.
+<p>Mapzen Mobility <a class="footnote-reference" href="#id11" id="id1">[1]</a> es un kit de herramientas para el transporte multimodal, está basado en software libre y usa datos abiertos (principalmente datos de OpenStreetMap). Consta de varias herramientas, tales como:
+- Mapzen Turn-by-Turn: servicio de navegación para el mundo, ya sea en automóvil, en bicicleta, a pie y combinaciones multimodales que combinen andar a pie y el uso del transporte público.
 - Mapzen Matrix: servicio de cálculo de tabla de distancia y tiempo entre diferentes lugares.
 - Mapzen Isochrone: servicio para obtener un cálculo de las áreas que se pueden alcanzar dentro de períodos de tiempo específicos desde una ubicación o un conjunto de ubicaciones.
-- Mapzen Map Matching: servicio que permite convertir una ruta en una ruta con instrucciones narrativas. Esto lo hace observando las coordenadas que coincide con las coordenadas de las carreteras conocidas y así obtener los valores de los atributos de esa línea coincidente.</p>
-<p>Otro servicio interesante de Mapzen es el servicio de búsqueda que permite geocodificar direcciones, o buscar puntos de interés. <a class="footnote-reference" href="#id12" id="id2">[2]</a></p>
-<p>Mapzen tiene una librería Mapzen JavaScript SDK <a class="footnote-reference" href="#id13" id="id3">[3]</a> que está basada en Leaflet <a class="footnote-reference" href="#id14" id="id4">[4]</a> . Esta facilita el uso de los diferentes servicios de Mapzen. Aqui <a class="footnote-reference" href="#id15" id="id5">[5]</a> se puede ver un ejemplo del cálculo de Isócronas utilizando la librería js de Mapzen.</p>
+- Mapzen Map Matching: servicio que permite convertir una ruta en una ruta con instrucciones narrativas. Esto lo hace observando las coordenadas que coinciden con las coordenadas de las carreteras conocidas y así obtiene los valores de los atributos de esa línea coincidente.</p>
+<p>Otro servicio interesante de Mapzen es el servicio de búsqueda que permite geocodificar direcciones ó buscar puntos de interés. <a class="footnote-reference" href="#id12" id="id2">[2]</a></p>
+<p>Mapzen tiene una librería Mapzen JavaScript SDK <a class="footnote-reference" href="#id13" id="id3">[3]</a> que está basada en Leaflet <a class="footnote-reference" href="#id14" id="id4">[4]</a> . Esta facilita el uso de los diferentes servicios de Mapzen. Aquí <a class="footnote-reference" href="#id15" id="id5">[5]</a> se puede ver un ejemplo del cálculo de Isócronas utilizando la librería js de Mapzen.</p>
 <p>En nuestro caso crearemos un visor utilizando Leaflet y llamando directamente al servicio de Mapzen.</p>
 </div>
 <div class="section" id="creacion-de-un-visor-que-permita-el-caculo-de-isocronas">
@@ -308,26 +308,26 @@
 </li>
 <li><p class="first">Abrir el archivo index.html en el navegador para confirmar que se carga un mapa centrado en Barcelona.</p>
 </li>
-<li><p class="first">Crear una API key. Al revisar la documentación de la API del servicio de Mapzen Isochrone <a class="footnote-reference" href="#id16" id="id6">[6]</a> vemos que es necesario tener una API key para poder utilizarlo. Para crear la API key hay que darse de alta en la página de Mapzen <a class="footnote-reference" href="#id17" id="id7">[7]</a>, esta tiene una verisón gratuita que tiene una cuotas de uso. Si se quiere hacer un uso más intesivo del servicio hay que pagar.</p>
+<li><p class="first">Crear una API key. Al revisar la documentación de la API del servicio de Mapzen Isochrone <a class="footnote-reference" href="#id16" id="id6">[6]</a> vemos que es necesario tener una API key para poder utilizarlo. Para crear la API key hay que darse de alta en la página de Mapzen <a class="footnote-reference" href="#id17" id="id7">[7]</a>, esta tiene una versión gratuita que tiene unas cuotas de uso. Si se quiere hacer un uso más intesivo del servicio hay que pagar.</p>
 </li>
-<li><p class="first">Crear una variable donde guardaremos nuestra API key. Antes de la declaración de nuestro mapa escribir</p>
+<li><p class="first">Crear una variable donde guardaremos nuestra API key. Escribir antes de la declaración de nuestro mapa</p>
 <div class="highlight-python"><div class="highlight"><pre>var API_KEY = &#39;{TU_API_KEY}&#39;;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Cargar la respuesta GeoJSON del servicio utilizando el plugin de Leaflet llamado <em>leaflet-ajax</em> <a class="footnote-reference" href="#id18" id="id8">[8]</a>. Este plugin permite hacer una llama AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Para cargar este plugin debemos agregar lo siguiente justo después de donde cargarmos el leaflet</p>
+<li><p class="first">Cargar la respuesta GeoJSON del servicio utilizando el plugin de Leaflet llamado <em>leaflet-ajax</em> <a class="footnote-reference" href="#id18" id="id8">[8]</a>. Este plugin permite hacer una llamada AJAX a un servicio que retorne un JSON y cargar la respuesta en un mapa. Agregar lo siguiente justo después de donde cargarmos el leaflet</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;https://calvinmetcalf.github.io/leaflet-ajax/dist/leaflet.ajax.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Agregar una capa de Isócronas al mapa llamando a la API de Mapzen utilizando el plugin. Al final de nuestro código agregar lo siguiente:</p>
+<li><p class="first">Agregar una capa de Isócronas al mapa llamando a la API de Mapzen utilizando el plugin. Agregar lo siguiente al final de nuestro código :</p>
 <div class="highlight-python"><div class="highlight"><pre>var geojsonLayer = new L.GeoJSON.AJAX(&#39;https://matrix.mapzen.com/isochrone?json={&quot;locations&quot;:[{&quot;lat&quot;:41.40024,&quot;lon&quot;:2.180442}],&quot;costing&quot;:&quot;pedestrian&quot;,&quot;contours&quot;:[{&quot;time&quot;:15,&quot;color&quot;:&quot;ff0000&quot;}]}&amp;api_key=TU_API_KEY&#39;).addTo(map);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargar el mapa y ver que aparece una línea azul que representa la isócrona del punto dado. En este caso el punto seleccionado es fijo y está escrito en nuestro código.</p>
+<li><p class="first">Recargar el mapa y comprobar que aparece una línea azul que representa la isócrona del punto dado. En este caso el punto seleccionado es fijo y está escrito en nuestro código.</p>
 </li>
-<li><p class="first">Modificar nuestra aplicación para que se haga el cálculo de la Isócrona cuando el usuario haga click en un punto del mapa. Para esto primero tendremos que detectar el evento click en el mapa. Luego de donde declaramos la capa geojson escribir</p>
+<li><p class="first">Modificar la aplicación para que se haga el cálculo de la Isócrona cuando el usuario haga click en un punto del mapa. Para ello primero hay que detectar el evento click en el mapa. Escribir luego de donde declaramos la capa geojson</p>
 <div class="highlight-python"><div class="highlight"><pre>    map.on(&#39;click&#39;, function(e){
 console.log(e);
     });
@@ -336,7 +336,7 @@ console.log(e);
 </li>
 <li><p class="first">Recargar la aplicación y abrir la consola del desarrollador. Hacer click sobre el mapa y ver que en la consola aparece el objeto del evento click. Inspeccionar este objeto y ver que tiene una propiedad llamada latlng que contine las coordenadas donde se ha hecho el click.</p>
 </li>
-<li><p class="first">Crear una función que tenga como parámetro una posición (coordenada lat lon) y genere una url de llamada al servicio de isócronas de Mapzen para que haga el cálculo en la coordenada indicada. Al final de nuestro código copiar lo siguiente:</p>
+<li><p class="first">Crear una función que tenga como parámetro una posición (coordenada lat lon) y genere una url de llamada al servicio de isócronas de Mapzen para que haga el cálculo en la coordenada indicada. Copiar lo siguiente al final de nuestro código:</p>
 <div class="highlight-python"><div class="highlight"><pre>        function crearUrlIsochrona(latlng){
     var lat = latlng.lat;
     var lng = latlng.lng;
@@ -353,27 +353,27 @@ console.log(e);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Llamar a la función <em>crearUrlIsochrona</em> cuando se hace click en el mapa. Al final de la función del click escribir</p>
+<li><p class="first">Llamar a la función <em>crearUrlIsochrona</em> cuando se hace click en el mapa. Escribir al final de la función del click</p>
 <div class="highlight-python"><div class="highlight"><pre>var url = crearUrlIsochrona(e.latlng);
 console.log(url);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargar la página y hacer click sobre el mapa para ver que en la consola aparece una url. Abrimos esta url en el navegador para comprobar que responde con un GeoJSON que contiene la isócrona.</p>
+<li><p class="first">Recargar la página y hacer click sobre el mapa para ver que en la consola aparece una url. Abrir esta url en el navegador para comprobar que responde con un GeoJSON que contiene la isócrona.</p>
 </li>
-<li><p class="first">Utilizar el método refresh para actualizar la capa geojsonLayer con la nueva url. Debajo de donde declaramos la variable url escribir</p>
+<li><p class="first">Utilizar el método refresh para actualizar la capa geojsonLayer con la nueva url. Escribir debajo de donde declaramos la variable url</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">geojsonLayer</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Refrescar el mapa y hacer click sobre el mapa para ver que se dibuja una nueva línea isócrona.</p>
+<li><p class="first">Refrescar el mapa y hacer click sobre el mapa para comprobar que se dibuja una nueva línea isócrona.</p>
 </li>
-<li><p class="first">Modificar la capa geojsonLayer para que se inicialice vacía sin ningún elemento. Para ello modificar la declaración de la capa y borrar la url que llama a la API de Mapzen. Nos quedaría así:</p>
+<li><p class="first">Modificar la capa geojsonLayer para que se inicialice vacía sin ningún elemento. Modificar la declaración de la capa y borrar la url que llama a la API de Mapzen. Quedaría así:</p>
 <div class="highlight-python"><div class="highlight"><pre>var geojsonLayer = new L.GeoJSON.AJAX(&#39;&#39;).addTo(map);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Pintar la línea del color que idicamos. Vemos que por defecto pinta la línea de color azul a pesar de que en la llamada a la API estamos diciendo que el color es rojo (ff0000). Esto es debido a que el Leaflet no sabe de que color pintar la línea y utiliza el color por defecto. En la respuesta del servicio podemos ver que los elementos que nos retorna tienen unas propiedades (properties) en donde se listan una serie de estilos, uno de ellos es el color que si corresponde con el rojo. Lo que debemos hacer es decirle al leaflet que utilice esa propiedad para dar el color a la línea. Para ello escribir lo siguiente en nuestra capa geojsonLayer.</p>
+<li><p class="first">Pintar la línea del color que indicamos. Por defecto se pinta la línea de color azul a pesar de que en la llamada a la API estamos diciendo que el color es rojo (ff0000). Esto es debido a que el Leaflet no sabe de que color pintar la línea y utiliza el color por defecto. En la respuesta del servicio podemos ver que los elementos que nos retorna tienen unas propiedades (properties) en donde se listan una serie de estilos, uno de ellos es el color que si corresponde con el rojo. Lo que debemos hacer es decirle al leaflet que utilice esa propiedad para dar el color a la línea. Escribir lo siguiente en nuestra capa geojsonLayer.</p>
 <div class="highlight-python"><div class="highlight"><pre>        var geojsonLayer = new L.GeoJSON.AJAX(&#39;&#39;,{
     style: function(geoJsonFeature){
         return {color: geoJsonFeature.properties.color};
@@ -382,32 +382,32 @@ console.log(url);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargar el mapa y hacer click para ver que las líneas son de color rojo.</p>
+<li><p class="first">Recargar el mapa y hacer click para confirmar que la línea es de color rojo.</p>
 </li>
-<li><p class="first">Calcular también la isócrona de 30 minutos. Hasta el momento pedíamos una isócrona de 15 minutos. Para ello modificar el parámetro <em>contours</em> de nuestra función. Agregar otro objeto a la matriz de countours en este caso el tiempo (time) será de 30 y la línea será de color verde. Quedaría de la siguiente forma:</p>
+<li><p class="first">Calcular también la isócrona de 30 minutos. Hasta el momento pedíamos una isócrona de 15 minutos. Modificar el parámetro <em>contours</em> de nuestra función. Agregar otro objeto a la matriz de countours en este caso el tiempo (time) será de 30 y la línea será de color verde. Quedaría de la siguiente forma:</p>
 <div class="highlight-python"><div class="highlight"><pre>contours: [{&quot;time&quot;:15,&quot;color&quot;:&quot;ff0000&quot;}, {&quot;time&quot;:30,&quot;color&quot;:&quot;00ff00&quot;}]
 </pre></div>
 </div>
 </li>
-<li><p class="first">Recargar el mapa y ver que ahora al hacer click aparecen 2 isócronas.</p>
+<li><p class="first">Recargar el mapa y comprobar que ahora al hacer click aparecen 2 isócronas.</p>
 </li>
 </ol>
 </div>
 <div class="section" id="agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa">
 <h3>Agregar un buscador de direcciones y puntos de interés al mapa<a class="headerlink" href="#agregar-un-buscador-de-direcciones-y-puntos-de-interes-al-mapa" title="Permalink to this headline">¶</a></h3>
-<p>Para agregar un buscador utilizaremos el plugin de Leaflet <em>Leaflet.OpenCage.Search</em> <a class="footnote-reference" href="#id19" id="id9">[9]</a> desarrollado por OpenCage que permite de una forma fácil y rápida hacer llamadas al servicio de búsqueda de Mapzen.</p>
+<p>Para agregar un buscador utilizaremos el plugin de Leaflet <em>Leaflet.OpenCage.Search</em> <a class="footnote-reference" href="#id19" id="id9">[9]</a> desarrollado por OpenCage que permite de una forma fácil y rápida hacer llamadas al servicio de búsqueda de OpenCage Geocoder.</p>
 <ol class="arabic">
 <li><p class="first">Cargar la librería en nuestra aplicación. Copiar lo siguiente justo despúes de la carga del plugin de leaflet.ajax</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/js/L.Control.OpenCageSearch.dev.js&quot;&gt;&lt;/script&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Cargar el estilo del plugin. escribir lo siguiente justo debajo de donde cargamos el estilo de Leaflet</p>
+<li><p class="first">Cargar el estilo del plugin. Escribir lo siguiente justo debajo de donde cargamos el estilo de Leaflet</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;link rel=&quot;stylesheet&quot; href=&quot;http://rawgit.com/opencagedata/leaflet-opencage-search/master/dist/css/L.Control.OpenCageSearch.dev.css&quot; /&gt;
 </pre></div>
 </div>
 </li>
-<li><p class="first">Agregar el control al mapa. Para utilizar el servicio de búsqueda tambíen es necesario pasar nuestra API key. Agregar lo siguiente antes de la declaraciṕn de nuestra función <em>crearUrlIsochrona</em> :</p>
+<li><p class="first">Agregar el control al mapa. Para utilizar el servicio de búsqueda también es necesario pasar nuestra API key. Agregar lo siguiente antes de la declaración de nuestra función <em>crearUrlIsochrona</em> :</p>
 <div class="highlight-python"><div class="highlight"><pre>var options_g = {
         key: &#39;{TU_API_KEY_OPENCAGE}&#39;,
         limit: 10
@@ -418,7 +418,7 @@ var geocoder = L.Control.openCageSearch(options_g).addTo(map);
 </li>
 <li><p class="first">Recargar el mapa y comprobar que aparece el control.</p>
 </li>
-<li><p class="first">Calcular las isócronas al seleccionar un resultado de la búsqueda. Para ello modificamos la función <em>_geocodeResultSelected</em> del control geocoder</p>
+<li><p class="first">Calcular las isócronas al seleccionar un resultado de la búsqueda. Modificar la función <em>_geocodeResultSelected</em> del control geocoder</p>
 <div class="highlight-python"><div class="highlight"><pre>geocoder._geocodeResultSelected = function(result){
         if (this.options.collapsed) {
                 this._collapse();
@@ -428,15 +428,15 @@ var geocoder = L.Control.openCageSearch(options_g).addTo(map);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Refrescar el mapa y abrir la consola de desarrollados para ver que al seleccionar un resultado de la búsqueda aparece un objeto en la consola. Inspeccionar este objeto para ver que tiene una propiedad latlng que es lo que necesitamos para calcular las isócronas.</p>
+<li><p class="first">Refrescar el mapa y abrir la consola de desarrolladores para comprobar que al seleccionar un resultado de la búsqueda aparece un objeto en la consola. Inspeccionar este objeto para ver que tiene una propiedad latlng que es lo que necesitamos para calcular las isócronas.</p>
 </li>
-<li><p class="first">Llamar a nuestra función <em>crearUrlIsochrona</em> en la función del evento select para generar la url, luego refrescar la capa de <em>geojsonLayer</em>, esto ya lo hemos hecho cuando el usuario hace click en el mapa. Por lo tanto copiar lo siguiente en la función</p>
+<li><p class="first">Llamar a nuestra función <em>crearUrlIsochrona</em> en la función del evento select para generar la url, luego refrescar la capa de <em>geojsonLayer</em>. Esto ya lo hemos hecho cuando el usuario hace click en el mapa. Copiar lo siguiente en la función</p>
 <div class="highlight-python"><div class="highlight"><pre>var url = crearUrlIsochrona(result.center);
 geojsonLayer.refresh(url);
 </pre></div>
 </div>
 </li>
-<li><p class="first">Refrescar la página y al seleccionar un resultado de búsqueda ver que calculá las isócronas desde ese punto.</p>
+<li><p class="first">Refrescar la página y al seleccionar un resultado de búsqueda comprobar que calcula las isócronas desde ese punto.</p>
 <blockquote>
 <div><table border="1" class="docutils">
 <colgroup>
@@ -451,11 +451,11 @@ geojsonLayer.refresh(url);
 </li>
 </ol>
 </div>
-<div class="section" id="una-alternativa-al-servicio-de-isocrones-de-mapzen">
-<h3>Una alternativa al servicio de Isócrones de Mapzen<a class="headerlink" href="#una-alternativa-al-servicio-de-isocrones-de-mapzen" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="una-alternativa-al-servicio-de-isocronas-de-mapzen">
+<h3>Una alternativa al servicio de Isócronas de Mapzen<a class="headerlink" href="#una-alternativa-al-servicio-de-isocronas-de-mapzen" title="Permalink to this headline">¶</a></h3>
 <p>Utilizaremos el servicio de la API de Iso4App <a class="footnote-reference" href="#id20" id="id10">[10]</a> que también está basado en datos de OSM.</p>
 <ol class="arabic">
-<li><p class="first">Crear una función que tenga como parámetro una posición (coordenada lat lon) y genere una url de llamada al servicio de isócronas de Iso4App para que haga el cálculo en la coordenada indicada. Al final de nuestro código copiar lo siguiente:</p>
+<li><p class="first">Crear una función que tenga como parámetro una posición (coordenada lat lon) y genere una url de llamada al servicio de isócronas de Iso4App para que haga el cálculo en la coordenada indicada. Copiar lo siguiente al final de nuestro código:</p>
 <div class="highlight-python"><div class="highlight"><pre>        function crearUrlIsochrona2(latlng){
     var lat = latlng.lat;
     var lng = latlng.lng;
