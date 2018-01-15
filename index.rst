@@ -29,3 +29,4 @@ Materiales:
    ejemplo-mapzen-mobility/ejemplo-mapzen-mobility
    ejemplo-geoservicio-realtime/ejemplo-geoservicio-realtime
    
+   ejemplo-gtfs/ejemplo-gtfs
