@@ -68,6 +68,7 @@ Para crear un visor de mapas utilizaremos la librería de mapas Leaflet [#]_. Y 
 
 #. Crear un archivo con el nombre de *package.json* dentro de la carpeta.
 #. Abrir el archivo package.json con un editor de texto y copiar el siguiente código. ::
+
 		{
 		  "name": "visor-gtfs",
 		  "version": "1.0.0",
